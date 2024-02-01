@@ -2113,11 +2113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Data\\Restaurant.Data.csproj",
+      "projectUniqueName": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Data\\Restaurant.Data.csproj",
       "projectName": "Restaurant.Data",
-      "projectPath": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Data\\Restaurant.Data.csproj",
+      "projectPath": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Data\\Restaurant.Data.csproj",
       "packagesPath": "C:\\Users\\TTS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Data\\obj\\",
+      "outputPath": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\TTS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2134,8 +2134,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Core\\Restaurant.Core.csproj": {
-              "projectPath": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Core\\Restaurant.Core.csproj"
+            "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Core\\Restaurant.Core.csproj": {
+              "projectPath": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.Core\\Restaurant.Core.csproj"
             }
           }
         }

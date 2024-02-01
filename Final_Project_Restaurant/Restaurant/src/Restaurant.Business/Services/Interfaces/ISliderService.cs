@@ -10,11 +10,11 @@ namespace Restaurant.Business.Services.Interfaces
 {
     public interface ISliderService
     {
-        Task CreateSlider(Slider slider);
-        Task UpdateSlider(Slider slider);
-        Task DeleteSlider(int id);
-        Task SoftDelete(Slider slider);
-        Task<List<Slider>> GetAllSliders(Expression<Func<Slider, bool>>? expression = null, params string[]? includes);
-        Task<Slider> GetByIdSliders(Expression<Func<Slider, bool>>? expression = null, params string[]? includes);
+        Task CreateAsync(Slider slider);
+        Task UpdateAsync(Slider slider);
+        Task DeleteAsync(int id);
+        Task SoftDelete(int id);
+        Task<List<Slider>> GetAllAsync(Expression<Func<Slider, bool>>? expression = null, params string[]? includes);
+        Task<Slider> GetByIdAsync(Expression<Func<Slider, bool>>? expression = null, params string[]? includes);
     }
 }

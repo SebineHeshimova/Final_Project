@@ -25,7 +25,7 @@ namespace Restaurant.Business.Services.Implementations
             _repository = repository;
         }
 
-        public async Task CreateSlider(Slider slider)
+        public async Task CreateAsync(Slider slider)
         {
             if (slider == null) throw new SliderNullException("Entity cannot be null!");
             if(slider.ImageFile != null)
@@ -47,37 +47,38 @@ namespace Restaurant.Business.Services.Implementations
             await _repository.CommitAsync();
         }
 
-        public async Task DeleteSlider(int id)
+        public async Task DeleteAsync(int id)
         {
-            var existSlider=await _repository.SingleAsync(x => x.Id == id);
-            if (existSlider == null) throw new SliderNullException("Entity cannot be null!");
-            Helper.DeleteFile(_env.WebRootPath, "uploads/sliders", existSlider.ImageUrl);
-            _repository.Delete(existSlider);
+            var slider=await _repository.SingleAsync(x => x.Id == id);
+            if (slider == null) throw new SliderNullException("Entity cannot be null!");
+            Helper.DeleteFile(_env.WebRootPath, "uploads/sliders", slider.ImageUrl);
+            _repository.Delete(slider);
             await _repository.CommitAsync();    
         }
 
-        public async Task<List<Slider>> GetAllSliders(Expression<Func<Slider, bool>>? expression = null, params string[]? includes)
+        public async Task<List<Slider>> GetAllAsync(Expression<Func<Slider, bool>>? expression = null, params string[]? includes)
         {
-            return  await _repository.GetAllWhere(s=>s.IsDeleted==false, includes).ToListAsync();
+            return  await _repository.GetAllWhere(expression, includes).ToListAsync();
         }
 
-        public async Task<Slider> GetByIdSliders(Expression<Func<Slider, bool>>? expression = null, params string[]? includes)
+        public async Task<Slider> GetByIdAsync(Expression<Func<Slider, bool>>? expression = null, params string[]? includes)
         {
-            return await _repository.SingleAsync(s=>s.IsDeleted==false, includes);
+            return await _repository.SingleAsync(expression, includes);
         }
 
-        public async Task SoftDelete(Slider slider)
+        public async Task SoftDelete(int id)
         {
-            var existSlider = await _repository.SingleAsync(x => x.Id == slider.Id);
-            if (existSlider == null) throw new SliderNullException("Entity cannot be null!");
-            existSlider.IsDeleted = true;
+            var slider = await _repository.SingleAsync(x => x.Id == id);
+            if (slider == null) throw new SliderNullException("Entity cannot be null!");
+            slider.IsDeleted = !slider.IsDeleted;
             await _repository.CommitAsync();
         }
 
-        public async Task UpdateSlider(Slider slider)
-        {
+        public async Task UpdateAsync(Slider slider)
+        {  
             var existSlider=await _repository.SingleAsync(s=>s.Id==slider.Id);
-            if(slider != null)
+			if (existSlider == null) throw new SliderNullException("Entity cannot be null!");
+			if (slider.ImageFile != null)
             {
                 if (slider.ImageFile.ContentType != "image/jpeg" && slider.ImageFile.ContentType != "image/png")
                 {

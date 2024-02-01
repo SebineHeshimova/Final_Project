@@ -1,32 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Restaurant.MVC.Models;
-using System.Diagnostics;
+using Restaurant.Business.Services.Interfaces;
+using Restaurant.MVC.ViewModels;
 
 namespace Restaurant.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ISliderService _sliderService;
 
-        public HomeController(ILogger<HomeController> logger)
+		public HomeController(ISliderService sliderService)
+		{
+			_sliderService = sliderService;
+		}
+
+		public async Task<IActionResult> Index()
         {
-            _logger = logger;
+            HomeViewModel model = new HomeViewModel()
+            {
+                Sliders = await _sliderService.GetAllAsync()
+            };
+            return View(model);
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
