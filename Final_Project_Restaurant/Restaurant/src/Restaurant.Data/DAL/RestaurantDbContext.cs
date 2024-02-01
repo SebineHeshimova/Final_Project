@@ -13,5 +13,6 @@ namespace Restaurant.Data.DAL
         public RestaurantDbContext(DbContextOptions<RestaurantDbContext> options) : base(options) { }
        
         public DbSet<Slider> Sliders {  get; set; }
+        public DbSet<Banner> Banners { get; set; }
     }
 }

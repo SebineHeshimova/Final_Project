@@ -14,6 +14,7 @@ namespace Restaurant.Data
         public static void AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<ISliderRepository, SliderRepository>();
+            services.AddScoped<IBannerRepository, BannerRepository>();
         }
     }
 }

@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Restaurant.Data\Restaurant.Data.csproj" />
-	  <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+	  <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>

@@ -14,6 +14,7 @@ namespace Restaurant.Business
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<ISliderService, SliderService>();
+            services.AddScoped<IBannerService, BannerService>();
         }
     }
 }

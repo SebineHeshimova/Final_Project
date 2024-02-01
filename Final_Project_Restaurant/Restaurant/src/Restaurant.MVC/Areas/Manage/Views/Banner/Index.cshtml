@@ -1,0 +1,40 @@
+﻿@model List<Banner>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="banner">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var banner in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@banner.Title</td>
+                    <td>@banner.Description</td>
+                    <td><img width="70px" src="~/uploads/banners/@banner.ImageUrl" /></td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="update" asp-controller="banner" asp-route-id="@banner.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="banner" asp-route-id="@banner.Id">Delete</a>
+                        <button class="btn btn-warning" type="submit">Soft delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
