@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Restaurant.MVC.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Restaurant.MVC.bundle.scp.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Restaurant.MVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Restaurant.MVC.props",
+      "PackagePath": "build\\Restaurant.MVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Restaurant.MVC.props",
+      "PackagePath": "buildMultiTargeting\\Restaurant.MVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Restaurant.MVC.props",
+      "PackagePath": "buildTransitive\\Restaurant.MVC.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

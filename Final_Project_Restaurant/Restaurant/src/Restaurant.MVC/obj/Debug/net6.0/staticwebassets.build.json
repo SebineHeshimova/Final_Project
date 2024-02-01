@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "vMrAlUF8RICBbVjbV8Ekl+y711eaRWwf3jHTq1enIu8=",
+  "Source": "Restaurant.MVC",
+  "BasePath": "_content/Restaurant.MVC",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Restaurant.MVC\\wwwroot",
+      "Source": "Restaurant.MVC",
+      "ContentRoot": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\",
+      "BasePath": "_content/Restaurant.MVC",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Restaurant.MVC.styles.css",
+      "SourceId": "Restaurant.MVC",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/Restaurant.MVC",
+      "RelativePath": "Restaurant.MVC.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Restaurant.MVC.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Restaurant.MVC.bundle.scp.css",
+      "SourceId": "Restaurant.MVC",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/Restaurant.MVC",
+      "RelativePath": "Restaurant.MVC.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\TTS\\Desktop\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Restaurant.MVC.bundle.scp.css"
+    }
+  ]
+}

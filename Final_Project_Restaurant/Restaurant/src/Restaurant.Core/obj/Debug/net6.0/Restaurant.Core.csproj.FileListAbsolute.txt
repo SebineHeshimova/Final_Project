@@ -1,0 +1,12 @@
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\bin\Debug\net6.0\Restaurant.Core.deps.json
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\bin\Debug\net6.0\Restaurant.Core.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\bin\Debug\net6.0\Restaurant.Core.pdb
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\Restaurant.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\Restaurant.Core.AssemblyInfoInputs.cache
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\Restaurant.Core.AssemblyInfo.cs
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\Restaurant.Core.csproj.CoreCompileInputs.cache
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\Restaurant.Core.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\refint\Restaurant.Core.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\Restaurant.Core.pdb
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\ref\Restaurant.Core.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Core\obj\Debug\net6.0\Restaurant.Core.csproj.AssemblyReference.cache

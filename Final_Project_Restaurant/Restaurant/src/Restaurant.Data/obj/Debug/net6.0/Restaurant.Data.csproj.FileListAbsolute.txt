@@ -1,0 +1,17 @@
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\bin\Debug\net6.0\Restaurant.Data.deps.json
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\bin\Debug\net6.0\Restaurant.Data.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\bin\Debug\net6.0\Restaurant.Data.pdb
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.AssemblyInfoInputs.cache
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.AssemblyInfo.cs
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.csproj.CoreCompileInputs.cache
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\refint\Restaurant.Data.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.pdb
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\ref\Restaurant.Data.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\bin\Debug\net6.0\Restaurant.Data.runtimeconfig.json
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\bin\Debug\net6.0\Restaurant.Core.dll
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\bin\Debug\net6.0\Restaurant.Core.pdb
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.csproj.AssemblyReference.cache
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.csproj.CopyComplete
+C:\Users\TTS\Desktop\Final_Project_Restaurant\Restaurant\src\Restaurant.Data\obj\Debug\net6.0\Restaurant.Data.genruntimeconfig.cache
