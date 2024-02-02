@@ -13,6 +13,13 @@ namespace Restaurant.Business.Services.Implementations
     {
         private readonly IBannerRepository _repository;
         private readonly IWebHostEnvironment _env;
+        public BannerService(IBannerRepository repository, IWebHostEnvironment env)
+        {
+            _repository = repository;
+            _env = env;
+        }
+
+       
         public async Task CreateAsync(Banner banner)
         {
             if (banner == null) throw new BannerNullException("Entity cannot be null!");
@@ -82,8 +89,7 @@ namespace Restaurant.Business.Services.Implementations
             existBanner.UpdatedDate = DateTime.UtcNow.AddHours(4);
             existBanner.Title = banner.Title;
             existBanner.Description = banner.Description;
-            existBanner.RedirectAction = banner.RedirectAction;
-            existBanner.RedirectController = banner.RedirectController;
+            existBanner.RedirectUrl = banner.RedirectUrl;
             await _repository.CommitAsync();
         }
     }

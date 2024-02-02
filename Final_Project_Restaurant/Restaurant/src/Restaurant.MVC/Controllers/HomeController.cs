@@ -7,17 +7,19 @@ namespace Restaurant.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ISliderService _sliderService;
-
-		public HomeController(ISliderService sliderService)
+        private readonly IBannerService _bannerService;
+		public HomeController(ISliderService sliderService, IBannerService bannerService)
 		{
 			_sliderService = sliderService;
+			_bannerService = bannerService;
 		}
 
 		public async Task<IActionResult> Index()
         {
             HomeViewModel model = new HomeViewModel()
             {
-                Sliders = await _sliderService.GetAllAsync()
+                Sliders = await _sliderService.GetAllAsync(),
+                Banners=await _bannerService.GetAllAsync()
             };
             return View(model);
         }

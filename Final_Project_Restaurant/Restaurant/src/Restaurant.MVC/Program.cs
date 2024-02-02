@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Restaurant.Data.DAL;
 using Restaurant.Data;
 using Restaurant.Business;
+using Restaurant.MVC.Viewservice;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<RestaurantDbContext>(option => { option.UseSqlServer(builder.Configuration.GetConnectionString("default")); });
 builder.Services.AddRepositories();
 builder.Services.AddServices();
+builder.Services.AddScoped<LayoutService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

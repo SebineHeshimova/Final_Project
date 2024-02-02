@@ -95,8 +95,7 @@ namespace Restaurant.Business.Services.Implementations
             existSlider.Title = slider.Title;
             existSlider.Description=slider.Description;
             existSlider.RedirectText = slider.RedirectText;
-            existSlider.RedirectAction= slider.RedirectAction;
-            existSlider.RedirectController= slider.RedirectController;  
+            existSlider.RedirectUrl= slider.RedirectUrl; 
             await _repository.CommitAsync();
         }
     }

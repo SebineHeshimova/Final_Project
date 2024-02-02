@@ -14,5 +14,7 @@ namespace Restaurant.Data.DAL
        
         public DbSet<Slider> Sliders {  get; set; }
         public DbSet<Banner> Banners { get; set; }
+        public DbSet<Wrapper> Wrappers { get; set; }
+        public DbSet<Setting> Settings { get; set; }
     }
 }

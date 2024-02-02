@@ -8097,6 +8097,26 @@
       "PackagePath": "staticwebassets\\phpmailer\\validate.js"
     },
     {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\41b53d2a-16a8-4604-b016-1ec4c72c888cimg-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\banners\\41b53d2a-16a8-4604-b016-1ec4c72c888cimg-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\c845de17-f156-4c5f-8d45-e4bddca4911dimg-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\banners\\c845de17-f156-4c5f-8d45-e4bddca4911dimg-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\ddb7f27a-46eb-406c-9af0-a3da317d08caimg-5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\banners\\ddb7f27a-46eb-406c-9af0-a3da317d08caimg-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\72fc4b7f-42c4-42a1-8b2f-e12c649c00bdslide_5_thumb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\72fc4b7f-42c4-42a1-8b2f-e12c649c00bdslide_5_thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\bf2cbe77-563f-437b-917b-f508d6945e82slide_4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\bf2cbe77-563f-437b-917b-f508d6945e82slide_4.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Restaurant.MVC.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

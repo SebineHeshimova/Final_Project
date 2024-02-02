@@ -1,9 +1,6 @@
-﻿
-@using Restaurant.MVC.ViewModels;
-@model HomeViewModel
+﻿@model HomeViewModel
 @{
-
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
 <main>
@@ -21,7 +18,7 @@
 										<p class="owl-slide-animated owl-slide-subtitle">
 											@slider.Description
 										</p>
-										<div class="owl-slide-animated owl-slide-cta"><a class="btn_1 btn_scroll"  asp-controller="@slider.RedirectController" asp-action="@slider.RedirectAction" role="button">Read more</a></div>
+										<div class="owl-slide-animated owl-slide-cta"><a class="btn_1 btn_scroll"  href="@slider.RedirectUrl" role="button">@slider.RedirectText</a></div>
 									</div>
 								</div>
 							</div>
@@ -36,33 +33,19 @@
 	<!--/carousel-->
 
 	<ul id="banners_grid" class="clearfix">
-		<li>
-			<a href="menu-1.html" class="~/assets/img_container">
-				<img src="~/assets/img/banners_cat_placeholder.jpg" data-src="~/assets/img/banner_1.jpg" alt="" class="lazy">
-				<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-					<h3>Our Menu</h3>
-					<p>View Our Specialites</p>
-				</div>
-			</a>
-		</li>
-		<li>
-			<a href="order-food.html" class="~/assets/img_container">
-				<img src="~/assets/img/banners_cat_placeholder.jpg" data-src="~/assets/img/banner_2.jpg" alt="" class="lazy">
-				<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-					<h3>Delivery</h3>
-					<p>Home delivery or take away food</p>
-				</div>
-			</a>
-		</li>
-		<li>
-			<a href="gallery.html" class="~/assets/img_container">
-				<img src="~/assets/img/banners_cat_placeholder.jpg" data-src="~/assets/img/banner_3.jpg" alt="" class="lazy">
-				<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-					<h3>Inside Foores</h3>
-					<p>View the Gallery</p>
-				</div>
-			</a>
-		</li>
+		@foreach(var banner in Model.Banners)
+		{
+			<li>
+				<a href="@banner.RedirectUrl" class="~/assets/img_container">
+					<img height="220px" width="572px" src="~/assets/img/banners_cat_placeholder.jpg" data-src="uploads/banners/@banner.ImageUrl" alt="" class="lazy">
+					<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+						<h3>@banner.Title</h3>
+						<p>@banner.Description</p>
+					</div>
+				</a>
+			</li>
+		}
+
 	</ul>
 	<!--/banners_grid -->
 

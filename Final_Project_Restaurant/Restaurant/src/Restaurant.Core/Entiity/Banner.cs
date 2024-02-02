@@ -17,12 +17,10 @@ namespace Restaurant.Core.Entiity
         [StringLength(maximumLength: 100, MinimumLength = 3)]
         [Required]
         public string Description { get; set; }
-        [StringLength(maximumLength:20,MinimumLength = 3)]
+        [StringLength(maximumLength:150)]
         [Required]
-        public string RedirectController { get; set; }
-        [StringLength(maximumLength: 20, MinimumLength = 3)]
-        [Required]
-        public string RedirectAction { get; set; }
+        public string RedirectUrl { get; set; }
+       
         [StringLength(maximumLength: 100)]
         public string? ImageUrl { get; set; }
         [NotMapped]

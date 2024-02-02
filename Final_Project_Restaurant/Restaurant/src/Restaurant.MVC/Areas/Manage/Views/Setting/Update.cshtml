@@ -1,0 +1,17 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Value" /></label>
+            <input asp-for="Value" placeholder="Value">
+            <span asp-validation-for="Value"></span>
+        </div>
+
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+</div>
