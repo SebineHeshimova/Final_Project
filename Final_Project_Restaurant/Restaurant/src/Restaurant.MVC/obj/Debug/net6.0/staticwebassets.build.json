@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l/ypWGrR2bMYR/nLzoH0+1iNg1yFNLlUZcDAMCWbn/8=",
+  "Hash": "PeT3rz3YNNxjG2xw7quBZDtCfjHzk/bu6gSSGoKyUIo=",
   "Source": "Restaurant.MVC",
   "BasePath": "_content/Restaurant.MVC",
   "Mode": "Default",
@@ -34493,12 +34493,12 @@
       "OriginalItemSpec": "wwwroot\\uploads\\banners\\ddb7f27a-46eb-406c-9af0-a3da317d08caimg-5.jpg"
     },
     {
-      "Identity": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\72fc4b7f-42c4-42a1-8b2f-e12c649c00bdslide_5_thumb.jpg",
+      "Identity": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\11905999-ec52-4850-a29f-1eb0529f2d91slide_home_1.jpg",
       "SourceId": "Restaurant.MVC",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\",
       "BasePath": "_content/Restaurant.MVC",
-      "RelativePath": "uploads/sliders/72fc4b7f-42c4-42a1-8b2f-e12c649c00bdslide_5_thumb.jpg",
+      "RelativePath": "uploads/sliders/11905999-ec52-4850-a29f-1eb0529f2d91slide_home_1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -34507,7 +34507,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\72fc4b7f-42c4-42a1-8b2f-e12c649c00bdslide_5_thumb.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\11905999-ec52-4850-a29f-1eb0529f2d91slide_home_1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\347499e5-9513-466e-bd94-ea849c9d7f39slide_3.jpg",
+      "SourceId": "Restaurant.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\",
+      "BasePath": "_content/Restaurant.MVC",
+      "RelativePath": "uploads/sliders/347499e5-9513-466e-bd94-ea849c9d7f39slide_3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\347499e5-9513-466e-bd94-ea849c9d7f39slide_3.jpg"
     },
     {
       "Identity": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\bf2cbe77-563f-437b-917b-f508d6945e82slide_4.jpg",
@@ -34525,6 +34542,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\sliders\\bf2cbe77-563f-437b-917b-f508d6945e82slide_4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\wrappers\\5fec268e-2734-4519-b62d-7463518de0a6slide_5.jpg",
+      "SourceId": "Restaurant.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\",
+      "BasePath": "_content/Restaurant.MVC",
+      "RelativePath": "uploads/wrappers/5fec268e-2734-4519-b62d-7463518de0a6slide_5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\wrappers\\5fec268e-2734-4519-b62d-7463518de0a6slide_5.jpg"
     }
   ]
 }

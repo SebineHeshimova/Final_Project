@@ -16,6 +16,7 @@ namespace Restaurant.Business
             services.AddScoped<ISliderService, SliderService>();
             services.AddScoped<IBannerService, BannerService>();
             services.AddScoped<ISettingService, SettingService>();
+            services.AddScoped<IWrapperService, WrapperService>();
         }
     }
 }

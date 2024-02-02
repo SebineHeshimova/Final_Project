@@ -82,13 +82,13 @@
 				<h2>Our Daily Menu</h2>
 			</div>
 			<!-- /main_title -->
-			<div class="banner lazy" data-bg="url(img/banner_bg.jpg)">
+			<div class="banner lazy" data-bg="url(uploads/wrappers/@Model.Wrappers.ImageUrl)">
 				<div class="wrapper d-flex align-items-center justify-content-between opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
 					<div>
-						<small>Special Offer</small>
-						<h3>Burgher Menu $18 only</h3>
-						<p>Hamburgher, Chips, Mix Sausages, Beer, Muffin</p>
-						<a href="reservations.html" class="btn_1">Reserve now</a>
+						<small>@Model.Wrappers.Title</small>
+						<h3>@Model.Wrappers.Description</h3>
+						<p>@Model.Wrappers.SubDescription</p>
+						<a href="@Model.Wrappers.RedirectUrl" class="btn_1">@Model.Wrappers.RedirectText</a>
 					</div>
 					<figure class="d-none d-lg-block"><img src="~/assets/img/banner.svg" alt="" width="200" height="200" class="~/assets/img-fluid"></figure>
 				</div>
