@@ -32384,6 +32384,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Restaurant.MVC.bundle.scp.css))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\abouts\c7b89655-97fc-42e1-8f4d-bc69b9cde8f2home_1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Restaurant.MVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Restaurant.MVC</BasePath>
+      <RelativePath>uploads/abouts/c7b89655-97fc-42e1-8f4d-bc69b9cde8f2home_1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\abouts\c7b89655-97fc-42e1-8f4d-bc69b9cde8f2home_1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\banners\41b53d2a-16a8-4604-b016-1ec4c72c888cimg-4.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Restaurant.MVC</SourceId>
@@ -32432,12 +32448,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\banners\ddb7f27a-46eb-406c-9af0-a3da317d08caimg-5.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\11905999-ec52-4850-a29f-1eb0529f2d91slide_home_1.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\09b830f2-148d-4a91-b882-ee890fe98720slide_home_1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Restaurant.MVC</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Restaurant.MVC</BasePath>
-      <RelativePath>uploads/sliders/11905999-ec52-4850-a29f-1eb0529f2d91slide_home_1.jpg</RelativePath>
+      <RelativePath>uploads/sliders/09b830f2-148d-4a91-b882-ee890fe98720slide_home_1.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -32446,14 +32462,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\11905999-ec52-4850-a29f-1eb0529f2d91slide_home_1.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\09b830f2-148d-4a91-b882-ee890fe98720slide_home_1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\347499e5-9513-466e-bd94-ea849c9d7f39slide_3.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\wrappers\e746797e-38df-4113-a03e-28e39880be13slide_5.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Restaurant.MVC</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Restaurant.MVC</BasePath>
-      <RelativePath>uploads/sliders/347499e5-9513-466e-bd94-ea849c9d7f39slide_3.jpg</RelativePath>
+      <RelativePath>uploads/wrappers/e746797e-38df-4113-a03e-28e39880be13slide_5.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -32462,39 +32478,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\347499e5-9513-466e-bd94-ea849c9d7f39slide_3.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\bf2cbe77-563f-437b-917b-f508d6945e82slide_4.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Restaurant.MVC</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Restaurant.MVC</BasePath>
-      <RelativePath>uploads/sliders/bf2cbe77-563f-437b-917b-f508d6945e82slide_4.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\bf2cbe77-563f-437b-917b-f508d6945e82slide_4.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\wrappers\5fec268e-2734-4519-b62d-7463518de0a6slide_5.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Restaurant.MVC</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Restaurant.MVC</BasePath>
-      <RelativePath>uploads/wrappers/5fec268e-2734-4519-b62d-7463518de0a6slide_5.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\wrappers\5fec268e-2734-4519-b62d-7463518de0a6slide_5.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\wrappers\e746797e-38df-4113-a03e-28e39880be13slide_5.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

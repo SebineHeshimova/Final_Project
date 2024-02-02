@@ -9,11 +9,13 @@ namespace Restaurant.MVC.Controllers
         private readonly ISliderService _sliderService;
         private readonly IBannerService _bannerService;
        private readonly IWrapperService _wrapperService;
-        public HomeController(ISliderService sliderService, IBannerService bannerService, IWrapperService wrapperService)
+        private readonly IAboutService _aboutService;
+        public HomeController(ISliderService sliderService, IBannerService bannerService, IWrapperService wrapperService, IAboutService aboutService)
         {
             _sliderService = sliderService;
             _bannerService = bannerService;
             _wrapperService = wrapperService;
+            _aboutService = aboutService;
         }
 
         public async Task<IActionResult> Index()
@@ -22,7 +24,8 @@ namespace Restaurant.MVC.Controllers
             {
                 Sliders = await _sliderService.GetAllAsync(),
                 Banners=await _bannerService.GetAllAsync(),
-                Wrappers=await _wrapperService.GetByIdAsync()
+                Wrappers=await _wrapperService.GetByIdAsync(),
+                Abouts=await _aboutService.GetByIdAsync(),
             };
             return View(model);
         }

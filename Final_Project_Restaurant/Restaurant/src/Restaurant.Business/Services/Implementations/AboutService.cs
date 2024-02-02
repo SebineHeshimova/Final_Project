@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException.AboutException;
+using Restaurant.Business.CustomException.RestaurantException.SliderException;
 using Restaurant.Business.Extensions;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
@@ -37,7 +39,7 @@ namespace Restaurant.Business.Services.Implementations
 				{
 					throw new AboutImageLengthException("ImageFile", "File size must be lower than 2mb!");
 				}
-				about.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/sliders", about.ImageFile);
+				about.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.ImageFile);
 			}
 			about.CreatedDate = DateTime.UtcNow.AddHours(4);
 			about.UpdatedDate = DateTime.UtcNow.AddHours(4);
@@ -46,29 +48,40 @@ namespace Restaurant.Business.Services.Implementations
 			await _repository.CommitAsync();
 		}
 
-		public Task DeleteAsync(int id)
+
+		public async Task<List<About>> GetAllAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes)
 		{
-			throw new NotImplementedException();
+			return await _repository.GetAllWhere(expression, includes).ToListAsync();
 		}
 
-		public Task<List<About>> GetAllAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes)
+		public async Task<About> GetByIdAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes)
 		{
-			throw new NotImplementedException();
+			return await _repository.SingleAsync(expression, includes);
 		}
 
-		public Task<About> GetByIdAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes)
-		{
-			throw new NotImplementedException();
-		}
 
-		public Task SoftDelete(int id)
+		public async Task UpdateAsync(About about)
 		{
-			throw new NotImplementedException();
-		}
-
-		public Task UpdateAsync(About about)
-		{
-			throw new NotImplementedException();
+			var existAbout = await _repository.SingleAsync(s => s.Id == about.Id);
+			if (existAbout == null) throw new SliderNullException("Entity cannot be null!");
+			if (about.ImageFile != null)
+			{
+				if (about.ImageFile.ContentType != "image/jpeg" && about.ImageFile.ContentType != "image/png")
+				{
+					throw new SliderImageContentTypeException("ImageFile", "File must be .png or .jpeg!");
+				}
+				if (about.ImageFile.Length > 2097152)
+				{
+					throw new SliderImageLengthException("ImageFile", "File size must be lower than 2mb!");
+				}
+				Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", existAbout.ImageUrl);
+				existAbout.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.ImageFile);
+			}
+			existAbout.UpdatedDate = DateTime.UtcNow.AddHours(4);
+			existAbout.Title = about.Title;
+			existAbout.Description = about.Description;
+			existAbout.RedirectUrl = about.RedirectUrl;
+			await _repository.CommitAsync();
 		}
 	}
 }

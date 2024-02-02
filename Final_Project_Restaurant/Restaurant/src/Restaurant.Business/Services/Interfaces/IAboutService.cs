@@ -12,8 +12,6 @@ namespace Restaurant.Business.Services.Interfaces
 	{
 		Task CreateAsync(About about);
 		Task UpdateAsync(About about);
-		Task DeleteAsync(int id);
-		Task SoftDelete(int id);
 		Task<List<About>> GetAllAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes);
 		Task<About> GetByIdAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes);
 	}

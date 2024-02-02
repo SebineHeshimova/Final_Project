@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/About/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFib3V0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFib3V0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/About/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFib3V0XFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Banner/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

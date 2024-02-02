@@ -50,7 +50,7 @@
 		<div class="layer"></div><!-- Opacity Mask Menu Mobile -->
 		<div class="container-fluid">
 			<div id="logo">
-				<a href="index-2.html">
+				<a asp-action="index" asp-controller="home">
 					<img src="~/assets/img/logo.svg" width="140" height="35" alt="" class="logo_normal">
 					<img src="~/assets/img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky">
 				</a>
@@ -100,16 +100,7 @@
 				</div>
 				<ul>
 					<li class="submenu">
-						<a href="#0" class="show-submenu">Home</a>
-						<ul>
-							<li><a href="index-7.html">KenBurns Slider <span class="badge text-bg-danger">New</span></a></li>
-							<li><a href="index-2.html">Slider 1</a></li>
-							<li><a href="index-3.html">Slider 2</a></li>
-							<li><a href="index-6.html">Slider 3</a></li>
-							<li><a href="index-4.html">Video Background</a></li>
-							<li><a href="index-5.html">Text Rotator</a></li>
-							<li><a href="index-8.html">GDPR Cookie Bar EU Law</a></li>
-						</ul>
+						<a asp-action="index" asp-controller="home" class="show-submenu">Home</a>
 					</li>
 					<li class="submenu">
 						<a href="#0" class="show-submenu">Menu</a>
