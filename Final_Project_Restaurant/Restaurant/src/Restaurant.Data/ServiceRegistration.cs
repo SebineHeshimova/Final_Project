@@ -16,6 +16,7 @@ namespace Restaurant.Data
             services.AddScoped<ISliderRepository, SliderRepository>();
             services.AddScoped<IBannerRepository, BannerRepository>();
             services.AddScoped<ISettingRepository, SettingRepository>();
+            services.AddScoped<IWrapperRepository, WrapperRepository>();
         }
     }
 }
