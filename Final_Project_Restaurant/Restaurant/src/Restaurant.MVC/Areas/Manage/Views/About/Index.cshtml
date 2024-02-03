@@ -18,18 +18,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var about in Model)
+            @foreach(var about in Model)
             {
                 counter++;
-                <tr>
+                <tr style="background-color:@(about.IsDeleted==true ? "LightPink" : "")">
                     <th scope="row">@counter</th>
                     <td>@about.Title</td>
                     <td><img width="70px" src="~/uploads/abouts/@about.ImageUrl" /></td>
                     <td>
-                        <a class="btn btn-warning" asp-action="update" asp-controller="about" asp-route-id="@about.Id">Update</a>
+                        <a class="btn btn-success" asp-action="update" asp-controller="about" asp-route-id="@about.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="about" asp-route-id="@about.Id">Delete</a>
+                        <a class="btn btn-@(about.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="about" asp-route-id="@about.Id">@(@about.IsDeleted == false ? "Hide" : "Revert")</a>
                     </td>
                 </tr>
             }
+
         </tbody>
     </table>
 </div>

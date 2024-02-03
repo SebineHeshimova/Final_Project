@@ -1,0 +1,20 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<div>
+    <div class="card" style="width: 18rem;">
+        <form method="post" enctype="multipart/form-data">
+            <img src="~/uploads/abouts/@Model.ImageUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <h5 class="card-text">@Model.Description</h5>
+                <a asp-action="index" asp-controller="about" class="btn btn-primary">Go to back</a>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+

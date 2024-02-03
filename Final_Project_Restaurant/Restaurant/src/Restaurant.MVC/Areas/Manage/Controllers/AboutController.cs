@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.CustomException.RestaurantException.AboutException;
-using Restaurant.Business.CustomException.RestaurantException.BannerExceptions;
-using Restaurant.Business.CustomException.RestaurantException.SliderException;
-using Restaurant.Business.Services.Implementations;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
 
@@ -86,5 +83,41 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 			catch (Exception ex) { }
 			return RedirectToAction("Index");
 		}
-	}
+        public async Task<IActionResult> Delete(int id)
+        {
+            var about = await _aboutService.GetByIdAsync(s => s.Id == id);
+            if (about == null) return View("Error");
+            return View(about);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(About about)
+        {
+            try
+            {
+                await _aboutService.DeleteAsync(about.Id);
+            }
+            catch (AboutNullException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View();
+            }
+            catch (Exception ex) { }
+            return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> SoftDelete(int id)
+        {
+            try
+            {
+                await _aboutService.SoftDelete(id);
+            }
+            catch (AboutNullException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View();
+            }
+            catch (Exception ex) { }
+            return RedirectToAction("Index");
+        }
+    }
 }

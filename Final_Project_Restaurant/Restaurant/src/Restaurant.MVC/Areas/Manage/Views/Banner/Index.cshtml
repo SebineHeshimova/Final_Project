@@ -17,23 +17,22 @@
                 <th scope="col">Image</th>
                 <th scope="col">Actions</th>
             </tr>
-        </thead>
         <tbody>
-            @foreach (var banner in Model)
-            {
-                counter++;
-                <tr>
+                @foreach (var banner in Model)
+                {
+                    counter++;
+                <tr style="background-color:@(banner.IsDeleted==true ? "LightPink" : "")">
                     <th scope="row">@counter</th>
                     <td>@banner.Title</td>
                     <td>@banner.Description</td>
                     <td><img width="70px" src="~/uploads/banners/@banner.ImageUrl" /></td>
                     <td>
-                        <a class="btn btn-warning" asp-action="update" asp-controller="banner" asp-route-id="@banner.Id">Update</a>
+                        <a class="btn btn-success" asp-action="update" asp-controller="banner" asp-route-id="@banner.Id">Update</a>
                         <a class="btn btn-danger" asp-action="delete" asp-controller="banner" asp-route-id="@banner.Id">Delete</a>
-                        <button class="btn btn-warning" type="submit">Soft delete</button>
+                        <a class="btn btn-@(banner.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="banner" asp-route-id="@banner.Id">@(banner.IsDeleted == false ? "Hide" : "Revert")</a>
                     </td>
                 </tr>
-            }
+                }
         </tbody>
     </table>
 </div>

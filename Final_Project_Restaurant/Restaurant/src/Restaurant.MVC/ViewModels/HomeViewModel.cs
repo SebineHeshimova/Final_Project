@@ -6,7 +6,7 @@ namespace Restaurant.MVC.ViewModels
     {
         public List<Slider> Sliders { get; set; }
         public List<Banner> Banners { get; set; }
-        public Wrapper Wrappers { get; set; }
-        public About Abouts { get; set; }
+        public List<Wrapper> Wrappers { get; set; }
+        public List<About> Abouts { get; set; }
     }
 }

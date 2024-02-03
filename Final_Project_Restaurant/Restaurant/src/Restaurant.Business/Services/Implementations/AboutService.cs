@@ -48,8 +48,16 @@ namespace Restaurant.Business.Services.Implementations
 			await _repository.CommitAsync();
 		}
 
+        public async Task DeleteAsync(int id)
+        {
+            var about = await _repository.SingleAsync(x => x.Id == id);
+            if (about == null) throw new SliderNullException("Entity cannot be null!");
+            Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", about.ImageUrl);
+            _repository.Delete(about);
+            await _repository.CommitAsync();
+        }
 
-		public async Task<List<About>> GetAllAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes)
+        public async Task<List<About>> GetAllAsync(Expression<Func<About, bool>>? expression = null, params string[]? includes)
 		{
 			return await _repository.GetAllWhere(expression, includes).ToListAsync();
 		}
@@ -59,20 +67,27 @@ namespace Restaurant.Business.Services.Implementations
 			return await _repository.SingleAsync(expression, includes);
 		}
 
+        public async Task SoftDelete(int id)
+        {
+            var about=await _repository.SingleAsync(x => x.Id==id);
+			if (about == null) throw new AboutNullException("Entity cannot be null!");
+			about.IsDeleted = !about.IsDeleted;
+			await _repository.CommitAsync();
+        }
 
-		public async Task UpdateAsync(About about)
+        public async Task UpdateAsync(About about)
 		{
 			var existAbout = await _repository.SingleAsync(s => s.Id == about.Id);
-			if (existAbout == null) throw new SliderNullException("Entity cannot be null!");
+			if (existAbout == null) throw new AboutNullException("Entity cannot be null!");
 			if (about.ImageFile != null)
 			{
 				if (about.ImageFile.ContentType != "image/jpeg" && about.ImageFile.ContentType != "image/png")
 				{
-					throw new SliderImageContentTypeException("ImageFile", "File must be .png or .jpeg!");
+					throw new AboutImageContentTypeException("ImageFile", "File must be .png or .jpeg!");
 				}
 				if (about.ImageFile.Length > 2097152)
 				{
-					throw new SliderImageLengthException("ImageFile", "File size must be lower than 2mb!");
+					throw new AboutImageLengthException("ImageFile", "File size must be lower than 2mb!");
 				}
 				Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", existAbout.ImageUrl);
 				existAbout.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.ImageFile);

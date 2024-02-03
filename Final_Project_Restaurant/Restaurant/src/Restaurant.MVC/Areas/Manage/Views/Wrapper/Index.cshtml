@@ -23,15 +23,15 @@
             @foreach (var wrapper in Model)
             {
                 counter++;
-                <tr>
+                <tr style="background-color:@(wrapper.IsDeleted==true ? "LightPink" : "")">
                     <th scope="row">@counter</th>
                     <td>@wrapper.Title</td>
                     <td>@wrapper.Description</td>
                     <td><img width="70px" src="~/uploads/wrappers/@wrapper.ImageUrl" /></td>
                     <td>
-                        <a class="btn btn-warning" asp-action="update" asp-controller="wrapper" asp-route-id="@wrapper.Id">Update</a>
+                        <a class="btn btn-success" asp-action="update" asp-controller="wrapper" asp-route-id="@wrapper.Id">Update</a>
                         <a class="btn btn-danger" asp-action="delete" asp-controller="wrapper" asp-route-id="@wrapper.Id">Delete</a>
-                        <button class="btn btn-warning" type="submit">Soft delete</button>
+                        <a class="btn btn-@(wrapper.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="wrapper" asp-route-id="@wrapper.Id">@(wrapper.IsDeleted == false ? "Hide" : "Revert")</a>
                     </td>
                 </tr>
             }

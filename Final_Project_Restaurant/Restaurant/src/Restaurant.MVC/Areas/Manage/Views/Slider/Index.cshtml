@@ -23,15 +23,15 @@
             @foreach (var slider in Model)
             {
                 counter++;
-                <tr>
+                <tr style="background-color:@(slider.IsDeleted==true ? "LightPink" : "")">
                     <th scope="row">@counter</th>
                     <td>@slider.Title</td>
                     <td>@slider.Description</td>
                     <td><img width="70px" src="~/uploads/sliders/@slider.ImageUrl" /></td>
                     <td>
-                        <a class="btn btn-warning" asp-action="update" asp-controller="slider" asp-route-id="@slider.Id">Update</a>
+                        <a class="btn btn-success" asp-action="update" asp-controller="slider" asp-route-id="@slider.Id">Update</a>
                         <a class="btn btn-danger" asp-action="delete" asp-controller="slider" asp-route-id="@slider.Id">Delete</a>
-                        <button class="btn btn-warning" type="submit">Soft delete</button>
+                        <a class="btn btn-@(slider.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="slider" asp-route-id="@slider.Id">@(slider.IsDeleted == false ? "Hide" : "Revert")</a>
                     </td>
                 </tr>
             }

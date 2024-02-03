@@ -22,10 +22,10 @@ namespace Restaurant.MVC.Controllers
         {
             HomeViewModel model = new HomeViewModel()
             {
-                Sliders = await _sliderService.GetAllAsync(),
-                Banners=await _bannerService.GetAllAsync(),
-                Wrappers=await _wrapperService.GetByIdAsync(),
-                Abouts=await _aboutService.GetByIdAsync(),
+                Sliders = await _sliderService.GetAllAsync(x=>x.IsDeleted==false),
+                Banners=await _bannerService.GetAllAsync(x=>x.IsDeleted==false),
+                Wrappers=await _wrapperService.GetAllAsync(x => x.IsDeleted == false),
+                Abouts=await _aboutService.GetAllAsync(a=>a.IsDeleted==false),
             };
             return View(model);
         }
