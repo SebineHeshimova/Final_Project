@@ -17,5 +17,6 @@ namespace Restaurant.Data.DAL
         public DbSet<Wrapper> Wrappers { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Offer> Offers { get; set; }
     }
 }
