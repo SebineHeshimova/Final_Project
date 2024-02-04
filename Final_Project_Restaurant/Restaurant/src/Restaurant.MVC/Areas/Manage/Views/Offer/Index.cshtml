@@ -1,0 +1,38 @@
+﻿@model List<Offer>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="offer">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Sub Title</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        <tbody>
+                @foreach (var offer in Model)
+                {
+                    counter++;
+                <tr style="background-color:@(offer.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td>@offer.Title</td>
+                    <td>@offer.SubTitle</td>
+                    <td><img width="70px" src="~/uploads/offers/@offer.ImageUrl" /></td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="offer" asp-route-id="@offer.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="offer" asp-route-id="@offer.Id">Delete</a>
+                        <a class="btn btn-@(offer.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="offer" asp-route-id="@offer.Id">@(offer.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+                }
+        </tbody>
+    </table>
+</div>

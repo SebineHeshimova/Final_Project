@@ -38,9 +38,9 @@
             <li>
                 <a href="@banner.RedirectUrl" class="~/assets/img_container">
                     <img height="220px" width="572px" src="~/assets/img/banners_cat_placeholder.jpg" data-src="uploads/banners/@banner.ImageUrl" alt="" class="lazy">
-                    <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                        <h3>@banner.Title</h3>
-                        <p>@banner.Description</p>
+                    <div style="text-align:center" class=" margin_80_60 short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+                        <h3 style="color:white">@banner.Title</h3>
+                        <p style="color:white">@banner.Description</p>
                     </div>
                 </a>
             </li>
@@ -213,19 +213,22 @@
     </div>
     <!-- /bg_gray -->
 
-    <div class="call_section lazy" data-bg="url(img/blog-single.jpg)">
+    @foreach(var offer in Model.Offers)
+    {
+    <div class="call_section lazy" data-bg="url(uploads/offers/@offer.ImageUrl)">
         <div class="container clearfix">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-6 text-center">
                     <div class="box_1" data-cue="slideInUp">
-                        <h2>Celebrate<span>a Special Event with us!</span></h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        <a href="contacts.html" class="btn_1 mt-3">Contact us</a>
+                        <h2>@offer.Title<span>@offer.SubTitle</span></h2>
+                        <p>@offer.Description</p>
+                        <a href="@offer.RedirectUrl" class="btn_1 mt-3">@offer.RedirectText</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    }
     <!--/call_section-->
 
     <div class="pattern_2">

@@ -18,6 +18,8 @@ namespace Restaurant.Data
             services.AddScoped<ISettingRepository, SettingRepository>();
             services.AddScoped<IWrapperRepository, WrapperRepository>();
             services.AddScoped<IAboutRepository, AboutRepository>();
+            services.AddScoped<IOfferRepository, OfferRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
         }
     }
 }

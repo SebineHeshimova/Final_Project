@@ -18,6 +18,8 @@ namespace Restaurant.Business
             services.AddScoped<ISettingService, SettingService>();
             services.AddScoped<IWrapperService, WrapperService>();
             services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<IOfferService, OfferService>();
+            services.AddScoped<ICategoryService, CategoryService>();
         }
     }
 }
