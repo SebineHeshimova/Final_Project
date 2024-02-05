@@ -30,7 +30,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create(Wrapper wrapper)
 		{
-			if (!ModelState.IsValid) return View("Error");
+			if (!ModelState.IsValid) return View();
 			try
 			{
 				await _wrapperService.CreateAsync(wrapper);
@@ -63,7 +63,8 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Update(Wrapper wrapper)
 		{
-			try
+            if (!ModelState.IsValid) return View();
+            try
 			{
 				await _wrapperService.UpdateAsync(wrapper);
 			}

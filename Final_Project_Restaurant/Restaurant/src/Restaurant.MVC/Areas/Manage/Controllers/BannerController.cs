@@ -29,7 +29,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Banner banner)
         {
-            if (!ModelState.IsValid) return View("Error");
+            if (!ModelState.IsValid) return View();
             try
             {
                 await _bannerService.CreateAsync(banner);
@@ -62,6 +62,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(Banner banner)
         {
+            if (!ModelState.IsValid) return View();
             try
             {
                 await _bannerService.UpdateAsync(banner);

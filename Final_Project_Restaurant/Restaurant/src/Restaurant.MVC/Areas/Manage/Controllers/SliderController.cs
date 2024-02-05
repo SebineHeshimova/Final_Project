@@ -28,7 +28,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create(Slider slider)
 		{
-			if (!ModelState.IsValid) return View("Error");
+			if (!ModelState.IsValid) return View();
 			try
 			{
 				await _sliderService.CreateAsync(slider);
@@ -61,7 +61,8 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Update(Slider slider)
 		{
-			try
+            if (!ModelState.IsValid) return View();
+            try
 			{
 				await _sliderService.UpdateAsync(slider);
 			}

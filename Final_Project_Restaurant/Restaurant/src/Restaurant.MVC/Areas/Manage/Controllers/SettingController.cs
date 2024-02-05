@@ -30,7 +30,8 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Update(Setting setting)
 		{
-			try
+            if (!ModelState.IsValid) return View();
+            try
 			{
 				await _settingService.UpdateAsync(setting);
 			}

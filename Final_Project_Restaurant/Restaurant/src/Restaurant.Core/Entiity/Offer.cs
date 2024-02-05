@@ -29,7 +29,7 @@ namespace Restaurant.Core.Entiity
         [StringLength(maximumLength: 100)]
         public string? ImageUrl {  get; set; }
         [NotMapped]
-        public IFormFile ImageFile { get; set; }
+        public IFormFile? ImageFile { get; set; }
 
     }
 }

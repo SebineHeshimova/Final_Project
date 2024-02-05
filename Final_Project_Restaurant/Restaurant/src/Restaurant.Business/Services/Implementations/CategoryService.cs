@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException.CategoryExceptions;
+using Restaurant.Business.CustomException.RestaurantException.OfferExceptions;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
 using Restaurant.Core.Repositories.Interfaces;
@@ -18,8 +19,8 @@ namespace Restaurant.Business.Services.Implementations
 
         public async Task CreateAsync(Category category)
         {
-            if (category == null) throw new CategoryNullException("Entity cannot be null!");
-            if (_repository.Table.Any(c=>c.Name==category.Name)) throw new CategoryNameException("This category exists!");
+            if (category == null) throw new CategoryNullException( "Entity cannot be null!");
+            if (_repository.Table.Any(c=>c.Name==category.Name)) throw new CategoryNameException("Name","This category exists!");
             await _repository.CreateAsync(category);
             await _repository.CommitAsync();
         }
@@ -42,16 +43,19 @@ namespace Restaurant.Business.Services.Implementations
             return await _repository.SingleAsync(expression, includes);
         }
 
-        public Task SoftDelete(int id)
+        public async Task SoftDelete(int id)
         {
-            throw new NotImplementedException();
+            var category = await _repository.SingleAsync(o => o.Id == id);
+            if (category == null) throw new CategoryNullException("Entity cannot be null!");
+            category.IsDeleted = !category.IsDeleted;
+            await _repository.CommitAsync();
         }
 
         public async Task UpdateAsync(Category category)
         {
             var existCategory=await _repository.SingleAsync(c=>c.Id==category.Id);
             if(existCategory == null) throw new CategoryNullException("Entity cannot be null!");
-            if (_repository.Table.Any(c=>c.Id==category.Id && c.Name==category.Name)) throw new CategoryNameException("This category exists!");
+            if (_repository.Table.Any(c=>c.Id!=category.Id && c.Name==category.Name)) throw new CategoryNameException("Name","This category exists!");
             existCategory.Name=category.Name;
             await _repository.CommitAsync();
         }
