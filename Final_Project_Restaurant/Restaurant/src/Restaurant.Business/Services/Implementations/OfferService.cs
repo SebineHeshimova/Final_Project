@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Restaurant.Business.CustomException.RestaurantException.BannerExceptions;
 using Restaurant.Business.CustomException.RestaurantException.OfferExceptions;
 using Restaurant.Business.Extensions;
 using Restaurant.Business.Services.Interfaces;
@@ -21,7 +22,6 @@ namespace Restaurant.Business.Services.Implementations
 
         public async Task CreateAsync(Offer offer)
         {
-            if (offer == null) throw new OfferNullException("Entity cannot be null!");
             if (offer.ImageFile != null)
             {
                 if (offer.ImageFile.ContentType != "image/jpeg" && offer.ImageFile.ContentType != "image/png")
@@ -33,6 +33,10 @@ namespace Restaurant.Business.Services.Implementations
                     throw new OfferImageLengthException("ImageFile", "File size must be lower than 2mb!");
                 }
                 offer.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/offers", offer.ImageFile);
+            }
+            else
+            {
+                throw new OfferNullException("ImageFile", "Entity cannot be null!");
             }
             offer.CreatedDate = DateTime.UtcNow.AddHours(4);
             offer.UpdatedDate = DateTime.UtcNow.AddHours(4);

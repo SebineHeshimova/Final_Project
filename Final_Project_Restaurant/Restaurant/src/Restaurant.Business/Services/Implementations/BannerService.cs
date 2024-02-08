@@ -22,7 +22,6 @@ namespace Restaurant.Business.Services.Implementations
        
         public async Task CreateAsync(Banner banner)
         {
-            if (banner == null) throw new BannerNullException("Entity cannot be null!");
             if (banner.ImageFile != null)
             {
                 if (banner.ImageFile.ContentType != "image/jpeg" && banner.ImageFile.ContentType != "image/png")
@@ -34,6 +33,10 @@ namespace Restaurant.Business.Services.Implementations
                     throw new BannerImageLengthException("ImageFile", "File size must be lower than 2mb!");
                 }
                 banner.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/banners", banner.ImageFile);
+            }
+            else
+            {
+                throw new BannerNullException("ImageFile", "Entity cannot be null!");
             }
             banner.CreatedDate = DateTime.UtcNow.AddHours(4);
             banner.UpdatedDate = DateTime.UtcNow.AddHours(4);

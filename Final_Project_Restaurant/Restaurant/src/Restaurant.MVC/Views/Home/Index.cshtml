@@ -81,7 +81,7 @@
         <div class="container margin_120_100" data-cue="slideInUp">
             <div class="main_title center mb-5">
                 <span><em></em></span>
-                <h2>Our Daily Menu</h2>
+                <h2>Our New Foods</h2>
             </div>
             <!-- /main_title -->
             @foreach (var wrapper in Model.Wrappers)
@@ -94,117 +94,30 @@
                             <p>@wrapper.SubDescription</p>
                             <a href="@wrapper.RedirectUrl" class="btn_1">@wrapper.RedirectText</a>
                         </div>
-                        <figure class="d-none d-lg-block"><img src="~/assets/img/banner.svg" alt="" width="200" height="200" class="~/assets/img-fluid"></figure>
+                        <!--/figure class="d-none d-lg-block"><img src="~/assets/img/banner.svg" alt="" width="200" height="200" class="~/assets/img-fluid"></!-->
                     </div>
                 </div>
             }
             <!-- /wrapper -->
             <!-- /banner -->
             <div class="row magnific-gallery homepage add_bottom_25">
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/3.jpg" title="Summer Berry" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/3.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Summer Berry</h3><em>$8</em>
+                @foreach(var food in Model.Foods)
+                {
+                    <div class="col-lg-6" data-cue="slideInUp">
+                        <div class="menu_item">
+                            <figure>
+                                <a href="~/assets/img/menu_items/large/3.jpg" title="Summer Berry" data-effect="mfp-zoom-in">
+                                    <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="uploads/foods/@food.ImageUrl" class="lazy" alt="">
+                                </a>
+                            </figure>
+                            <div class="menu_title">
+                                <h3>@food.Name</h3><em>$@food.Price</em>
+                            </div>
+                            <p>@food.Composition</p>
                         </div>
-                        <p>Raspberries, Blackberries</p>
                     </div>
-                </div>
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/4.jpg" title="Coconut Tart" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/4.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Coconut Tart</h3><em>$10</em>
-                        </div>
-                        <p>Blueberries, Graham cracker crumbs</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/5.jpg" title="Pumpkin Cookies" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/5.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Pumpkin Cookies</h3><em>$11</em>
-                        </div>
-                        <p>Pumpkin, Sugar, Butter</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/6.jpg" title="Cookies Cream Cheese" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/7.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Cookies Cream Cheese</h3><em>$14</em>
-                        </div>
-                        <p>Sugar, Butter, Eggs</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/8.jpg" title="Chocolate Cupcakes" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/8.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Chocolate Cupcakes</h3><em>$14</em>
-                        </div>
-                        <p>Chocolate, Eggs, Vanilla</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/9.jpg" title="Chocolate Cupcakes" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/9.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Chocolate Cupcakes</h3><em>$14</em>
-                        </div>
-                        <p>Chocolate, Eggs, Vanilla</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/10.jpg" title="Soft shell crab" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/10.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Soft shell crab</h3><em>$14</em>
-                        </div>
-                        <p>Chicken, Potato, Salad</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-cue="slideInUp">
-                    <div class="menu_item">
-                        <figure>
-                            <a href="~/assets/img/menu_items/large/11.jpg" title="Soft shell crab" data-effect="mfp-zoom-in">
-                                <img src="~/assets/img/menu_items/menu_items_placeholder.png" data-src="~/assets/img/menu_items/11.jpg" class="lazy" alt="">
-                            </a>
-                        </figure>
-                        <div class="menu_title">
-                            <h3>Soft shell crab</h3><em>$14</em>
-                        </div>
-                        <p>Chicken, Potato, Salad</p>
-                    </div>
-                </div>
+                }
+
             </div>
             <!-- /row -->
             <p class="text-center"><a href="#0" class="btn_1 outline" data-cue="zoomIn">Download Menu</a></p>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException;
+using Restaurant.Business.CustomException.RestaurantException.BannerExceptions;
 using Restaurant.Business.CustomException.RestaurantException.SliderException;
 using Restaurant.Business.Extensions;
 using Restaurant.Business.Services.Interfaces;
@@ -27,7 +28,6 @@ namespace Restaurant.Business.Services.Implementations
 
         public async Task CreateAsync(Slider slider)
         {
-            if (slider == null) throw new SliderNullException("Entity cannot be null!");
             if(slider.ImageFile != null)
             {
                 if(slider.ImageFile.ContentType!="image/jpeg" && slider.ImageFile.ContentType != "image/png")
@@ -39,6 +39,10 @@ namespace Restaurant.Business.Services.Implementations
                     throw new SliderImageLengthException("ImageFile", "File size must be lower than 2mb!");
                 }
                 slider.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/sliders", slider.ImageFile) ;
+            }
+            else
+            {
+                throw new SliderNullException("ImageFile", "Entity cannot be null!");
             }
             slider.CreatedDate = DateTime.UtcNow.AddHours(4);
             slider.UpdatedDate= DateTime.UtcNow.AddHours(4);
@@ -96,6 +100,13 @@ namespace Restaurant.Business.Services.Implementations
             existSlider.Description=slider.Description;
             existSlider.RedirectText = slider.RedirectText;
             existSlider.RedirectUrl= slider.RedirectUrl; 
+            existSlider.IsShop = slider.IsShop;
+            existSlider.IsMenu = slider.IsMenu;
+            existSlider.IsAbout = slider.IsAbout;
+            existSlider.IsBlog= slider.IsBlog;
+            existSlider.IsGallery= slider.IsGallery;
+            existSlider.IsReservation= slider.IsReservation;
+            existSlider.IsHome= slider.IsHome;
             await _repository.CommitAsync();
         }
     }

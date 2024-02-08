@@ -9,9 +9,8 @@ namespace Restaurant.Core.Entiity
 {
     public class Category:BaseEntity
     {
-        [StringLength(maximumLength:50, MinimumLength =3)]
-        [Required]
-        public string Name { get; set; }
-        public List<Food>? Foods { get; set; }
+		[StringLength(maximumLength: 50, MinimumLength = 3)]
+		[Required]
+		public string Name { get; set; }
     }
 }

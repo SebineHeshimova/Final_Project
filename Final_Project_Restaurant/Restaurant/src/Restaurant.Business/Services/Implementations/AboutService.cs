@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException.AboutException;
+using Restaurant.Business.CustomException.RestaurantException.BannerExceptions;
 using Restaurant.Business.CustomException.RestaurantException.SliderException;
 using Restaurant.Business.Extensions;
 using Restaurant.Business.Services.Interfaces;
@@ -28,7 +29,6 @@ namespace Restaurant.Business.Services.Implementations
 
 		public async Task CreateAsync(About about)
 		{
-			if (about == null) throw new AboutNullException("Entity cannot be null!");
 			if (about.ImageFile != null)
 			{
 				if (about.ImageFile.ContentType != "image/jpeg" && about.ImageFile.ContentType != "image/png")
@@ -41,7 +41,11 @@ namespace Restaurant.Business.Services.Implementations
 				}
 				about.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.ImageFile);
 			}
-			about.CreatedDate = DateTime.UtcNow.AddHours(4);
+            else
+            {
+                throw new AboutNullException("ImageFile", "Entity cannot be null!");
+            }
+            about.CreatedDate = DateTime.UtcNow.AddHours(4);
 			about.UpdatedDate = DateTime.UtcNow.AddHours(4);
 			about.IsDeleted = false;
 			await _repository.CreateAsync(about);

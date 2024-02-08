@@ -157,6 +157,9 @@ namespace Restaurant.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsNew")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -278,7 +281,28 @@ namespace Restaurant.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<bool>("IsAbout")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsBlog")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsGallery")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsHome")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMenu")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsReservation")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsShop")
                         .HasColumnType("bit");
 
                     b.Property<string>("RedirectText")
@@ -358,17 +382,12 @@ namespace Restaurant.Data.Migrations
             modelBuilder.Entity("Restaurant.Core.Entiity.Food", b =>
                 {
                     b.HasOne("Restaurant.Core.Entiity.Category", "Category")
-                        .WithMany("Foods")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("Restaurant.Core.Entiity.Category", b =>
-                {
-                    b.Navigation("Foods");
                 });
 #pragma warning restore 612, 618
         }

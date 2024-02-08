@@ -24,5 +24,12 @@ namespace Restaurant.Core.Entiity
         public string? ImageUrl {  get; set; }
         [NotMapped]
         public IFormFile? ImageFile { get; set; }
+        public bool IsHome {  get; set; }
+        public bool IsAbout { get; set; }
+        public bool IsMenu {  get; set; }
+        public bool IsBlog { get; set; }
+        public bool IsGallery {  get; set; }
+        public bool IsShop { get; set; }
+        public bool IsReservation { get; set; }
     }
 }

@@ -33,11 +33,6 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 			{
 				await _sliderService.CreateAsync(slider);
 			}
-			catch (SliderNullException ex)
-			{
-				ModelState.AddModelError("", ex.Message);
-				return View();
-			}
 			catch (SliderImageContentTypeException ex)
 			{
 				ModelState.AddModelError(ex.PropertyName, ex.Message);
@@ -47,8 +42,13 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 			{
 				ModelState.AddModelError(ex.PropertyName, ex.Message);
 				return View();
-			}
-			catch (Exception ex) { }
+            }
+            catch (SliderNullException ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View();
+            }
+            catch (Exception ex) { }
 			return RedirectToAction("Index");
 		}
 		public async Task<IActionResult> Update(int id)

@@ -1,0 +1,44 @@
+﻿@model List<Food>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="food">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var food in Model)
+            {
+                counter++;
+                <tr style="background-color:@(food.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td>@food.Name</td>
+                    <td>@food.Category.Name</td>
+                    <td>@food.Price</td>
+                    <td><img width="70px" src="~/uploads/foods/@food.ImageUrl" /></td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="food" asp-route-id="@food.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="food" asp-route-id="@food.Id">Delete</a>
+                        <a class="btn btn-@(food.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="food" asp-route-id="@food.Id">@(food.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+

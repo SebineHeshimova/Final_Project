@@ -35,11 +35,6 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 			{
 				await _wrapperService.CreateAsync(wrapper);
 			}
-			catch (WrapperNullException ex)
-			{
-				ModelState.AddModelError("", ex.Message);
-				return View();
-			}
 			catch (WrapperImageContentTypeException ex)
 			{
 				ModelState.AddModelError(ex.PropertyName, ex.Message);
@@ -49,8 +44,13 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 			{
 				ModelState.AddModelError(ex.PropertyName, ex.Message);
 				return View();
-			}
-			catch (Exception ex) { }
+            }
+            catch (WrapperNullException ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View();
+            }
+            catch (Exception ex) { }
 			return RedirectToAction("Index");
 		}
 		public async Task<IActionResult> Update(int id)

@@ -33,17 +33,17 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
             {
                 await _aboutService.CreateAsync(about);
             }
-            catch (AboutNullException ex)
-            {
-                ModelState.AddModelError("", ex.Message);
-                return View();
-            }
             catch (AboutImageContentTypeException ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
             catch (AboutImageLengthException ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View();
+            }
+            catch (AboutNullException ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();

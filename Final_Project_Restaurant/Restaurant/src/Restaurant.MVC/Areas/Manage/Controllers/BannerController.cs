@@ -29,15 +29,10 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Banner banner)
         {
-            if (!ModelState.IsValid) return View();
+            if (!ModelState.IsValid) return View(banner);
             try
             {
                 await _bannerService.CreateAsync(banner);
-            }
-            catch (BannerNullException ex)
-            {
-                ModelState.AddModelError("", ex.Message);
-                return View();
             }
             catch (BannerImageContentTypeException ex)
             {
@@ -49,7 +44,15 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-            catch (Exception ex) { }
+            catch (BannerNullException ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View();
+            }
+            catch (Exception ex) 
+            {
+                throw;
+            }
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> Update(int id)
@@ -62,7 +65,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(Banner banner)
         {
-            if (!ModelState.IsValid) return View();
+            if (!ModelState.IsValid) return View(banner);
             try
             {
                 await _bannerService.UpdateAsync(banner);
@@ -82,7 +85,9 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                throw;
+            }
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> Delete(int id)

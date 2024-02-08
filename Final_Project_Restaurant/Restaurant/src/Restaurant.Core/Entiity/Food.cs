@@ -23,7 +23,8 @@ namespace Restaurant.Core.Entiity
         public string? ImageUrl { get; set;}
         [NotMapped]
         public IFormFile? ImageFile { get; set;}
+        public bool IsNew { get; set; }
         public Category? Category { get; set; }
-        public int CategoryId {  get; set; }
+        public int CategoryId { get; set; }
     }
 }

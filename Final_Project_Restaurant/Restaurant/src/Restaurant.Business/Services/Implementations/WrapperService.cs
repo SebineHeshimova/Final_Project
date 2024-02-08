@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Restaurant.Business.CustomException.RestaurantException.BannerExceptions;
 using Restaurant.Business.CustomException.RestaurantException.SliderException;
 using Restaurant.Business.CustomException.RestaurantException.WrapperExceptions;
 using Restaurant.Business.Extensions;
@@ -29,7 +30,6 @@ namespace Restaurant.Business.Services.Implementations
 
 		public async Task CreateAsync(Wrapper wrapper)
 		{
-			if (wrapper == null) throw new WrapperNullException("Entity cannot be null!");
 			if (wrapper.ImageFile != null)
 			{
 				if (wrapper.ImageFile.ContentType != "image/jpeg" && wrapper.ImageFile.ContentType != "image/png")
@@ -42,7 +42,11 @@ namespace Restaurant.Business.Services.Implementations
 				}
 				wrapper.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/wrappers", wrapper.ImageFile);
 			}
-			wrapper.CreatedDate = DateTime.UtcNow.AddHours(4);
+            else
+            {
+                throw new WrapperNullException("ImageFile", "Entity cannot be null!");
+            }
+            wrapper.CreatedDate = DateTime.UtcNow.AddHours(4);
 			wrapper.UpdatedDate = DateTime.UtcNow.AddHours(4);
 			wrapper.IsDeleted = false;
 			await _repository.CreateAsync(wrapper);

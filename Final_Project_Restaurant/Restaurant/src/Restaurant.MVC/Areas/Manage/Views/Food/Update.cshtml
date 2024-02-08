@@ -1,0 +1,48 @@
+﻿@model Food
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Name" /></label>
+            <input asp-for="Name" placeholder="Name">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Composition" /></label>
+            <input asp-for="Composition" placeholder="Composition">
+            <span asp-validation-for="Composition"></span>
+        </div>
+        <div class="form-group col-md-4">
+            <label asp-for="CategoryId">CategoryId</label>
+            <select asp-for="CategoryId" class="form-select" aria-label="Default select example">
+                @foreach (var category in ViewBag.Category)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Price" /></label>
+            <input asp-for="Price" placeholder="Price">
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="mb-3 form-check">
+            <label asp-for="ImageFile" /></label>
+            <input asp-for="ImageFile" placeholder="ImageFile">
+            <span asp-validation-for="ImageFile"></span>
+        </div>
+        <div class="form-row">
+            <div class="form-check mb-3 col-md-4">
+                <input class="form-check-input" asp-for="IsNew">
+                <label class="form-check-label" asp-for="IsNew">IsNew</label>
+            </div>
+            </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
