@@ -22,9 +22,12 @@ namespace Restaurant.MVC.Controllers
             {
                 Categories = await _categoryService.GetAllAsync(c => c.IsDeleted == false),
                 Foods = await _foodService.GetAllAsync(f => f.IsDeleted == false),
-                Sliders = await _sliderService.GetAllAsync(s=>s.IsDeleted==false && s.IsMenu)
+                Sliders = await _sliderService.GetAllAsync(s => s.IsDeleted == false && s.IsMenu)
             };
             return View(model);
         }
+    
+
+        
     }
 }

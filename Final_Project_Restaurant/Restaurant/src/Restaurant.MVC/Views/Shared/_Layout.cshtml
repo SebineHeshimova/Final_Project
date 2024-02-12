@@ -1,4 +1,4 @@
-﻿@using Restaurant.MVC.Viewservice;
+﻿@using Restaurant.MVC.ViewService;
 @inject LayoutService service
 @{
 	var Setting=await service.GetSetting();
@@ -129,7 +129,7 @@
 							<li><a href="shop-2.html">Shop Rows</a></li>
 							<li><a href="shop-single.html">Product Single</a></li>
 							<li><a href="shop-cart.html">Cart Page</a></li>
-							<li><a href="shop-checkout.html">Checkout</a></li>
+							<li><a asp-controller="checkout" asp-action="checkout">Checkout</a></li>
 						</ul>
 					</li>
 					<li><a href="reservations.html" class="btn_top">Reservations</a></li>

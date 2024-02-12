@@ -25,14 +25,14 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         }
         public IActionResult Create()
         {
-            ViewBag.Category=_foodRepository.Categories.ToList();
+            ViewBag.Category = _foodService.Table;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Food food)
         {
-            ViewBag.Category = _foodRepository.Categories.ToList();
+            ViewBag.Category = _foodService.Table;
             if (!ModelState.IsValid) return View();
             try
             {
@@ -63,7 +63,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Update(int id)
         {
-            ViewBag.Category=_foodRepository.Categories.ToList();
+            ViewBag.Category = _foodService.Table;
             var food = await _foodService.GetByIdAsync(s => s.Id == id);
             if (food == null) return View("Error");
             return View(food);
@@ -72,7 +72,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(Food food)
         {
-            ViewBag.Category = _foodRepository.Categories.ToList();
+            ViewBag.Category = _foodService.Table;
             if(!ModelState.IsValid) return View();
             try
             {

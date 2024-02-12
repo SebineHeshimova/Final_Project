@@ -1,11 +1,14 @@
-﻿using Restaurant.Core.Entiity;
+﻿using Microsoft.EntityFrameworkCore;
+using Restaurant.Core.Entiity;
 using System.Linq.Expressions;
 
 namespace Restaurant.Business.Services.Interfaces
 {
     public interface IFoodService
     {
-        Task CreateAsync(Food food);
+
+        public DbSet<Category> Table {  get; } 
+		Task CreateAsync(Food food);
         Task UpdateAsync(Food food);
         Task DeleteAsync(int id);
         Task SoftDelete(int id);

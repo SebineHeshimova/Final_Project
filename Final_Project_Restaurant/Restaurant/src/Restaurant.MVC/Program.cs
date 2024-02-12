@@ -2,7 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using Restaurant.Data.DAL;
 using Restaurant.Data;
 using Restaurant.Business;
-using Restaurant.MVC.Viewservice;
+using Restaurant.MVC.ViewService;
+using Microsoft.AspNetCore.Identity;
+using Restaurant.Core.Entiity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,16 @@ builder.Services.AddDbContext<RestaurantDbContext>(option => { option.UseSqlServ
 builder.Services.AddRepositories();
 builder.Services.AddServices();
 builder.Services.AddScoped<LayoutService>();
+builder.Services.AddIdentity<AppUser, IdentityRole>(option =>
+{
+    option.Password.RequiredLength = 8;
+    option.Password.RequireUppercase = true;
+    option.Password.RequireLowercase = true;
+    option.Password.RequireDigit = true;
+    option.Password.RequiredUniqueChars = 1;
+
+    //  option.User.RequireUniqueEmail = true;
+}).AddEntityFrameworkStores<RestaurantDbContext>().AddDefaultTokenProviders();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,7 +38,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
 			name: "areas",

@@ -1,7 +1,7 @@
 ﻿using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
 
-namespace Restaurant.MVC.Viewservice
+namespace Restaurant.MVC.ViewService
 {
     public class LayoutService
     {

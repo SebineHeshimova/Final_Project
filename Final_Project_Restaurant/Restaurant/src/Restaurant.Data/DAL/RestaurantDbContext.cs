@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Restaurant.Core.Entiity;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Data.DAL
 {
-    public class RestaurantDbContext:DbContext
+    public class RestaurantDbContext:IdentityDbContext
     {
         public RestaurantDbContext(DbContextOptions<RestaurantDbContext> options) : base(options) { }
        
@@ -21,5 +22,7 @@ namespace Restaurant.Data.DAL
         public DbSet<Offer> Offers { get; set; }
         public DbSet<Food> Foods { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
     }
+
 }

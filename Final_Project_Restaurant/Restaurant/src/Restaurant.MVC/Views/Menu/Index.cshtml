@@ -62,11 +62,6 @@
             </div>
         }
 
-
-
-
-
-
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container">
@@ -87,7 +82,7 @@
                     @foreach(var food in Model.Foods)
                     {
                         <div class="col-lg-4 col-md-6 portfolio-item filter-@food.Category.Id">
-                            <div class="menu_item">
+                            <div class="menu_item order">
                                 <figure>
                                     <a href="img/menu_items/large/1.jpg" title="Soft shell crab" data-effect="mfp-zoom-in">
                                         <img src="img/menu_items/menu_items_placeholder.png" data-src="uploads/foods/@food.ImageUrl" class="lazy" alt="">
@@ -97,11 +92,10 @@
                                     <h3>@food.Name</h3><em>$@food.Price</em>
                                 </div>
                                 <p>@food.Composition</p>
+                                <a asp-action="AddToBasket" asp-controller="checkout" asp-route-foodId="@food.Id" class="add_to_cart add-to-basket">Add To Cart</a>
                             </div>
                         </div>
                     }
-
-                 
 
                 </div>
 
@@ -121,6 +115,7 @@
     <script src="~/new/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="~/new/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="~/new/vendor/php-email-form/validate.js"></script>
+    <script src="~/manage/js/main.js"></script>
 
     <!-- Template Main JS File -->
     <script src="~/new/js/main.js"></script>

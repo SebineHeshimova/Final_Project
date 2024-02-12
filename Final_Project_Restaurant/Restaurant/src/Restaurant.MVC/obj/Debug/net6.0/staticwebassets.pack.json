@@ -721,6 +721,10 @@
       "PackagePath": "staticwebassets\\manage\\js\\demo\\datatables-demo.js"
     },
     {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\manage\\js\\main.js",
+      "PackagePath": "staticwebassets\\manage\\js\\main.js"
+    },
+    {
       "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\manage\\js\\sb-admin-2.js",
       "PackagePath": "staticwebassets\\manage\\js\\sb-admin-2.js"
     },

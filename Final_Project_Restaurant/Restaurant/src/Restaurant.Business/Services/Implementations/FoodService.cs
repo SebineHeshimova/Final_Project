@@ -25,7 +25,9 @@ namespace Restaurant.Business.Services.Implementations
             _categoryRepository = categoryRepository;
         }
 
-        public async Task CreateAsync(Food food)
+		public DbSet<Category> Table => _categoryRepository.Table;
+
+		public async Task CreateAsync(Food food)
         {
             if (!_categoryRepository.Table.Any(c => c.Id == food.CategoryId))
             {

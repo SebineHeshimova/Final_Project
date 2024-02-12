@@ -1,11 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Restaurant.Business.Services.Implementations;
 using Restaurant.Business.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Restaurant.Business
 {
@@ -21,6 +16,7 @@ namespace Restaurant.Business
             services.AddScoped<IOfferService, OfferService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IFoodService, FoodService>();
+            services.AddScoped<IAccountService, AccountService>();
         }
     }
 }
