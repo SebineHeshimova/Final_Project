@@ -2,7 +2,7 @@
 
 namespace Restaurant.Business.Services.Interfaces
 {
-	public interface IAccountService
+	public interface IAdminAccountService
 	{
 		Task Login(AdminLoginViewModel viewModel);
 	}

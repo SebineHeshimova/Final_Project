@@ -6,11 +6,11 @@ using Restaurant.Core.Entiity;
 
 namespace Restaurant.Business.Services.Implementations
 {
-	public class AccountService : IAccountService
+	public class AdminAccountService : IAdminAccountService
 	{
 		private readonly UserManager<AppUser> _userManager;
 		private readonly SignInManager<AppUser> _signInManager;
-		public AccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+		public AdminAccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;

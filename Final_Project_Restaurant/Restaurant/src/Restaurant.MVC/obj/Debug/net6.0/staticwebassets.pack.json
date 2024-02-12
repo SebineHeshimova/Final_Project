@@ -8097,6 +8097,414 @@
       "PackagePath": "staticwebassets\\manage\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\css\\main.css",
+      "PackagePath": "staticwebassets\\newP\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\css\\plugins.css",
+      "PackagePath": "staticwebassets\\newP\\css\\plugins.css"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\Ionicons28b5.eot",
+      "PackagePath": "staticwebassets\\newP\\fonts\\Ionicons28b5.eot"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\Ionicons28b5.svg",
+      "PackagePath": "staticwebassets\\newP\\fonts\\Ionicons28b5.svg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\Ionicons28b5.ttf",
+      "PackagePath": "staticwebassets\\newP\\fonts\\Ionicons28b5.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\Ionicons28b5.woff",
+      "PackagePath": "staticwebassets\\newP\\fonts\\Ionicons28b5.woff"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\Material-Design-Iconic-Fontd1f1.ttf",
+      "PackagePath": "staticwebassets\\newP\\fonts\\Material-Design-Iconic-Fontd1f1.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\Material-Design-Iconic-Fontd1f1.woff",
+      "PackagePath": "staticwebassets\\newP\\fonts\\Material-Design-Iconic-Fontd1f1.woff"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\Material-Design-Iconic-Fontd1f1.woff2",
+      "PackagePath": "staticwebassets\\newP\\fonts\\Material-Design-Iconic-Fontd1f1.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-brands-400d41d.eot",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-brands-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-regular-400d41d.eot",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-regular-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\fonts\\fa-solid-900d41d.eot",
+      "PackagePath": "staticwebassets\\newP\\fonts\\fa-solid-900d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\best-seller-bg.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\best-seller-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-2-slider-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-2-slider-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-2-slider-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-2-slider-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-3-slider-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-3-slider-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-3-slider-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-3-slider-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-4-slider-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-4-slider-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-4-slider-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-4-slider-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-slider-1-ai.png",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-slider-1-ai.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\home-slider-2-ai.png",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\home-slider-2-ai.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-contained.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-contained.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-full.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-full.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-mid.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-mid.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-small-with-text.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-small-with-text.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-small.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-with-text-2--small.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-with-text-2--small.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-with-text-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-with-text-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-with-text-big.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-with-text-big.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\bg-images\\promo-banner-with-text.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\bg-images\\promo-banner-with-text.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\favicon.ico",
+      "PackagePath": "staticwebassets\\newP\\image\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\icon\\author-logo.png",
+      "PackagePath": "staticwebassets\\newP\\image\\icon\\author-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\icon\\eng-flag.png",
+      "PackagePath": "staticwebassets\\newP\\image\\icon\\eng-flag.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\icon\\germany-flag.png",
+      "PackagePath": "staticwebassets\\newP\\image\\icon\\germany-flag.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\icon\\payment.png",
+      "PackagePath": "staticwebassets\\newP\\image\\icon\\payment.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\icon\\quotation.png",
+      "PackagePath": "staticwebassets\\newP\\image\\icon\\quotation.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\logo--footer.png",
+      "PackagePath": "staticwebassets\\newP\\image\\logo--footer.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\logo.png",
+      "PackagePath": "staticwebassets\\newP\\image\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\best-seller-author.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\best-seller-author.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\blog-grid-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\blog-grid-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\blog-grid-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\blog-grid-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\blog-grid-3.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\blog-grid-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\blog-grid-4.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\blog-grid-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\blog-img-big-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\blog-img-big-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\blog-img-big-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\blog-img-big-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\blog-img-big-3.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\blog-img-big-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\brand-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\brand-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\brand-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\brand-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\brand-3.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\brand-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\brand-4.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\brand-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\brand-5.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\brand-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\brand-6.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\brand-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\cat-gal-large.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\cat-gal-large.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\cat-gal-mid-2.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\cat-gal-mid-2.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\cat-gal-mid.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\cat-gal-mid.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\cat-gal-small-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\cat-gal-small-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\cat-gal-small.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\cat-gal-small.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\client-1.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\client-1.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\client-2.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\client-2.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\client-3.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\client-3.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\client-4.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\client-4.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\client-5.png",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\client-5.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\home-blog-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\home-blog-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\home-blog-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\home-blog-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\others\\home-side-promo.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\others\\home-side-promo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\cart-product-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\cart-product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-10.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-11.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-12.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-13.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-3.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-4.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-5.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-6.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-7.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-8.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-9.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-details-1.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-details-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-details-2.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-details-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-details-3.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-details-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-details-4.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-details-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\image\\products\\product-details-5.jpg",
+      "PackagePath": "staticwebassets\\newP\\image\\products\\product-details-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\js\\ajax-mail.js",
+      "PackagePath": "staticwebassets\\newP\\js\\ajax-mail.js"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\js\\custom.js",
+      "PackagePath": "staticwebassets\\newP\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\newP\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\newP\\js\\plugins.js"
+    },
+    {
       "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\new\\css\\style.css",
       "PackagePath": "staticwebassets\\new\\css\\style.css"
     },

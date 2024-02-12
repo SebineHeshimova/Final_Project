@@ -13,5 +13,7 @@ namespace Restaurant.Core.Entiity
 		[StringLength(maximumLength: 50, MinimumLength =3)]
 		[Required]
 		public string FullName {  get; set; }
+		[Required]
+		public string BirthDate {  get; set; }
 	}
 }

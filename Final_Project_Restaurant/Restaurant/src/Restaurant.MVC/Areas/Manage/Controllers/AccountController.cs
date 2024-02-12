@@ -8,9 +8,9 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 	[Area("Manage")]
 	public class AccountController : Controller
 	{
-		private readonly IAccountService _accountService;
+		private readonly IAdminAccountService _accountService;
 
-		public AccountController(IAccountService accountService)
+		public AccountController(IAdminAccountService accountService)
 		{
 			_accountService = accountService;
 		}
