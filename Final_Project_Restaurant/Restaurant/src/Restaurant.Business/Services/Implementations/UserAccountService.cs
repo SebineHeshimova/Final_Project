@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Restaurant.Business.CustomException.AccountExceptions.UserAccountExceptions;
+using Restaurant.Business.CustomException.RestaurantException.AccountExceptions;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Business.ViewModels;
 using Restaurant.Core.Entiity;
@@ -14,15 +15,26 @@ namespace Restaurant.Business.Services.Implementations
     public class UserAccountService : IUserAccountService
     {
         private readonly UserManager<AppUser> _userManager;
-
-        public UserAccountService(UserManager<AppUser> userManager)
+        private readonly SignInManager<AppUser> _signInManager;
+        public UserAccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        public Task Login(UserLoginViewModel viewModel)
+        public async Task Login(UserLoginViewModel viewModel)
         {
-            throw new NotImplementedException();
+            AppUser user = null;
+            user = await _userManager.FindByNameAsync(viewModel.UserName);
+            if (user == null)
+            {
+                throw new InvalidUsernameOrPasswordException("", "Invalid UserName or Password!");
+            }
+            var result = await _signInManager.PasswordSignInAsync(user, viewModel.Password, false, false);
+            if (!result.Succeeded)
+            {
+                throw new InvalidUsernameOrPasswordException("", "Invalid UserName or Password!");
+            }
         }
 
         public async Task Register(UserRegisterViewModel viewModel)

@@ -32,7 +32,7 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 			{
 				await _accountService.Login(viewModel);
 			}
-			catch (InvalidUsernameAndPasswordException ex)
+			catch (InvalidUsernameOrPasswordException ex)
 			{
 				ModelState.AddModelError(ex.PropertyName, ex.Message);
 				return View();

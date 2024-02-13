@@ -23,12 +23,12 @@ namespace Restaurant.Business.Services.Implementations
 			user = await _userManager.FindByNameAsync(viewModel.UserName);
 			if (user == null)
 			{
-				throw new InvalidUsernameAndPasswordException("","Invalid Username or Password!");
+				throw new InvalidUsernameOrPasswordException("","Invalid Username or Password!");
 			}
 			var result = await _signInManager.PasswordSignInAsync(user, viewModel.Password, false, false);
 			if (!result.Succeeded)
 			{
-				throw new InvalidUsernameAndPasswordException("", "Invalid Username or Password!");
+				throw new InvalidUsernameOrPasswordException("", "Invalid Username or Password!");
 			}
 			
 

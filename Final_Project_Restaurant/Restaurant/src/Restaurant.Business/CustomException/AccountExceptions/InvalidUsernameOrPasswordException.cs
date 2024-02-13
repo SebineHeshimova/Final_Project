@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Business.CustomException.RestaurantException.AccountExceptions
 {
-	public class InvalidUsernameAndPasswordException:Exception
+	public class InvalidUsernameOrPasswordException:Exception
 	{
 		public string PropertyName { get; set; }
-		public InvalidUsernameAndPasswordException()
+		public InvalidUsernameOrPasswordException()
 		{
 		}
-		public InvalidUsernameAndPasswordException(string? message) : base(message)
+		public InvalidUsernameOrPasswordException(string? message) : base(message)
 		{
 		}
-		public InvalidUsernameAndPasswordException(string propertyName, string? message) : base(message)
+		public InvalidUsernameOrPasswordException(string propertyName, string? message) : base(message)
 		{
 			PropertyName = propertyName;
 		}
