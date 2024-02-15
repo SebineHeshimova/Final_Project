@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.Services.Interfaces;
-using Restaurant.MVC.ViewModels;
+using Restaurant.Business.ViewModels;
 
 namespace Restaurant.MVC.Controllers
 {
@@ -26,12 +26,13 @@ namespace Restaurant.MVC.Controllers
         {
             HomeViewModel model = new HomeViewModel()
             {
-                Sliders = await _sliderService.GetAllAsync(x=>x.IsDeleted==false && x.IsHome),
-                Banners=await _bannerService.GetAllAsync(x=>x.IsDeleted==false),
-                Wrappers=await _wrapperService.GetAllAsync(x => x.IsDeleted == false),
-                Abouts=await _aboutService.GetAllAsync(a=>a.IsDeleted==false),
-                Offers=await _offerService.GetAllAsync(o=>o.IsDeleted==false),
-                Foods=await _foodService.GetAllAsync(f=>f.IsNew==true)
+                Sliders = await _sliderService.GetAllAsync(x => x.IsDeleted == false && x.IsHome),
+                Banners = await _bannerService.GetAllAsync(x => x.IsDeleted == false),
+                Wrappers = await _wrapperService.GetAllAsync(x => x.IsDeleted == false),
+                Abouts = await _aboutService.GetAllAsync(a => a.IsDeleted == false),
+                Offers = await _offerService.GetAllAsync(o => o.IsDeleted == false),
+                Foods = await _foodService.GetAllAsync(f => f.IsNew == true)
+                
             };
             return View(model);
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Restaurant.Business.Services.Implementations;
 using Restaurant.Business.Services.Interfaces;
 
@@ -18,6 +19,8 @@ namespace Restaurant.Business
             services.AddScoped<IFoodService, FoodService>();
             services.AddScoped<IAdminAccountService, AdminAccountService>();
             services.AddScoped<IUserAccountService, UserAccountService>();
+            services.AddScoped<IShopService, ShopService>();
+            services.AddScoped<IReservationService, ReservationService>();
         }
     }
 }

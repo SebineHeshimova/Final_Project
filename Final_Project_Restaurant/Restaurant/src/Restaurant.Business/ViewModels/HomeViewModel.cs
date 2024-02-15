@@ -1,6 +1,6 @@
 ﻿using Restaurant.Core.Entiity;
 
-namespace Restaurant.MVC.ViewModels
+namespace Restaurant.Business.ViewModels
 {
     public class HomeViewModel
     {
@@ -10,6 +10,6 @@ namespace Restaurant.MVC.ViewModels
         public List<About> Abouts { get; set; }
         public List<Offer> Offers { get; set; }
         public List<Food> Foods { get; set; }
-        
+        public ReservationViewModel Reservation { get; set; }
     }
 }

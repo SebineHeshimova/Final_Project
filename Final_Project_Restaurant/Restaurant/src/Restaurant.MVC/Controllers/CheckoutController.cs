@@ -1,63 +1,49 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Restaurant.MVC.ViewModels;
 using Restaurant.Core.Repositories.Interfaces;
+using Restaurant.Core.Entiity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Restaurant.Business.ViewModels;
+using Restaurant.MVC.ViewModels;
+using Restaurant.Business.Services.Interfaces;
+using Restaurant.Business.CustomException.RestaurantException.FoodExceptions;
 
 namespace Restaurant.MVC.Controllers
 {
     public class CheckoutController : Controller
     {
-
+        private readonly IShopService _shopService;
         private readonly IFoodRepository _foodRepository;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IBasketItemRepository _basketItemRepository;
+        private readonly IOrderRepository _orderRepository;
 
-        public CheckoutController(IFoodRepository foodRepository)
+        public CheckoutController(IFoodRepository foodRepository, UserManager<AppUser> userManager, IBasketItemRepository basketItemRepository, IShopService shopService, IOrderRepository orderRepository)
         {
             _foodRepository = foodRepository;
+            _userManager = userManager;
+            _basketItemRepository = basketItemRepository;
+            _shopService = shopService;
+            _orderRepository = orderRepository;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult AddToBasket(int foodId)
+        public async Task<IActionResult> AddToBasket(int foodId)
         {
-            if (!_foodRepository.Table.Any(f => f.Id == foodId)) return NotFound();
-
-
-            List<BasketItemViewModel> basketItems = new List<BasketItemViewModel>();
-            string basketItemsStr = HttpContext.Request.Cookies["BasketItem"];
-            BasketItemViewModel basketItem = null;
-            if (basketItemsStr is not null)
+            try
             {
-                basketItems = JsonConvert.DeserializeObject<List<BasketItemViewModel>>(basketItemsStr);
-
-                basketItem = basketItems.FirstOrDefault(b => b.FoodId == foodId);
-                if (basketItem != null)
-                {
-                    basketItem.Count++;
-                }
-                else
-                {
-                    basketItem = new BasketItemViewModel()
-                    {
-                        FoodId = foodId,
-                        Count = 1
-                    };
-                    basketItems.Add(basketItem);
-                }
-
+                await _shopService.AddToBasket(foodId);
             }
-            else
+            catch(FoodNullException ex)
             {
-                basketItem = new BasketItemViewModel()
-                {
-                    FoodId = foodId,
-                    Count = 1
-                };
-                basketItems.Add(basketItem);
+                ModelState.AddModelError("", ex.Message);
+                return View();
             }
-            basketItemsStr = JsonConvert.SerializeObject(basketItems);
-            HttpContext.Response.Cookies.Append("BasketItem", basketItemsStr);
+            catch(Exception ex) { }
             return Ok();
         }
 
@@ -73,24 +59,24 @@ namespace Restaurant.MVC.Controllers
         }
         public async Task<IActionResult> Checkout()
         {
-            List<CheckoutViewModel> checkoutVMList = new List<CheckoutViewModel>();
-            List<BasketItemViewModel> basketItemVMList=new List<BasketItemViewModel>();
-            CheckoutViewModel checkoutVM = null;
-            string basketItemVMListStr = HttpContext.Request.Cookies["BasketItem"];
-            if(basketItemVMListStr != null)
+            if(!ModelState.IsValid) return View();
+            
+            var orderViewModel =  await _shopService.CheckoutGet();
+            if (orderViewModel == null) return View();
+            return View(orderViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+       public async Task<IActionResult> Checkout(OrderViewModel viewModel)
+        {
+            if (!ModelState.IsValid) return View();
+            try
             {
-                basketItemVMList = JsonConvert.DeserializeObject<List<BasketItemViewModel>>(basketItemVMListStr);
-                foreach(var item in basketItemVMList)
-                {
-                    checkoutVM = new CheckoutViewModel()
-                    {
-                        Food = await _foodRepository.SingleAsync(f => f.Id == item.FoodId),
-                        Count = item.Count,
-                    };
-                    checkoutVMList.Add(checkoutVM);
-                }
+                await _shopService.CheckoutPost(viewModel);
             }
-            return View(checkoutVMList);
+            catch (Exception ex) { }
+            return RedirectToAction("index", "Home");
         }
     }
 }

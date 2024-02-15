@@ -106,8 +106,6 @@
 						<a href="#0" class="show-submenu">Menu</a>
 						<ul>
 							<li><a asp-action="index" asp-controller="menu">Menu With Tabs</a></li>
-							<li><a href="order-food.html">Order Food</a></li>
-							<li><a href="confirm.html">Confirm</a></li>
 						</ul>
 					</li>
 					<li class="submenu">
@@ -132,7 +130,7 @@
 							<li><a asp-controller="checkout" asp-action="checkout">Checkout</a></li>
 						</ul>
 					</li>
-					<li><a href="reservations.html" class="btn_top">Reservations</a></li>
+					<li><a asp-action="index" asp-controller="reservation" class="btn_top">Reservations</a></li>
 				</ul>
 			</nav>
 		</div>

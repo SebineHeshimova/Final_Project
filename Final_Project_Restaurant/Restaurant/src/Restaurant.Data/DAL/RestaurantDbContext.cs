@@ -23,6 +23,10 @@ namespace Restaurant.Data.DAL
         public DbSet<Food> Foods { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }  
+        public DbSet<Order> Orders {  get; set; }
+        public DbSet<OrderItem> OrdersItems { get; set;}
+        public DbSet<Reservation> Reservations { get; set; }
     }
 
 }

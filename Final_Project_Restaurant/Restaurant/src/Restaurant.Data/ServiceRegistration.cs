@@ -21,6 +21,9 @@ namespace Restaurant.Data
             services.AddScoped<IOfferRepository, OfferRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IFoodRepository, FoodRepository>();
+            services.AddScoped<IBasketItemRepository, BasketItemRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
         }
     }
 }

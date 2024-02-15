@@ -1,0 +1,106 @@
+﻿@model ReservationViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<body>
+
+
+
+    <main>
+
+        @foreach(var slider in Model.Sliders)
+        {
+            <div class="hero_single inner_pages background-image" data-background="url(uploads/sliders/@slider.ImageUrl)">
+                <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-9 col-lg-10 col-md-8">
+                                <h1>@slider.Title</h1>
+                                <p>@slider.Description</p>
+                            </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                </div>
+                <div class="frame white"></div>
+            </div>
+        }
+        <!-- /hero_single -->
+
+        <div class="pattern_2">
+            <div class="container margin_120_100 pb-0">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center d-none d-lg-block" data-cue="slideInUp">
+                        <img src="~/assets/img/chef.png" width="400" height="733" alt="" class="~/assets/img-fluid">
+                    </div>
+                    <div class="col-lg-6 col-md-8" data-cue="slideInUp">
+                        <div class="main_title">
+                            <span><em></em></span>
+                            <h2>Reserve a table</h2>
+                            <p>or Call us at 0344 32423453</p>
+                        </div>
+                        <div id="wizard_container">
+                            <section class="book_section layout_padding">
+                                <div class="container">
+                                    <div class="heading_container">
+                                        <h2>
+                                            Book A Table
+                                        </h2>
+                                    </div>
+                                    <div>
+                                        <div class="form_container">
+                                            <form method="post" asp-action="create" asp-controller="reservation">
+                                                <div class="row gutters-15">
+                                                    <div class="col-12 form-group">
+                                                        <input asp-for="FullName" placeholder="Full name" class="form-control" required />
+                                                        <span asp-validation-for="FullName" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-md-6 form-group">
+                                                        <input asp-for="Phone" placeholder="Phone" class="form-control" required />
+                                                        <span asp-validation-for="Phone" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-md-6 form-group">
+                                                        <input asp-for="Email" placeholder="Email" class="form-control" required />
+                                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                      
+                                                        <input asp-for="Date" type="date" class="form-control" placeholder="Date" required />
+                                                        <span asp-validation-for="Date" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-sm-6 form-group">
+                                                       
+                                                        <input asp-for="Time" type="time" class="form-control" placeholder="Time" required />
+                                                        <span asp-validation-for="Time" class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-12 form-group text-center">
+                                                        <button type="submit" class="item-btn">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- /Wizard container -->
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /pattern_2 -->
+
+    </main>
+    <!-- /main -->
+
+
+
+</body>
+
+
+
