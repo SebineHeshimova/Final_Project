@@ -13,5 +13,7 @@ namespace Restaurant.Business.ViewModels
 		public List<About> Abouts { get; set; }
 		public List<Chef> Chefs { get; set; }
 		public List<Feedback> Feedbacks { get; set; }
-	}
+		public List<PreferenceSlider> PreferenceSliders { get; set; }
+        public List<PreferenceText> PreferenceTexts { get; set; }
+    }
 }

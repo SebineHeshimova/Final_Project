@@ -26,6 +26,8 @@ namespace Restaurant.Data
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IChefRepository, ChefRepository>();
             services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+            services.AddScoped<IPreferenceSliderRepository, PreferenceSliderRepository>();
+            services.AddScoped<IPreferenceTextRepository, PreferenceTextRepository>();
         }
     }
 }

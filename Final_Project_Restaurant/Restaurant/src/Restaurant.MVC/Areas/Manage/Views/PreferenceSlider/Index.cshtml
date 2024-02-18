@@ -1,0 +1,41 @@
+﻿@model List<PreferenceSlider>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="PreferenceSlider">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var preferenceSlider in Model)
+            {
+                counter++;
+                <tr style="background-color:@(preferenceSlider.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td>@preferenceSlider.Title</td>
+                    <td>@preferenceSlider.Description</td>
+                    <td><img width="70px" src="~/uploads/preferenceSliders/@preferenceSlider.ImageUrl" /></td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="preferenceSlider" asp-route-id="@preferenceSlider.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="preferenceSlider" asp-route-id="@preferenceSlider.Id">Delete</a>
+                        <a class="btn btn-@(preferenceSlider.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="preferenceSlider" asp-route-id="@preferenceSlider.Id">@(preferenceSlider.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

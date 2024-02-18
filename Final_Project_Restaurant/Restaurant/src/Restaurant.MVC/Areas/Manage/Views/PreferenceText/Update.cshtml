@@ -1,0 +1,31 @@
+﻿@model PreferenceText
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Create</h1>
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Title" /></label>
+            <input asp-for="Title" placeholder="Title">
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" /></label>
+            <input asp-for="Description" placeholder="Description">
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="RedirectText" /></label>
+            <input asp-for="RedirectText" placeholder="RedirectText">
+            <span asp-validation-for="RedirectText"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="RedirectUrl" /></label>
+            <input asp-for="RedirectUrl" placeholder="RedirectUrl">
+            <span asp-validation-for="RedirectUrl"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

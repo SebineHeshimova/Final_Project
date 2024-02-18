@@ -1,0 +1,39 @@
+﻿@model List<PreferenceText>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="preferenceText">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var preferenceText in Model)
+            {
+                counter++;
+                <tr style="background-color:@(preferenceText.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td>@preferenceText.Title</td>
+                    <td>@preferenceText.Description</td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="preferenceText" asp-route-id="@preferenceText.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="preferenceText" asp-route-id="@preferenceText.Id">Delete</a>
+                        <a class="btn btn-@(preferenceText.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="preferenceText" asp-route-id="@preferenceText.Id">@(preferenceText.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

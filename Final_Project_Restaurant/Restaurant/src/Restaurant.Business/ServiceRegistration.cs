@@ -23,6 +23,8 @@ namespace Restaurant.Business
             services.AddScoped<IReservationService, ReservationService>();
             services.AddScoped<IChefService, ChefService>();
             services.AddScoped<IFeedbackService, FeedbackService>();
+            services.AddScoped<IPreferenceSliderService, PreferenceSliderService>();
+            services.AddScoped<IPreferenceTextService,  PreferenceTextService>();
         }
     }
 }
