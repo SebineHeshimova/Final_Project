@@ -11,7 +11,7 @@ using Restaurant.Business.CustomException.RestaurantException.FoodExceptions;
 
 namespace Restaurant.MVC.Controllers
 {
-    public class CheckoutController : Controller
+    public class ShopController : Controller
     {
         private readonly IShopService _shopService;
         private readonly IFoodRepository _foodRepository;
@@ -19,7 +19,7 @@ namespace Restaurant.MVC.Controllers
         private readonly IBasketItemRepository _basketItemRepository;
         private readonly IOrderRepository _orderRepository;
 
-        public CheckoutController(IFoodRepository foodRepository, UserManager<AppUser> userManager, IBasketItemRepository basketItemRepository, IShopService shopService, IOrderRepository orderRepository)
+        public ShopController(IFoodRepository foodRepository, UserManager<AppUser> userManager, IBasketItemRepository basketItemRepository, IShopService shopService, IOrderRepository orderRepository)
         {
             _foodRepository = foodRepository;
             _userManager = userManager;
@@ -74,6 +74,11 @@ namespace Restaurant.MVC.Controllers
             try
             {
                 await _shopService.CheckoutPost(viewModel);
+            }
+            catch(NullReferenceException ex)
+            {
+                ModelState.AddModelError("",ex.Message);
+                return View();
             }
             catch (Exception ex) { }
             return RedirectToAction("index", "Home");

@@ -24,9 +24,7 @@ namespace Restaurant.Business.ViewModels
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
         [Required]
-        public DateTime Date { get; set; }
-        [Required]
-        public TimeSpan Time { get; set; }
+        public DateTime DateTime { get; set; }
         public List<Slider> Sliders { get; set; }
     }
 }

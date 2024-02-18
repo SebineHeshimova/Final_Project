@@ -31,7 +31,7 @@ namespace Restaurant.MVC.Controllers
                 Wrappers = await _wrapperService.GetAllAsync(x => x.IsDeleted == false),
                 Abouts = await _aboutService.GetAllAsync(a => a.IsDeleted == false),
                 Offers = await _offerService.GetAllAsync(o => o.IsDeleted == false),
-                Foods = await _foodService.GetAllAsync(f => f.IsNew == true)
+                Foods = await _foodService.GetAllAsync(f => f.IsNew == true),
                 
             };
             return View(model);

@@ -68,8 +68,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Chef/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENoZWZcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Chef/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENoZWZcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Chef/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENoZWZcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Chef/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENoZWZcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Feedback/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZlZWRiYWNrXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Feedback/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZlZWRiYWNrXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Feedback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZlZWRiYWNrXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Feedback/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZlZWRiYWNrXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Food/Create.cshtml]
@@ -102,6 +134,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Offer/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9mZmVyXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Reservation/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc2VydmF0aW9uXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Reservation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc2VydmF0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Reservation/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc2VydmF0aW9uXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Setting/Index.cshtml]
@@ -160,20 +204,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Checkout/Checkout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ2hlY2tvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Checkout/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Home/Index.cshtml]
@@ -186,6 +226,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Reservation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Shop/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Shop/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/_ViewImports.cshtml]

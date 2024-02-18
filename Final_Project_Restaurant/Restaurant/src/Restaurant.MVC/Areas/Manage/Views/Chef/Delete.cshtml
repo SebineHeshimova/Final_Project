@@ -1,0 +1,19 @@
+﻿@model Chef
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<div>
+    <div class="card" style="width: 18rem;">
+        <form method="post" enctype="multipart/form-data">
+            <img src="~/uploads/chefs/@Model.ImageUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@Model.FullName</h5>
+                <h5 class="card-text">@Model.Position</h5>
+                <a asp-action="index" asp-controller="chef" class="btn btn-primary">Go to back</a>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -23,9 +23,7 @@ namespace Restaurant.Core.Entiity
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
         [Required]
-        public DateTime Date { get; set; }
-        [Required]
-        public TimeSpan Time { get; set; }
+        public DateTime DateTime { get; set; }
         public string? AppUserId {  get; set; }
         public AppUser? User { get; set; }
     }

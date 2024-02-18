@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Restaurant.Business.CustomException.RestaurantException.CategoryExceptions;
 using Restaurant.Business.CustomException.RestaurantException.ReservationExceptions;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Business.ViewModels;
@@ -25,15 +26,13 @@ namespace Restaurant.Business.Services.Implementations
         public async Task Create(ReservationViewModel viewModel)
         {
             if(viewModel == null) throw new ReservationNullException("Entity cannot be null!");
-            if (viewModel.Date < DateTime.Today) throw new InvalidReservatinDateException("Date", "mshgjre");
-           // if (viewModel.Time < TimeSpan.) throw new InvalidReservationTimeException("Time", "sjghejjr");
+            if (viewModel.DateTime < DateTime.UtcNow) throw new InvalidReservatinDateException("DateTime", "mshgjre");
             Reservation reservation = new Reservation()
             {
                 FullName = viewModel.FullName,
                 Email = viewModel.Email,
                 Phone = viewModel.Phone,
-                Date = viewModel.Date,
-                Time = viewModel.Time,
+                DateTime = viewModel.DateTime,
                 CreatedDate = DateTime.UtcNow.AddHours(4),
                 UpdatedDate= DateTime.UtcNow.AddHours(4),
                 IsDeleted=false
@@ -43,9 +42,12 @@ namespace Restaurant.Business.Services.Implementations
             await _repository.CommitAsync();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            var reservation = await _repository.SingleAsync(c => c.Id == id);
+            if (reservation == null) throw new ReservationNullException("Entity cannot be null!");
+            _repository.Delete(reservation);
+            await _repository.CommitAsync();
         }
 
         public async Task<List<Reservation>> GetAllAsync(Expression<Func<Reservation, bool>>? expression = null, params string[]? include)
@@ -58,9 +60,17 @@ namespace Restaurant.Business.Services.Implementations
             return await _repository.SingleAsync(expression, include);
         }
 
-        public Task Update(Reservation reservation)
+        public async Task Update(Reservation reservation)
         {
-            throw new NotImplementedException();
-        }
+            var existReservation = await _repository.SingleAsync(x => x.Id == reservation.Id);
+            if (reservation == null) throw new ReservationNullException("Entity cannot be null!");
+            if (reservation.DateTime < DateTime.UtcNow) throw new InvalidReservatinDateException("DateTime", "Invalid reservation date!");
+            existReservation.FullName = reservation.FullName;
+            existReservation.Email= reservation.Email;
+            existReservation.Phone= reservation.Phone;
+            existReservation.DateTime = reservation.DateTime;
+            existReservation.UpdatedDate=DateTime.UtcNow.AddHours(4);
+            await _repository.CommitAsync();
+        }            
     }
 }

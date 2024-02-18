@@ -1,0 +1,31 @@
+﻿@model Feedback
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="FullName" /></label>
+            <input asp-for="FullName" placeholder="FullName">
+            <span asp-validation-for="FullName"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Comment" /></label>
+            <input asp-for="Comment" placeholder="Comment">
+            <span asp-validation-for="Comment"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Date" /></label>
+            <input asp-for="Date" placeholder="Date">
+            <span asp-validation-for="Date"></span>
+        </div>
+        <div class="mb-3 form-check">
+            <label asp-for="ImageFile" /></label>
+            <input asp-for="ImageFile" placeholder="ImageFile">
+            <span asp-validation-for="ImageFile"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

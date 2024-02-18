@@ -1,0 +1,39 @@
+﻿@model List<Chef>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="chef">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Fullname</th>
+                <th scope="col">Position</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var chef in Model)
+            {
+                counter++;
+                <tr style="background-color:@(chef.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td>@chef.FullName</td>
+                    <td>@chef.Position</td>
+                    <td><img width="70px" src="~/uploads/chefs/@chef.ImageUrl" /></td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="chef" asp-route-id="@chef.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="chef" asp-route-id="@chef.Id">Delete</a>
+                        <a class="btn btn-@(chef.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="chef" asp-route-id="@chef.Id">@(chef.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

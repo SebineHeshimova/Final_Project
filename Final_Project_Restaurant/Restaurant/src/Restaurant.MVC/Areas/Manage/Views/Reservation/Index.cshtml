@@ -1,0 +1,41 @@
+﻿@model List<Reservation>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Fullname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">DateTime</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                counter++;
+                <tr style="background-color:@(reservation.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td>@reservation.FullName</td>
+                    <td>@reservation.Email</td>
+                    <td>@reservation.Phone</td>
+                    <td>@reservation.DateTime</td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="reservation" asp-route-id="@reservation.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="reservation" asp-route-id="@reservation.Id">Delete</a>
+                        <a class="btn btn-@(reservation.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="reservation" asp-route-id="@reservation.Id">@(reservation.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

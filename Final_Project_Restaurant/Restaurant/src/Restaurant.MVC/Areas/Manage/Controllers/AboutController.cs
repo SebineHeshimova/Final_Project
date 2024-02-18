@@ -48,7 +48,22 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
                 return View();
             }
-            catch (Exception ex) { }
+			catch (AboutSignatureImageContentTypeException ex)
+			{
+				ModelState.AddModelError(ex.PropertyName, ex.Message);
+				return View();
+			}
+			catch (AboutSignatureImageLengthException ex)
+			{
+				ModelState.AddModelError(ex.PropertyName, ex.Message);
+				return View();
+			}
+			catch (AboutSignatureImageNullException ex)
+			{
+				ModelState.AddModelError(ex.PropertyName, ex.Message);
+				return View();
+			}
+			catch (Exception ex) { }
             return RedirectToAction("Index");
         }
 		public async Task<IActionResult> Update(int id)
@@ -77,6 +92,16 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
 				return View();
 			}
 			catch (AboutImageLengthException ex)
+			{
+				ModelState.AddModelError(ex.PropertyName, ex.Message);
+				return View();
+			}
+			catch (AboutSignatureImageContentTypeException ex)
+			{
+				ModelState.AddModelError(ex.PropertyName, ex.Message);
+				return View();
+			}
+			catch (AboutSignatureImageLengthException ex)
 			{
 				ModelState.AddModelError(ex.PropertyName, ex.Message);
 				return View();

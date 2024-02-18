@@ -111,11 +111,9 @@
 					<li class="submenu">
 						<a href="#0" class="show-submenu">Other Pages</a>
 						<ul>
-							<li><a href="about.html">About</a></li>
+							<li><a asp-action="index" asp-controller="about">About</a></li>
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="gallery-2.html">Gallery Masonry</a></li>
-							<li><a href="404.html">404 Error page</a></li>
 							<li><a href="leave-review.html">Leave a review</a></li>
 							<li><a href="contacts.html">Contacts</a></li>
 						</ul>
@@ -127,7 +125,7 @@
 							<li><a href="shop-2.html">Shop Rows</a></li>
 							<li><a href="shop-single.html">Product Single</a></li>
 							<li><a href="shop-cart.html">Cart Page</a></li>
-							<li><a asp-controller="checkout" asp-action="checkout">Checkout</a></li>
+							<li><a asp-controller="shop" asp-action="checkout">Checkout</a></li>
 						</ul>
 					</li>
 					<li><a asp-action="index" asp-controller="reservation" class="btn_top">Reservations</a></li>

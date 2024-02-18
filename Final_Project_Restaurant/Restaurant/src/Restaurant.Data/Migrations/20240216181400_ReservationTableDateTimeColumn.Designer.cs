@@ -12,8 +12,8 @@ using Restaurant.Data.DAL;
 namespace Restaurant.Data.Migrations
 {
     [DbContext(typeof(RestaurantDbContext))]
-    [Migration("20240215012813_AddedReservationTableDateTime")]
-    partial class AddedReservationTableDateTime
+    [Migration("20240216181400_ReservationTableDateTimeColumn")]
+    partial class ReservationTableDateTimeColumn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -587,7 +587,7 @@ namespace Restaurant.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -607,9 +607,6 @@ namespace Restaurant.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
-
-                    b.Property<TimeSpan>("Time")
-                        .HasColumnType("time");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");

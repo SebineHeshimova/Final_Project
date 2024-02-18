@@ -21,6 +21,8 @@ namespace Restaurant.Business
             services.AddScoped<IUserAccountService, UserAccountService>();
             services.AddScoped<IShopService, ShopService>();
             services.AddScoped<IReservationService, ReservationService>();
+            services.AddScoped<IChefService, ChefService>();
+            services.AddScoped<IFeedbackService, FeedbackService>();
         }
     }
 }

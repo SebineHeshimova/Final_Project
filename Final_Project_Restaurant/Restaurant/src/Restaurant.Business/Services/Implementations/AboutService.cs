@@ -45,7 +45,23 @@ namespace Restaurant.Business.Services.Implementations
             {
                 throw new AboutNullException("ImageFile", "Entity cannot be null!");
             }
-            about.CreatedDate = DateTime.UtcNow.AddHours(4);
+			if (about.SignatureImageFile != null)
+			{
+				if (about.SignatureImageFile.ContentType != "image/jpeg" && about.SignatureImageFile.ContentType != "image/png")
+				{
+					throw new AboutSignatureImageContentTypeException("SignatureImageFile", "File must be .png or .jpeg!");
+				}
+				if (about.SignatureImageFile.Length > 2097152)
+				{
+					throw new AboutSignatureImageLengthException("SignatureImageFile", "File size must be lower than 2mb!");
+				}
+				about.SignatureImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.SignatureImageFile);
+			}
+			else
+			{
+				throw new AboutSignatureImageNullException("SignatureImageFile", "Entity cannot be null!");
+			}
+			about.CreatedDate = DateTime.UtcNow.AddHours(4);
 			about.UpdatedDate = DateTime.UtcNow.AddHours(4);
 			about.IsDeleted = false;
 			await _repository.CreateAsync(about);
@@ -57,7 +73,8 @@ namespace Restaurant.Business.Services.Implementations
             var about = await _repository.SingleAsync(x => x.Id == id);
             if (about == null) throw new SliderNullException("Entity cannot be null!");
             Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", about.ImageUrl);
-            _repository.Delete(about);
+			Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", about.SignatureImageUrl);
+			_repository.Delete(about);
             await _repository.CommitAsync();
         }
 
@@ -95,6 +112,19 @@ namespace Restaurant.Business.Services.Implementations
 				}
 				Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", existAbout.ImageUrl);
 				existAbout.ImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.ImageFile);
+			}
+			if (about.SignatureImageFile != null)
+			{
+				if (about.SignatureImageFile.ContentType != "image/jpeg" && about.SignatureImageFile.ContentType != "image/png")
+				{
+					throw new AboutSignatureImageContentTypeException("SignatureImageFile", "File must be .png or .jpeg!");
+				}
+				if (about.SignatureImageFile.Length > 2097152)
+				{
+					throw new AboutSignatureImageLengthException("SignatureImageFile", "File size must be lower than 2mb!");
+				}
+				Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", existAbout.SignatureImageUrl);
+				about.SignatureImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.SignatureImageFile);
 			}
 			existAbout.UpdatedDate = DateTime.UtcNow.AddHours(4);
 			existAbout.Title = about.Title;

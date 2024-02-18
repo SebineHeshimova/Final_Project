@@ -1,0 +1,26 @@
+﻿@model Chef
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="FullName" /></label>
+            <input asp-for="FullName" placeholder="FullName">
+            <span asp-validation-for="FullName"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Position" /></label>
+            <input asp-for="Position" placeholder="Position">
+            <span asp-validation-for="Position"></span>
+        </div>
+        <div class="mb-3 form-check">
+            <label asp-for="ImageFile" /></label>
+            <input asp-for="ImageFile" placeholder="ImageFile">
+            <span asp-validation-for="ImageFile"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

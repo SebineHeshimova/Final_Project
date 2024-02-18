@@ -27,6 +27,8 @@ namespace Restaurant.Data.DAL
         public DbSet<Order> Orders {  get; set; }
         public DbSet<OrderItem> OrdersItems { get; set;}
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Chef> Chefs { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 
 }

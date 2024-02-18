@@ -1,0 +1,39 @@
+﻿@model List<Feedback>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="feedback">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Fullname</th>
+                <th scope="col">Date</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var feedback in Model)
+            {
+                counter++;
+                <tr style="background-color:@(feedback.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td>@feedback.FullName</td>
+                    <td>@feedback.Date</td>
+                    <td><img width="70px" src="~/uploads/feedbacks/@feedback.ImageUrl" /></td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="feedback" asp-route-id="@feedback.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="feedback" asp-route-id="@feedback.Id">Delete</a>
+                        <a class="btn btn-@(feedback.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="feedback" asp-route-id="@feedback.Id">@(feedback.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

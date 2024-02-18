@@ -144,11 +144,16 @@ namespace Restaurant.Business.Services.Implementations
                     checkoutVMList.Add(checkoutVM);
                 }
             }
+            
             OrderViewModel orderViewModel = new OrderViewModel()
             {
                 CheckoutViewModel = checkoutVMList
             };
             
+            if(orderViewModel == null)
+            {
+                throw new NullReferenceException();
+            }
             return orderViewModel;
         }
 
