@@ -24,6 +24,8 @@
     <Folder Include="wwwroot\uploads\foods\" />
     <Folder Include="wwwroot\uploads\chefs\" />
     <Folder Include="wwwroot\uploads\feedbacks\" />
+    <Folder Include="wwwroot\uploads\gallerys\" />
+    <Folder Include="wwwroot\uploads\videos\" />
     <Folder Include="wwwroot\uploads\preferenceSliders\" />
     <Folder Include="wwwroot\uploads\offers\" />
     <Folder Include="wwwroot\uploads\wrappers\" />

@@ -28,6 +28,8 @@ namespace Restaurant.Data
             services.AddScoped<IFeedbackRepository, FeedbackRepository>();
             services.AddScoped<IPreferenceSliderRepository, PreferenceSliderRepository>();
             services.AddScoped<IPreferenceTextRepository, PreferenceTextRepository>();
+            services.AddScoped<IGalleryRepository, GalleryRepository>();
+            services.AddScoped<IVideoRepository, VideoRepository>();
         }
     }
 }

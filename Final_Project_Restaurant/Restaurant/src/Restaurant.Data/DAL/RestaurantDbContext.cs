@@ -31,6 +31,8 @@ namespace Restaurant.Data.DAL
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<PreferenceSlider> PreferenceSlider { get; set; }   
         public DbSet<PreferenceText> PreferenceText { get; set; }   
+        public DbSet<Gallery> Gallerys { get; set; }
+        public DbSet<Video> Videos { get; set; }
     }
 
 }

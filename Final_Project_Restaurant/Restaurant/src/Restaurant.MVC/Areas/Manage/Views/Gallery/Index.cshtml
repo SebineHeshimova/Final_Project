@@ -1,0 +1,34 @@
+﻿@model List<Gallery>
+@{
+    ViewData["Title"] = "Index";
+    int counter = 0;
+}
+<div class="container-fluid align-items-center d-flex justify-content-between">
+    <h2>Index</h2>
+    <a class="btn btn-primary" asp-action="create" asp-controller="gallery">Create</a>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        <tbody>
+                @foreach (var gallery in Model)
+                {
+                    counter++;
+                <tr style="background-color:@(gallery.IsDeleted==true ? "LightPink" : "")">
+                    <th scope="row">@counter</th>
+                    <td><img width="70px" src="~/uploads/gallerys/@gallery.ImageUrl" /></td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="gallery" asp-route-id="@gallery.Id">Update</a>
+                        <a class="btn btn-danger" asp-action="delete" asp-controller="gallery" asp-route-id="@gallery.Id">Delete</a>
+                        <a class="btn btn-@(gallery.IsDeleted==false ? "warning" : "secondary")" asp-action="softdelete" asp-controller="gallery" asp-route-id="@gallery.Id">@(gallery.IsDeleted == false ? "Hide" : "Revert")</a>
+                    </td>
+                </tr>
+                }
+        </tbody>
+    </table>
+</div>
