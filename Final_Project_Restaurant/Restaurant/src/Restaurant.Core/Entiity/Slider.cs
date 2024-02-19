@@ -31,5 +31,6 @@ namespace Restaurant.Core.Entiity
         public bool IsGallery {  get; set; }
         public bool IsShop { get; set; }
         public bool IsReservation { get; set; }
+        public bool IsContact { get; set; }
     }
 }

@@ -14,6 +14,7 @@ builder.Services.AddDbContext<RestaurantDbContext>(option => { option.UseSqlServ
 builder.Services.AddRepositories();
 builder.Services.AddServices();
 builder.Services.AddScoped<LayoutService>();
+builder.Services.AddScoped<ContactService>();
 builder.Services.AddIdentity<AppUser, IdentityRole>(option =>
 {
     option.Password.RequiredLength = 8;

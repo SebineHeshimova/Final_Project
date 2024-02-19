@@ -859,6 +859,9 @@ namespace Restaurant.Data.Migrations
                     b.Property<bool>("IsBlog")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsContact")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 

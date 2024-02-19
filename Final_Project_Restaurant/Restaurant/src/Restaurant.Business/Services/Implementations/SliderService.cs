@@ -107,6 +107,7 @@ namespace Restaurant.Business.Services.Implementations
             existSlider.IsGallery= slider.IsGallery;
             existSlider.IsReservation= slider.IsReservation;
             existSlider.IsHome= slider.IsHome;
+            existSlider.IsContact= slider.IsContact;
             await _repository.CommitAsync();
         }
     }

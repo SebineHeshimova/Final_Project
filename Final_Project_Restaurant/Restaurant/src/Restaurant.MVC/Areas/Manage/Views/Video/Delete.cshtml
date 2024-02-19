@@ -1,0 +1,17 @@
+﻿@model Video
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<div>
+    <div class="card" style="width: 18rem;">
+        <form method="post" enctype="multipart/form-data">
+            <img src="~/uploads/videos/@Model.ImageUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a asp-action="index" asp-controller="video" class="btn btn-primary">Go to back</a>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
