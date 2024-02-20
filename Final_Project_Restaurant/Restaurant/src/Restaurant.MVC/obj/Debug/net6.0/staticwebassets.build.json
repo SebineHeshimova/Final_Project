@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kcaGDHcJ8szMHvVb1NRyTJx0REgYMqLaJ5j+vaPxBB0=",
+  "Hash": "6qJxnzHcG8C6nujztxHeL0jRMkehmNMJNmIBa232bI4=",
   "Source": "Restaurant.MVC",
   "BasePath": "_content/Restaurant.MVC",
   "Mode": "Default",
@@ -39234,6 +39234,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\sliders\\09b830f2-148d-4a91-b882-ee890fe98720slide_home_1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\4ec5d60b-d20c-4e6d-a02a-72067c649aafslide_home_1.jpg",
+      "SourceId": "Restaurant.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\",
+      "BasePath": "_content/Restaurant.MVC",
+      "RelativePath": "uploads/sliders/4ec5d60b-d20c-4e6d-a02a-72067c649aafslide_home_1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\4ec5d60b-d20c-4e6d-a02a-72067c649aafslide_home_1.jpg"
     },
     {
       "Identity": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\7c39c70b-a241-4a3c-b554-90a9ddadef5fslide_home_1.jpg",

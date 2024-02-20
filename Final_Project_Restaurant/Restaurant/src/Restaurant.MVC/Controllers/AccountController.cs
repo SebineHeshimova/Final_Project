@@ -75,5 +75,16 @@ namespace Restaurant.MVC.Controllers
             return RedirectToAction("index", "Home");
 
         }
+		public async Task<IActionResult> Logout()
+		{
+			_accountService.Logout();
+
+			return RedirectToAction("index", "Home");
+		}
+		public async Task<IActionResult> Profile()
+		{
+			var order=await _accountService.Profile();
+			return View(order);
+		}
 	}
 }

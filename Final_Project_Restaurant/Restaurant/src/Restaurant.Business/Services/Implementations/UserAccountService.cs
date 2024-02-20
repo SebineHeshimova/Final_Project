@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.AccountExceptions.UserAccountExceptions;
 using Restaurant.Business.CustomException.RestaurantException.AccountExceptions;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Business.ViewModels;
 using Restaurant.Core.Entiity;
+using Restaurant.Core.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +20,17 @@ namespace Restaurant.Business.Services.Implementations
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        public UserAccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
-        {
-            _userManager = userManager;
-            _signInManager = signInManager;
-        }
+		private readonly IHttpContextAccessor _context;
+        private readonly IOrderRepository _orderRepository;
+		public UserAccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IHttpContextAccessor context, IOrderRepository orderRepository)
+		{
+			_userManager = userManager;
+			_signInManager = signInManager;
+			_context = context;
+			_orderRepository = orderRepository;
+		}
 
-        public async Task Login(UserLoginViewModel viewModel)
+		public async Task Login(UserLoginViewModel viewModel)
         {
             AppUser user = null;
             user = await _userManager.FindByNameAsync(viewModel.UserName);
@@ -67,5 +75,23 @@ namespace Restaurant.Business.Services.Implementations
             }
             await _userManager.AddToRoleAsync(appUser, "User");
         }
-    }
+		public async Task Logout()
+		{
+			await _signInManager.SignOutAsync();
+		}
+		public async Task<List<Order>> Profile()
+		{
+			AppUser appUser = null;
+
+			if (_context.HttpContext.User.Identity.IsAuthenticated)
+			{
+				appUser = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
+			}
+
+			List<Order> orders = await _orderRepository.Table.Where(x => x.AppUserId == appUser.Id).ToListAsync();
+            
+			return orders;
+		}
+
+	}
 }

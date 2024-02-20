@@ -36896,6 +36896,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\09b830f2-148d-4a91-b882-ee890fe98720slide_home_1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\4ec5d60b-d20c-4e6d-a02a-72067c649aafslide_home_1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Restaurant.MVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Restaurant.MVC</BasePath>
+      <RelativePath>uploads/sliders/4ec5d60b-d20c-4e6d-a02a-72067c649aafslide_home_1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\4ec5d60b-d20c-4e6d-a02a-72067c649aafslide_home_1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\7c39c70b-a241-4a3c-b554-90a9ddadef5fslide_home_1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Restaurant.MVC</SourceId>

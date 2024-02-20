@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -32,5 +33,6 @@ namespace Restaurant.Core.Entiity
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
         public List<OrderItem> OrderItems { get; set; }
+        public OrderStatus Status { get; set; }
     }
 }

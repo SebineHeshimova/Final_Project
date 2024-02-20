@@ -2,6 +2,7 @@
 @inject LayoutService service
 @{
 	var Setting=await service.GetSetting();
+	var user = await service.GetAppUser();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,7 @@
 		<div data-loader="circle-side"></div>
 	</div><!-- /Page Preload -->
 
-	<header class="header clearfix element_to_stick">
+	<header class="header clearfix element_to_stick" style="background-color:black">
 		<div class="layer"></div><!-- Opacity Mask Menu Mobile -->
 		<div class="container-fluid">
 			<div id="logo">
@@ -56,7 +57,23 @@
 				</a>
 			</div>
 			<ul id="top_menu">
-				<li><a href="#0" class="search-overlay-menu-btn"></a></li>
+				<li>
+					@if (!User.Identity.IsAuthenticated)
+					{
+						<div class="login-block " >
+							<a asp-action="login" asp-controller="account" class="font-weight-bold" >Login</a> <br>
+							<span>or</span><br>
+							<a  asp-action="register" asp-controller="account">Register</a>
+						</div>
+					}
+					else
+					{
+						<div class="login-block">
+							<a asp-action="Profile" asp-controller="account" class="font-weight-bold">@user.FullName</a><br><br>
+							<a asp-action="logout" asp-controller="account" class="margin:25px">Logout</a>
+						</div>
+					}
+				</li>
 				<li>
 					<div class="dropdown dropdown-cart">
 						<a href="shop-cart.html" class="cart_bt"><strong>2</strong></a>
@@ -115,7 +132,7 @@
 							<li><a href="blog.html">Blog</a></li>
 							<li><a asp-action="index" asp-controller="gallery">Gallery</a></li>
 							<li><a href="leave-review.html">Leave a review</a></li>
-							<li><a href="contacts.html">Contacts</a></li>
+							<li><a asp-action="index" asp-controller="contact">Contacts</a></li>
 						</ul>
 					</li>
 					<li class="submenu">
@@ -129,17 +146,10 @@
 						</ul>
 					</li>
 					<li><a asp-action="index" asp-controller="reservation" class="btn_top">Reservations</a></li>
+					
 				</ul>
 			</nav>
 		</div>
-		<!-- Search -->
-		<div class="search-overlay-menu">
-			<span class="search-overlay-close"><span class="closebt"><i class="icon_close"></i></span></span>
-			<form role="search" id="searchform" method="get">
-				<input value="" name="q" type="search" placeholder="Search..." />
-				<button type="submit"><i class="icon_search"></i></button>
-			</form>
-		</div><!-- End Search -->
 	</header>
 	<!-- /header -->
 	@RenderBody()

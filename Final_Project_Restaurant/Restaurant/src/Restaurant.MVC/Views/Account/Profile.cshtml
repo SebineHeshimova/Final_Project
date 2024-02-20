@@ -1,0 +1,37 @@
+﻿
+@model List<Order>
+@{
+    ViewData["Title"] = "Profile";
+    int counter = 0;
+}
+<div class="margin_80_60 " style="background-color:black"></div>
+<main>
+    <div class="container" style="border: 1px solid; min-height:50vh">
+        <h1>Order</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Total Amount</th>
+                    <th scope="col">Create Date</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var orderItem in Model)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td>@orderItem.OrderItems</td>
+                        <td>@orderItem.TotalPrice.ToString("0.00") AZN</td>
+                        <td>@orderItem.CreatedDate.ToString("MMMM ddd, yyyy H:mm:ss")</td>
+                        <td> <span class="badge text-white text-bg-@(orderItem.Status == OrderStatus.Pending ? "secondary" : orderItem.Status == OrderStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@orderItem.Status</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
