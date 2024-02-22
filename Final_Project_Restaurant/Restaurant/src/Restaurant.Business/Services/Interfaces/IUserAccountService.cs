@@ -1,5 +1,4 @@
 ﻿using Restaurant.Business.ViewModels;
-using Restaurant.Core.Entiity;
 
 namespace Restaurant.Business.Services.Interfaces
 {
@@ -8,6 +7,6 @@ namespace Restaurant.Business.Services.Interfaces
         Task Login(UserLoginViewModel viewModel);
         Task Register(UserRegisterViewModel viewModel);
         Task Logout();
-        Task<List<Order>> Profile();
+        Task<ProfilViewModel> Profile();
 	}
 }

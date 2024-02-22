@@ -25,8 +25,9 @@ namespace Restaurant.MVC.Controllers
             };
             return View(viewModel);
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+           
             return View();
         }
         [HttpPost]
@@ -42,13 +43,12 @@ namespace Restaurant.MVC.Controllers
                 ModelState.AddModelError("", ex.Message);
                 return View();
             }
-            catch(InvalidReservatinDateException ex)
+            catch (InvalidReservatinDateException ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
             }
-            catch(Exception ex) { }
             return RedirectToAction("Index", "Home");
         }
-      
+
     }
 }

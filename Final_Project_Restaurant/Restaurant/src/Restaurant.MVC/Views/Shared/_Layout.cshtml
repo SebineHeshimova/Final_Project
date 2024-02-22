@@ -138,15 +138,19 @@
 					<li class="submenu">
 						<a href="#0" class="show-submenu">Shop</a>
 						<ul>
-							<li><a href="shop-1.html">Shop Grid</a></li>
-							<li><a href="shop-2.html">Shop Rows</a></li>
-							<li><a href="shop-single.html">Product Single</a></li>
 							<li><a href="shop-cart.html">Cart Page</a></li>
 							<li><a asp-controller="shop" asp-action="checkout">Checkout</a></li>
 						</ul>
 					</li>
-					<li><a asp-action="index" asp-controller="reservation" class="btn_top">Reservations</a></li>
-					
+					@if (!User.Identity.IsAuthenticated)
+					{
+						<li><a asp-action="login" asp-controller="account" class="btn_top">Reservations</a></li>
+					}
+					else
+					{
+						<li><a asp-action="index" asp-controller="reservation" class="btn_top">Reservations</a></li>
+					}
+
 				</ul>
 			</nav>
 		</div>

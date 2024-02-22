@@ -27,6 +27,9 @@ namespace Restaurant.Business
             services.AddScoped<IPreferenceTextService,  PreferenceTextService>();
             services.AddScoped<IGalleryService, GalleryService>();
             services.AddScoped<IVideoService, VideoService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IReservationCheckService, ReservationCheckService>();    
+
         }
     }
 }

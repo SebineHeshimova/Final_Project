@@ -1,5 +1,5 @@
 ﻿
-@model List<Order>
+@model ProfilViewModel
 @{
     ViewData["Title"] = "Profile";
     int counter = 0;
@@ -20,15 +20,41 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var orderItem in Model)
+                @foreach (var orderItem in Model.Orders)
                 {
                     counter++;
                     <tr>
                         <th scope="row">@counter</th>
-                        <td>@orderItem.OrderItems</td>
+                        <td>@orderItem.OrderItems.Count</td>
                         <td>@orderItem.TotalPrice.ToString("0.00") AZN</td>
                         <td>@orderItem.CreatedDate.ToString("MMMM ddd, yyyy H:mm:ss")</td>
                         <td> <span class="badge text-white text-bg-@(orderItem.Status == OrderStatus.Pending ? "secondary" : orderItem.Status == OrderStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@orderItem.Status</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div><br />
+    <div class="container" style="border: 1px solid; min-height:50vh">
+        <h1>Reservation</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Guest count</th>
+                    <th scope="col">Create Date</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reservation in Model.Reservations)
+                {
+                    counter++;
+                    <tr>
+                        <th scope="row">@counter</th>
+                        <td>@reservation.GuestCount</td>
+                        <td>@reservation.CreatedDate.ToString("MMMM ddd, yyyy H:mm:ss")</td>
+                        <td> <span class="badge text-white text-bg-@(reservation.Status == ReservationStatus.Pending ? "secondary" : reservation.Status == ReservationStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@reservation.Status</span></td>
                     </tr>
                 }
             </tbody>

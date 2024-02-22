@@ -84,10 +84,11 @@ namespace Restaurant.Business.Services.Implementations
             }
             else
             {
-                basketItem = await _basketItemRepository.Table.FirstOrDefaultAsync(b => b.FoodId == foodId && b.UserId == user.Id);
+                basketItem = await _basketItemRepository.Table.FirstOrDefaultAsync(b => b.FoodId == foodId && b.UserId == user.Id && b.IsDeleted==false);
                 if (basketItem != null)
                 {
                     basketItem.Count++;
+                    basketItem.UpdatedDate = DateTime.UtcNow.AddHours(4);
                 }
                 else
                 {
@@ -95,7 +96,10 @@ namespace Restaurant.Business.Services.Implementations
                     {
                         FoodId = foodId,
                         Count = 1,
-                        UserId = user.Id
+                        UserId = user.Id,
+                        IsDeleted=false,
+                        CreatedDate=DateTime.UtcNow.AddHours(4),
+                        UpdatedDate=DateTime.UtcNow.AddHours(4),
                     };
                     await _basketItemRepository.CreateAsync(basketItem);
                 }
@@ -133,7 +137,7 @@ namespace Restaurant.Business.Services.Implementations
             }
             else
             {
-                basketItems = await _basketItemRepository.Table.Where(b => b.UserId == user.Id).ToListAsync();
+                basketItems = await _basketItemRepository.Table.Include(b=>b.Food).Where(b => b.UserId == user.Id && b.IsDeleted==false).ToListAsync();
                 foreach (var item in basketItems)
                 {
                     checkoutVM = new CheckoutViewModel()
@@ -147,7 +151,11 @@ namespace Restaurant.Business.Services.Implementations
             
             OrderViewModel orderViewModel = new OrderViewModel()
             {
-                CheckoutViewModel = checkoutVMList
+                CheckoutViewModels = checkoutVMList,
+                FullName=user.FullName,
+                Email=user.Email,
+                Phone=user.PhoneNumber
+                
             };
             
             if(orderViewModel == null)
@@ -163,10 +171,10 @@ namespace Restaurant.Business.Services.Implementations
             List<CheckoutViewModel> checkoutItemList = new List<CheckoutViewModel>();
             List<BasketItemViewModel> basketItemList = new List<BasketItemViewModel>();
             List<BasketItem> basketItems = new List<BasketItem>();
-            CheckoutViewModel checkoutItem = null;
+           
             OrderItem orderItem = null;
             AppUser user = null;
-
+            double delivery = 10;
             if (_context.HttpContext.User.Identity.IsAuthenticated)
             {
                 user = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
@@ -181,7 +189,9 @@ namespace Restaurant.Business.Services.Implementations
                 ZipCode = viewModel.ZipCode,
                 AppUserId = user?.Id,
                 OrderItems = new List<OrderItem>(),
-                CreatedDate = DateTime.UtcNow.AddHours(4)
+                CreatedDate = DateTime.UtcNow.AddHours(4),
+                UpdatedDate = DateTime.UtcNow.AddHours(4),
+                
             };
 
             if (user == null)
@@ -192,16 +202,17 @@ namespace Restaurant.Business.Services.Implementations
                     basketItemList = JsonConvert.DeserializeObject<List<BasketItemViewModel>>(basketViewstr);
                     foreach (var item in basketItemList)
                     {
-                        Food food = _foodRepository.Table.FirstOrDefault(x => x.Id == item.FoodId);
+                        Food food = await _foodRepository.SingleAsync(x => x.Id == item.FoodId);
                         orderItem = new OrderItem
                         {
                             Food = food,
                             FoodName = food.Name,
                             Price = food.Price,
                             Count = item.Count,
-                            Order = order
+                            Order = order,
+                            
                         };
-                        order.TotalPrice += orderItem.Price * orderItem.Count;
+                        order.TotalPrice += (orderItem.Price * orderItem.Count)+delivery;
                         order.OrderItems.Add(orderItem);
                     }
                 }
@@ -211,8 +222,8 @@ namespace Restaurant.Business.Services.Implementations
                 basketItems = await _basketItemRepository.Table.Include(x => x.Food).Where(x => x.UserId == user.Id && !x.IsDeleted).ToListAsync();
                 foreach (var item in basketItems)
                 {
-                    Food food = _foodRepository.Table.FirstOrDefault(x => x.Id == item.FoodId);
-
+                    Food food = await _foodRepository.SingleAsync(x => x.Id == item.FoodId);
+                    
                     orderItem = new OrderItem
                     {
                         Food = food,
@@ -221,7 +232,7 @@ namespace Restaurant.Business.Services.Implementations
                         Count = item.Count,
                         Order = order
                     };
-                    order.TotalPrice += orderItem.Price * orderItem.Count;
+                    order.TotalPrice += (orderItem.Price * orderItem.Count) + delivery;
                     order.OrderItems.Add(orderItem);
                     item.IsDeleted = true;
                 }

@@ -24,7 +24,10 @@ namespace Restaurant.Business.ViewModels
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
         [Required]
+        public byte GuestCount {  get; set; }
+        [Required]
         public DateTime DateTime { get; set; }
-        public List<Slider> Sliders { get; set; }
+        public List<Slider>? Sliders { get; set; }
+        public AppUser? User { get; set; }
     }
 }

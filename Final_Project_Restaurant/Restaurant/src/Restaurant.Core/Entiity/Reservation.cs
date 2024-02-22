@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using Restaurant.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,8 +24,11 @@ namespace Restaurant.Core.Entiity
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
         [Required]
+        public byte GuestCount {  get; set; }
+        [Required]
         public DateTime DateTime { get; set; }
         public string? AppUserId {  get; set; }
         public AppUser? User { get; set; }
+        public ReservationStatus Status { get; set; }
     }
 }

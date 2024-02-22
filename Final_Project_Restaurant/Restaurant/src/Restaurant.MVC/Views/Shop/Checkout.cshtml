@@ -27,36 +27,36 @@
 
                                     <div class="col-md-4 col-12">
                                         <label>Fullname</label>
-                                        <input asp-for="FullName" placeholder="Fullname">
+                                        <input asp-for="FullName" placeholder="Fullname" required />
                                         <span asp-validation-for="FullName"></span>
                                     </div>
                                     <div class="col-md-4 col-12">
 
                                         <label>Email Address</label>
-                                        <input asp-for="Email" placeholder="Email Address">
+                                        <input asp-for="Email" placeholder="Email Address" required />
                                         <span asp-validation-for="Email"></span>
                                     </div>
 
                                     <div class="col-md-4 col-12">
                                         <label>Phone</label>
-                                        <input asp-for="Phone" placeholder="Phone">
+                                        <input asp-for="Phone" placeholder="Phone" required />
                                         <span asp-validation-for="Phone"></span>
                                     </div>
 
                                     <div class="col-md-4 col-12">
                                         <label>Full Address</label>
-                                        <input asp-for="Address" placeholder="Full Address">
+                                        <input asp-for="Address" placeholder="Full Address" required />
                                         <span asp-validation-for="Address"></span>
                                     </div>
                                     <div class="col-md-4 col-12">
                                         <label>City</label>
-                                        <input asp-for="City" placeholder="City">
+                                        <input asp-for="City" placeholder="City" required />
                                         <span asp-validation-for="City"></span>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Postal Code</label>
-                                            <input asp-for="ZipCode" placeholder="0123">
+                                            <input asp-for="ZipCode" placeholder="0123" required />
                                             <span asp-validation-for="ZipCode"></span>
                                         </div>
                                     </div>
@@ -156,7 +156,7 @@
                              </ul>
                               <hr>-->
                             <ul class="clearfix">
-                                @foreach (var item in Model.CheckoutViewModel)
+                                @foreach (var item in Model.CheckoutViewModels)
                                 {
                                     <li><a asp-controller="menu" asp-action="index">@item.Count x @item.Food.Name</a><span>$@(item.Food.Price * item.Count)</span></li>
                                     totalPrice += (item.Food.Price * item.Count);

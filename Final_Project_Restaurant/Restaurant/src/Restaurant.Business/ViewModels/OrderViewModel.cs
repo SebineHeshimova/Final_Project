@@ -10,7 +10,7 @@ namespace Restaurant.Business.ViewModels
 {
     public class OrderViewModel
     {
-
+        public List<CheckoutViewModel>? CheckoutViewModels { get; set; }
         [StringLength(maximumLength: 50, MinimumLength = 3)]
         [Required]
         public string FullName { get; set; }
@@ -29,6 +29,6 @@ namespace Restaurant.Business.ViewModels
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
         public string ZipCode { get; set; }
-        public List<CheckoutViewModel>? CheckoutViewModel { get; set; }
+       
     }
 }

@@ -19,7 +19,9 @@ namespace Restaurant.Business.ViewModels
 		[Required]
 		[DataType(DataType.EmailAddress)]
 		public string Email { get; set; }
-		[Required]
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
+        [Required]
         public string Birthdate {  get; set; }
 		[StringLength(maximumLength: 30, MinimumLength = 8)]
 		[Required]

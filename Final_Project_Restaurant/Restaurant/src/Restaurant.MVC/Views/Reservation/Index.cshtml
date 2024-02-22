@@ -1,6 +1,8 @@
 ﻿@model ReservationViewModel
+@inject LayoutService service
 @{
     ViewData["Title"] = "Index";
+    var user = await service.GetAppUser();
 }
 
 
@@ -52,31 +54,38 @@
                                     </div>
                                     <div>
                                         <div class="form_container">
-                                            <form method="post" asp-action="create" asp-controller="reservation">
-                                                <div class="row gutters-15">
-                                                    <div class="col-12 form-group">
-                                                        <input asp-for="FullName" placeholder="Full name" class="form-control" required />
-                                                        <span asp-validation-for="FullName" class="text-danger"></span>
-                                                    </div>
+                                           
+                                                <form method="post" asp-action="create" asp-controller="reservation">
+                                                    <div class="row gutters-15">
+                                                        <div class="col-12 form-group">
+                                                            <input asp-for="FullName" placeholder="Full name" class="form-control" required />
+                                                            <span asp-validation-for="FullName" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="col-md-6 form-group">
+                                                            <input asp-for="Phone" placeholder="Phone" class="form-control" required />
+                                                            <span asp-validation-for="Phone" class="text-danger"></span>
+                                                        </div>
+                                                        <div class="col-md-6 form-group">
+                                                            <input asp-for="Email" placeholder="Email" class="form-control" required />
+                                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                                        </div>
                                                     <div class="col-md-6 form-group">
-                                                        <input asp-for="Phone" placeholder="Phone" class="form-control" required />
-                                                        <span asp-validation-for="Phone" class="text-danger"></span>
+                                                        <input asp-for="GuestCount" placeholder="GuestCount" class="form-control" required />
+                                                        <span asp-validation-for="GuestCount" class="text-danger"></span>
                                                     </div>
-                                                    <div class="col-md-6 form-group">
-                                                        <input asp-for="Email" placeholder="Email" class="form-control" required />
-                                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                                        <div class="col-sm-12 form-group">
+
+                                                            <input asp-for="DateTime" type="datetime-local" class="form-control" placeholder="DateTime" required />
+                                                            <div asp-validation-summary="ModelOnly"></div>
+                                                        </div>
+
+                                                        <div class="col-12 form-group text-center">
+                                                            <button type="submit" class="item-btn">Submit</button>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-sm-12 form-group">
-                                                      
-                                                        <input asp-for="DateTime" type="datetime-local" class="form-control" placeholder="DateTime" required />
-                                                        <div asp-validation-summary="ModelOnly"></div>
-                                                    </div>
-                                                   
-                                                    <div class="col-12 form-group text-center">
-                                                        <button type="submit" class="item-btn">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                                </form>
+                                            
+                                           
                                         </div>
                                     </div>
                                 </div>

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException.CategoryExceptions;
 using Restaurant.Business.CustomException.RestaurantException.ReservationExceptions;
 using Restaurant.Business.Services.Interfaces;
@@ -17,31 +19,65 @@ namespace Restaurant.Business.Services.Implementations
     public class ReservationService : IReservationService
     {
         private readonly IReservationRepository _repository;
-
-        public ReservationService(IReservationRepository repository)
+        private readonly IHttpContextAccessor _context;
+        private readonly UserManager<AppUser> _userManager;
+        public ReservationService(IReservationRepository repository, IHttpContextAccessor context, UserManager<AppUser> userManager)
         {
             _repository = repository;
+            _context = context;
+            _userManager = userManager;
         }
-        
+
         public async Task Create(ReservationViewModel viewModel)
         {
-            if(viewModel == null) throw new ReservationNullException("Entity cannot be null!");
+
+            if (viewModel == null) throw new ReservationNullException("Entity cannot be null!");
             if (viewModel.DateTime < DateTime.UtcNow) throw new InvalidReservatinDateException("DateTime", "mshgjre");
+            AppUser user = null;
+            if (_context.HttpContext.User.Identity.IsAuthenticated)
+            {
+                user = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
+            }
+
             Reservation reservation = new Reservation()
             {
                 FullName = viewModel.FullName,
                 Email = viewModel.Email,
                 Phone = viewModel.Phone,
+                GuestCount = viewModel.GuestCount,
                 DateTime = viewModel.DateTime,
                 CreatedDate = DateTime.UtcNow.AddHours(4),
-                UpdatedDate= DateTime.UtcNow.AddHours(4),
-                IsDeleted=false
+                UpdatedDate = DateTime.UtcNow.AddHours(4),
+                AppUserId=user.Id,
+                IsDeleted = false
             };
 
             await _repository.CreateAsync(reservation);
             await _repository.CommitAsync();
         }
+        //public async Task<ReservationViewModel> CreateGet()
+        //{
 
+        //  //  if (viewModel == null) throw new ReservationNullException("ReservationViewModel cannot be null!");
+        //  // 
+        //    AppUser user = null;
+        //    if (_context.HttpContext.User.Identity.IsAuthenticated)
+        //    {
+        //        user = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
+        //    }
+
+        //    ReservationViewModel viewModel = new ReservationViewModel()
+        //    {
+        //        FullName = user.FullName,
+        //        Email = user.Email,
+        //        Phone = user.PhoneNumber,
+
+
+        //    };
+
+
+        //    return viewModel;
+        //}
         public async Task Delete(int id)
         {
             var reservation = await _repository.SingleAsync(c => c.Id == id);
@@ -66,11 +102,12 @@ namespace Restaurant.Business.Services.Implementations
             if (reservation == null) throw new ReservationNullException("Entity cannot be null!");
             if (reservation.DateTime < DateTime.UtcNow) throw new InvalidReservatinDateException("DateTime", "Invalid reservation date!");
             existReservation.FullName = reservation.FullName;
-            existReservation.Email= reservation.Email;
-            existReservation.Phone= reservation.Phone;
+            existReservation.Email = reservation.Email;
+            existReservation.Phone = reservation.Phone;
             existReservation.DateTime = reservation.DateTime;
-            existReservation.UpdatedDate=DateTime.UtcNow.AddHours(4);
+            existReservation.GuestCount = reservation.GuestCount;
+            existReservation.UpdatedDate = DateTime.UtcNow.AddHours(4);
             await _repository.CommitAsync();
-        }            
+        }
     }
 }

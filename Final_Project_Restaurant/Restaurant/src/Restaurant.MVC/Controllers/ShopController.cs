@@ -59,7 +59,8 @@ namespace Restaurant.MVC.Controllers
         }
         public async Task<IActionResult> Checkout()
         {
-            if(!ModelState.IsValid) return View();
+           
+            if (!ModelState.IsValid) return View();
             
             var orderViewModel =  await _shopService.CheckoutGet();
             if (orderViewModel == null) return View();
@@ -68,16 +69,17 @@ namespace Restaurant.MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-       public async Task<IActionResult> Checkout(OrderViewModel viewModel)
+        public async Task<IActionResult> Checkout(OrderViewModel viewModel)
         {
+
             if (!ModelState.IsValid) return View();
             try
             {
                 await _shopService.CheckoutPost(viewModel);
             }
-            catch(NullReferenceException ex)
+            catch (NullReferenceException ex)
             {
-                ModelState.AddModelError("",ex.Message);
+                ModelState.AddModelError("", ex.Message);
                 return View();
             }
             catch (Exception ex) { }

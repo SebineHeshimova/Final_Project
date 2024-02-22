@@ -22,15 +22,17 @@ namespace Restaurant.Business.Services.Implementations
         private readonly SignInManager<AppUser> _signInManager;
 		private readonly IHttpContextAccessor _context;
         private readonly IOrderRepository _orderRepository;
-		public UserAccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IHttpContextAccessor context, IOrderRepository orderRepository)
-		{
-			_userManager = userManager;
-			_signInManager = signInManager;
-			_context = context;
-			_orderRepository = orderRepository;
-		}
+        private readonly IReservationRepository _reservationRepository;
+        public UserAccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IHttpContextAccessor context, IOrderRepository orderRepository, IReservationRepository reservationRepository)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _context = context;
+            _orderRepository = orderRepository;
+            _reservationRepository = reservationRepository;
+        }
 
-		public async Task Login(UserLoginViewModel viewModel)
+        public async Task Login(UserLoginViewModel viewModel)
         {
             AppUser user = null;
             user = await _userManager.FindByNameAsync(viewModel.UserName);
@@ -63,7 +65,9 @@ namespace Restaurant.Business.Services.Implementations
                 UserName = viewModel.UserName,
                 Email = viewModel.Email,
                 FullName = viewModel.Fullname,
-                BirthDate = viewModel.Birthdate
+                BirthDate = viewModel.Birthdate,
+                PhoneNumber=viewModel.Phone,
+               
             };
             var result = await _userManager.CreateAsync(appUser, viewModel.Password);
             if (!result.Succeeded)
@@ -79,7 +83,7 @@ namespace Restaurant.Business.Services.Implementations
 		{
 			await _signInManager.SignOutAsync();
 		}
-		public async Task<List<Order>> Profile()
+		public async Task<ProfilViewModel> Profile()
 		{
 			AppUser appUser = null;
 
@@ -88,9 +92,14 @@ namespace Restaurant.Business.Services.Implementations
 				appUser = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
 			}
 
-			List<Order> orders = await _orderRepository.Table.Where(x => x.AppUserId == appUser.Id).ToListAsync();
-            
-			return orders;
+			List<Order> orders = await _orderRepository.GetAllWhere(x => x.AppUserId == appUser.Id, "OrderItems").ToListAsync();
+            List<Reservation> reservations = await _reservationRepository.GetAllWhere(x => x.AppUserId == appUser.Id).ToListAsync();
+            ProfilViewModel viewModel = new ProfilViewModel()
+            {
+                Orders = orders,
+                Reservations = reservations
+            };
+            return viewModel;
 		}
 
 	}
