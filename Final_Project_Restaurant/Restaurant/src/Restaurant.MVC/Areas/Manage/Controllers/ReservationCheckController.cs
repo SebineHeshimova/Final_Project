@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Restaurant.Business.CustomException.RestaurantException.OrderExceptions;
 using Restaurant.Business.CustomException.RestaurantException.ReservationExceptions;
+using Restaurant.Business.Services.Implementations;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
 
@@ -15,11 +17,11 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
         {
             _reservationCheckService = reservationCheckService;
         }
-
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-            List<Reservation> reservation = await _reservationCheckService.GetAllAsync();
-            return View(reservation);
+
+            var datas = await _reservationCheckService.GetAllPaginatedAsync(page, 10);
+            return View(datas);
         }
         public async Task<IActionResult> Detail(int id)
         {

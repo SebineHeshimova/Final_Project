@@ -1,9 +1,8 @@
-﻿@using Restaurant.Core.Enums;
-@using Restaurant.Core.Enums;
-@model List<Order>
+﻿@model PaginatedList<Order>
 @{
     ViewData["Title"] = "Profile";
     int counter = 0;
+    double delivery = 10;
 }
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <div class="container" style=" min-height:50vh">
@@ -41,4 +40,21 @@
             }
         </tbody>
     </table>
+</div>
+<div style="margin: 0;
+     position: absolute;
+     top: 90%;
+     left: 50%;
+     transform: translate(-50%, -50%);">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item @(!Model.HasPrevious ? "disabled" : "")"><a class="page-link" asp-action="index" asp-route-page="@(Model.ActivePage-1)">Previous</a></li>
+            @for (int i = 1; i <= Model.TotalPage; i++)
+            {
+                <li class="page-item @(Model.ActivePage==i ? "active" : "")"><a class="page-link" asp-action="index" asp-route-page="@i">@i</a></li>
+            }
+
+            <li class="page-item @(!Model.HasNext ? "disabled" : "")"><a class="page-link" asp-action="index" asp-route-page="@(Model.ActivePage+1)">Next</a></li>
+        </ul>
+    </nav>
 </div>

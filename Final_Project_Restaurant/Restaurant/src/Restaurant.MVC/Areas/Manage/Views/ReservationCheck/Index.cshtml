@@ -1,6 +1,5 @@
 ﻿@using Restaurant.Core.Enums;
-@using Restaurant.Core.Enums;
-@model List<Reservation>
+@model PaginatedList<Reservation>
 @{
     ViewData["Title"] = "Index";
     int counter = 0;
@@ -16,7 +15,7 @@
                 <th scope="col">Fulname</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>
-                <th scope="col">Created Date</th>
+                <th scope="col">Reservation date</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
             </tr>
@@ -27,11 +26,10 @@
                 counter++;
                 <tr>
                     <th scope="row">@counter</th>
-                    <td>@item.Id</td>
                     <td>@item.FullName</td>
                     <td>@item.Email</td>
                     <td>@item.Phone</td>
-                    <td>@item.CreatedDate.ToString("MMMM dd, yyyy H:mm:ss")</td>
+                    <td>@item.DateTime.ToString("MMMM dd, yyyy H:mm:ss")</td>
                     <td> <span class="badge text-white text-bg-@(item.Status == ReservationStatus.Pending ? "secondary" : item.Status == ReservationStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@item.Status</span></td>
                     <td><a asp-action="detail" asp-controller="reservationcheck" asp-route-id="@item.Id" class="btn btn-warning">Detail</a></td>
 
@@ -40,4 +38,21 @@
             }
         </tbody>
     </table>
+</div>
+<div style="margin: 0;
+     position: absolute;
+     top: 90%;
+     left: 50%;
+     transform: translate(-50%, -50%);">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item @(!Model.HasPrevious ? "disabled" : "")"><a class="page-link" asp-action="index" asp-route-page="@(Model.ActivePage-1)">Previous</a></li>
+            @for (int i = 1; i <= Model.TotalPage; i++)
+            {
+                <li class="page-item @(Model.ActivePage==i ? "active" : "")"><a class="page-link" asp-action="index" asp-route-page="@i">@i</a></li>
+            }
+
+            <li class="page-item @(!Model.HasNext ? "disabled" : "")"><a class="page-link" asp-action="index" asp-route-page="@(Model.ActivePage+1)">Next</a></li>
+        </ul>
+    </nav>
 </div>

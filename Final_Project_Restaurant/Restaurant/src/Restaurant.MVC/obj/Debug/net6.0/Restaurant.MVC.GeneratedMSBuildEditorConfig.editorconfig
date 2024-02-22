@@ -200,16 +200,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc2VydmF0aW9uQ2hlY2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Reservation/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc2VydmF0aW9uXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Reservation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc2VydmF0aW9uXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Reservation/Update.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFJlc2VydmF0aW9uXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Areas/Manage/Views/Setting/Index.cshtml]
@@ -316,8 +308,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Reservation/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Reservation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Reservation/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/TTS/Desktop/Final_-Project/Final_Project_Restaurant/Restaurant/src/Restaurant.MVC/Views/Shop/Checkout.cshtml]

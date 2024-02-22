@@ -100,7 +100,7 @@ namespace Restaurant.Business.Services.Implementations
         {
             var existReservation = await _repository.SingleAsync(x => x.Id == reservation.Id);
             if (reservation == null) throw new ReservationNullException("Entity cannot be null!");
-            if (reservation.DateTime < DateTime.UtcNow) throw new InvalidReservatinDateException("DateTime", "Invalid reservation date!");
+            if (reservation.DateTime < DateTime.UtcNow && DateTime.UtcNow.AddHours(1)>existReservation.DateTime) throw new InvalidReservatinDateException("DateTime", "Invalid reservation date!");
             existReservation.FullName = reservation.FullName;
             existReservation.Email = reservation.Email;
             existReservation.Phone = reservation.Phone;

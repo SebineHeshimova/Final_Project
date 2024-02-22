@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException.ReservationExceptions;
+using Restaurant.Business.PaginationModel;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
 using Restaurant.Core.Enums;
@@ -41,6 +42,13 @@ namespace Restaurant.Business.Services.Implementations
         public async Task<List<Reservation>> GetAllAsync(Expression<Func<Reservation, bool>>? expression = null, params string[]? includes)
         {
             return await _repository.GetAllWhere(expression, includes).ToListAsync();
+        }
+
+        public async Task<PaginatedList<Reservation>> GetAllPaginatedAsync(int page, int pageSize, Expression<Func<Reservation, bool>>? expression = null, params string[]? includes)
+        {
+            var query = _repository.GetAllWhere(expression, includes);
+            var paginatedList = PaginatedList<Reservation>.Create(query, page, pageSize);
+            return paginatedList;
         }
 
         public async Task<Reservation> GetByIdAsync(Expression<Func<Reservation, bool>>? expression = null, params string[]? includes)

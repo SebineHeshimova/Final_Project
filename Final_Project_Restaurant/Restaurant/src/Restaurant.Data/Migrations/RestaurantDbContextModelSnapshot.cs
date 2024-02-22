@@ -268,7 +268,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Abouts");
+                    b.ToTable("Abouts", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Banner", b =>
@@ -309,7 +309,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Banners");
+                    b.ToTable("Banners", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.BasketItem", b =>
@@ -345,7 +345,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BasketItems");
+                    b.ToTable("BasketItems", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Category", b =>
@@ -372,7 +372,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Chef", b =>
@@ -408,7 +408,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Chefs");
+                    b.ToTable("Chefs", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Feedback", b =>
@@ -449,7 +449,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Feedbacks");
+                    b.ToTable("Feedbacks", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Food", b =>
@@ -496,7 +496,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Foods");
+                    b.ToTable("Foods", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Gallery", b =>
@@ -522,7 +522,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Gallerys");
+                    b.ToTable("Gallerys", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Offer", b =>
@@ -573,7 +573,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Offers");
+                    b.ToTable("Offers", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Order", b =>
@@ -635,7 +635,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.OrderItem", b =>
@@ -678,7 +678,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrdersItems");
+                    b.ToTable("OrdersItems", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.PreferenceSlider", b =>
@@ -714,7 +714,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PreferenceSlider");
+                    b.ToTable("PreferenceSlider", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.PreferenceText", b =>
@@ -756,7 +756,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PreferenceText");
+                    b.ToTable("PreferenceText", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Reservation", b =>
@@ -807,7 +807,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Setting", b =>
@@ -839,7 +839,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Settings", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Slider", b =>
@@ -909,7 +909,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Video", b =>
@@ -940,7 +940,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Videos");
+                    b.ToTable("Videos", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Wrapper", b =>
@@ -991,7 +991,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Wrappers");
+                    b.ToTable("Wrappers", (string)null);
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.AppUser", b =>

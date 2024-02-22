@@ -1,0 +1,69 @@
+﻿@model Reservation
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="pattern_2">
+    <div class="container margin_120_100 pb-0">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center d-none d-lg-block" data-cue="slideInUp">
+                <img src="~/assets/img/chef.png" width="400" height="733" alt="" class="~/assets/img-fluid">
+            </div>
+            <div class="col-lg-6 col-md-8" data-cue="slideInUp">
+                <div class="main_title">
+                    <span><em></em></span>
+                </div>
+                <div id="wizard_container">
+                    <section class="book_section layout_padding">
+                        <div class="container">
+                            <div class="heading_container">
+                                <h2>
+                                    Book A Table
+                                </h2>
+                            </div>
+                            <div>
+                                <div class="form_container">
+
+                                    <form method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label asp-for="FullName" /></label>
+                                            <input asp-for="FullName" placeholder="Full name" class="form-control" required />
+                                            <span asp-validation-for="FullName" class="text-danger"></span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label asp-for="Email" /></label>
+                                            <input asp-for="Email" placeholder="Email" class="form-control" required>
+                                            <span asp-validation-for="Email "></span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label asp-for="Phone" /></label>
+                                            <input asp-for="Phone" placeholder="Phone" class="form-control" required>
+                                            <span asp-validation-for="Phone"></span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label asp-for="GuestCount" /></label>
+                                            <input asp-for="GuestCount" placeholder="GuestCount" class="form-control" required>
+                                            <span asp-validation-for="GuestCount"></span>
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <label asp-for="DateTime" /></label>
+                                            <input asp-for="DateTime" placeholder="DateTime" class="form-control">
+                                            <span asp-validation-for="DateTime"></span>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- /Wizard container -->
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+

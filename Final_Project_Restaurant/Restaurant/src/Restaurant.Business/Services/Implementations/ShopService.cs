@@ -171,10 +171,9 @@ namespace Restaurant.Business.Services.Implementations
             List<CheckoutViewModel> checkoutItemList = new List<CheckoutViewModel>();
             List<BasketItemViewModel> basketItemList = new List<BasketItemViewModel>();
             List<BasketItem> basketItems = new List<BasketItem>();
-           
+            double delivery = 10;
             OrderItem orderItem = null;
             AppUser user = null;
-            double delivery = 10;
             if (_context.HttpContext.User.Identity.IsAuthenticated)
             {
                 user = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
@@ -212,7 +211,8 @@ namespace Restaurant.Business.Services.Implementations
                             Order = order,
                             
                         };
-                        order.TotalPrice += (orderItem.Price * orderItem.Count)+delivery;
+                        order.TotalPrice += (orderItem.Price * orderItem.Count);
+                        order.TotalPrice += delivery;
                         order.OrderItems.Add(orderItem);
                     }
                 }
@@ -232,7 +232,8 @@ namespace Restaurant.Business.Services.Implementations
                         Count = item.Count,
                         Order = order
                     };
-                    order.TotalPrice += (orderItem.Price * orderItem.Count) + delivery;
+                    order.TotalPrice += (orderItem.Price * orderItem.Count);
+                    order.TotalPrice =order.TotalPrice+ delivery;
                     order.OrderItems.Add(orderItem);
                     item.IsDeleted = true;
                 }

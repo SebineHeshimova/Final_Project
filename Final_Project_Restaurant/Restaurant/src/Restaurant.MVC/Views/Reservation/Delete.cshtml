@@ -1,0 +1,48 @@
+﻿@model Reservation
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="pattern_2">
+    <div class="container margin_120_100 pb-0">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8" data-cue="slideInUp">
+                <div class="main_title">
+                    <span><em></em></span>
+                </div>
+                <div id="wizard_container">
+                    <section class="book_section layout_padding">
+                        <div class="container">
+                            <div class="heading_container">
+                                <h2>
+
+                                    Cancel the reservation
+                                </h2>
+                            </div><br />
+                            <div>
+                                <div class="form_container">
+                                    <form method="post" enctype="multipart/form-data">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Email: @Model.Email</h5><br />
+                                            <h5 class="card-title">Telephone number: @Model.Phone</h5><br />
+                                            <h5 class="card-title">Guest count: @Model.GuestCount</h5><br />
+                                            <h5 class="card-title">Reservation date: @Model.DateTime</h5><br /><br />
+                                            <a asp-action="index" asp-controller="reservation" class="btn btn-primary">Go to back</a>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- /Wizard container -->
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+
