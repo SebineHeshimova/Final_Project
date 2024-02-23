@@ -1,4 +1,5 @@
 ﻿using MessagePack;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.CustomException.RestaurantException.CategoryExceptions;
 using Restaurant.Business.Services.Implementations;
@@ -7,6 +8,7 @@ using Restaurant.Core.Entiity;
 
 namespace Restaurant.MVC.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "SuperAdmin, Admin")]
     [Area("Manage")]
     public class CategoryController : Controller
     {

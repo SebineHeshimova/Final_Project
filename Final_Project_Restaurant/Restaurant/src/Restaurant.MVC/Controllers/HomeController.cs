@@ -12,6 +12,7 @@ namespace Restaurant.MVC.Controllers
         private readonly IAboutService _aboutService;
         private readonly IOfferService _offerService;
         private readonly IFoodService _foodService;
+        
         public HomeController(ISliderService sliderService, IBannerService bannerService, IWrapperService wrapperService, IAboutService aboutService, IOfferService offerService, IFoodService foodService)
         {
             _sliderService = sliderService;

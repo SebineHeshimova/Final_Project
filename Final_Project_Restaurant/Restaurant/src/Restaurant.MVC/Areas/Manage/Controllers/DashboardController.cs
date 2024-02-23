@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Core.Entiity;
 
 namespace Restaurant.MVC.Areas.Manage.Controllers
 {
+	[Authorize(Roles ="SuperAdmin, Admin")]
 	[Area("Manage")]
 	public class DashboardController : Controller
 	{

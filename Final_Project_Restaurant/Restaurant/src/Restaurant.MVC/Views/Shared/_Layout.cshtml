@@ -1,8 +1,8 @@
 ﻿@using Restaurant.MVC.ViewService;
 @inject LayoutService service
 @{
-	var Setting=await service.GetSetting();
-	var user = await service.GetAppUser();
+    var Setting = await service.GetSetting();
+    var user = await service.GetAppUser();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -10,226 +10,193 @@
 
 <!-- Mirrored from www.ansonika.com/foores/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Feb 2024 09:12:36 GMT -->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Foores - Single Restaurant Version">
-	<meta name="author" content="Ansonika">
-	<title>Foores - Single Restaurant Version</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Foores - Single Restaurant Version">
+    <meta name="author" content="Ansonika">
+    <title>Foores - Single Restaurant Version</title>
 
-	<!-- Favicons-->
-	<link rel="shortcut icon" href="~/assets/img/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/x-icon" href="~/assets/img/apple-touch-icon-57x57-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="~/assets/img/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="~/assets/img/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/assets/img/apple-touch-icon-144x144-precomposed.png">
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="~/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="~/assets/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="~/assets/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="~/assets/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/assets/img/apple-touch-icon-144x144-precomposed.png">
 
-	<!-- GOOGLE WEB FONT -->
-	<link rel="preconnect" href="https://fonts.googleapis.com/">
-	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- GOOGLE WEB FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
-	<!-- BASE CSS -->
-	<link href="~/assets/css/vendors.min.css" rel="stylesheet">
-	<link href="~/assets/css/style.css" rel="stylesheet">
+    <!-- BASE CSS -->
+    <link href="~/assets/css/vendors.min.css" rel="stylesheet">
+    <link href="~/assets/css/style.css" rel="stylesheet">
 
-	<!-- SPECIFIC CSS -->
-	<link href="~/assets/css/wizard.css" rel="stylesheet">
+    <!-- SPECIFIC CSS -->
+    <link href="~/assets/css/wizard.css" rel="stylesheet">
 
-	<!-- YOUR CUSTOM CSS -->
-	<link href="~/assets/css/custom.css" rel="stylesheet">
+    <!-- YOUR CUSTOM CSS -->
+    <link href="~/assets/css/custom.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-	<div id="preloader">
-		<div data-loader="circle-side"></div>
-	</div><!-- /Page Preload -->
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div><!-- /Page Preload -->
 
-	<header class="header clearfix element_to_stick" style="background-color:black">
-		<div class="layer"></div><!-- Opacity Mask Menu Mobile -->
-		<div class="container-fluid">
-			<div id="logo">
-				<a asp-action="index" asp-controller="home">
-					<img src="~/assets/img/logo.svg" width="140" height="35" alt="" class="logo_normal">
-					<img src="~/assets/img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky">
-				</a>
-			</div>
-			<ul id="top_menu">
-				<li>
-					@if (!User.Identity.IsAuthenticated)
-					{
-						<div class="login-block " >
-							<a asp-action="login" asp-controller="account" class="font-weight-bold" >Login</a> <br>
-							<span>or</span><br>
-							<a  asp-action="register" asp-controller="account">Register</a>
-						</div>
-					}
-					else
-					{
-						<div class="login-block">
-							<a asp-action="Profile" asp-controller="account" class="font-weight-bold">@user.FullName</a><br><br>
-							<a asp-action="logout" asp-controller="account" class="margin:25px">Logout</a>
-						</div>
-					}
-				</li>
-				<li>
-					<div class="dropdown dropdown-cart">
-						<a href="shop-cart.html" class="cart_bt"><strong>2</strong></a>
-						<div class="dropdown-menu">
-							<ul>
-								<li>
-									<figure><img src="~/assets/img/item_placeholder_square_small.jpg" data-src="~/assets/img/item_square_small_1.jpg" alt="" width="50" height="50" class="lazy"></figure>
-									<strong><span>1x Pizza Napoli</span>$12.00</strong>
-									<a href="#0" class="action"><i class="icon_trash_alt"></i></a>
-								</li>
-								<li>
-									<figure><img src="~/assets/img/item_placeholder_square_small.jpg" data-src="~/assets/img/item_square_small_2.jpg" alt="" width="50" height="50" class="lazy"></figure>
-									<strong><span>1x Hamburgher Maxi</span>$10.00</strong>
-									<a href="#0" class="action"><i class="icon_trash_alt"></i></a>
-								</li>
-								<li>
-									<figure><img src="~/assets/img/item_placeholder_square_small.jpg" data-src="~/assets/img/item_square_small_3.jpg" alt="" width="50" height="50" class="lazy"></figure>
-									<strong><span>1x Red Wine Bottle</span>$20.00</strong>
-									<a href="#0" class="action"><i class="icon_trash_alt"></i></a>
-								</li>
-							</ul>
-							<div class="total_drop">
-								<div class="clearfix add_bottom_15"><strong>Total</strong><span>$32.00</span></div>
-								<a href="shop-cart.html" class="btn_1 outline">View Cart</a><a href="shop-checkout.html" class="btn_1">Checkout</a>
-							</div>
-						</div>
-					</div>
-					<!-- /dropdown-cart-->
-				</li>
-			</ul>
-			<!-- /top_menu -->
-			<a href="#0" class="open_close">
-				<i class="icon_menu"></i><span>Menu</span>
-			</a>
-			<nav class="main-menu">
-				<div id="header_menu">
-					<a href="#0" class="open_close">
-						<i class="icon_close"></i><span>Menu</span>
-					</a>
-					<a href="index-2.html"><img src="~/assets/img/logo.svg" width="140" height="35" alt=""></a>
-				</div>
-				<ul>
-					<li class="submenu">
-						<a asp-action="index" asp-controller="home" class="show-submenu">Home</a>
-					</li>
-					<li class="submenu">
-						<a href="#0" class="show-submenu">Menu</a>
-						<ul>
-							<li><a asp-action="index" asp-controller="menu">Menu With Tabs</a></li>
-						</ul>
-					</li>
-					<li class="submenu">
-						<a href="#0" class="show-submenu">Other Pages</a>
-						<ul>
-							<li><a asp-action="index" asp-controller="about">About</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a asp-action="index" asp-controller="gallery">Gallery</a></li>
-							<li><a href="leave-review.html">Leave a review</a></li>
-							<li><a asp-action="index" asp-controller="contact">Contacts</a></li>
-						</ul>
-					</li>
-					<li class="submenu">
-						<a href="#0" class="show-submenu">Shop</a>
-						<ul>
-							<li><a href="shop-cart.html">Cart Page</a></li>
-							<li><a asp-controller="shop" asp-action="checkout">Checkout</a></li>
-						</ul>
-					</li>
-					@if (!User.Identity.IsAuthenticated)
-					{
-						<li><a asp-action="login" asp-controller="account" class="btn_top">Reservations</a></li>
-					}
-					else
-					{
-						<li><a asp-action="index" asp-controller="reservation" class="btn_top">Reservations</a></li>
-					}
+    <header class="header clearfix element_to_stick" style="background-color:black">
+        <div class="layer"></div><!-- Opacity Mask Menu Mobile -->
+        <div class="container-fluid">
+            <div id="logo">
+                <a asp-action="index" asp-controller="home">
+                    <img src="~/assets/img/logo.svg" width="140" height="35" alt="" class="logo_normal">
+                    <img src="~/assets/img/logo_sticky.svg" width="140" height="35" alt="" class="logo_sticky">
+                </a>
+            </div>
+            <ul id="top_menu">
+                <li>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <div class="login-block ">
+                            <a asp-action="login" asp-controller="account" class="font-weight-bold">Login</a> <br>
+                            <span>or</span><br>
+                            <a asp-action="register" asp-controller="account">Register</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="login-block">
+                            <a asp-action="Profile" asp-controller="account" class="font-weight-bold">@user.FullName</a><br><br>
+                            <a asp-action="logout" asp-controller="account" class="margin:25px">Logout</a>
+                        </div>
+                    }
+                </li>
+            </ul>
+            <!-- /top_menu -->
+            <a href="#0" class="open_close">
+                <i class="icon_menu"></i><span>Menu</span>
+            </a>
+            <nav class="main-menu">
+                <div id="header_menu">
+                    <a href="#0" class="open_close">
+                        <i class="icon_close"></i><span>Menu</span>
+                    </a>
+                    <a href="index-2.html"><img src="~/assets/img/logo.svg" width="140" height="35" alt=""></a>
+                </div>
+                <ul>
+                    <li class="submenu">
+                        <a asp-action="index" asp-controller="home" class="show-submenu">Home</a>
+                    </li>
+                    <li class="submenu">
+                        <a asp-action="index" asp-controller="menu">Menu</a>
+                   
+                        
+                           
+                    <li class="submenu">
+                        <a href="#0" class="show-submenu">Other Pages</a>
+                        <ul>
+                            <li><a asp-action="index" asp-controller="about">About</a></li>
+                            <li><a asp-action="index" asp-controller="gallery">Gallery</a></li>
+                            <li><a asp-action="index" asp-controller="contact">Contacts</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#0" class="show-submenu">Shop</a>
+                        <ul>
+                            <li><a asp-controller="shop" asp-action="checkout">Checkout</a></li>
+                        </ul>
+                    </li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                        <li><a asp-action="login" asp-controller="account" class="btn_top">Reservations</a></li>
+                            }
+                            else
+                            {
+                        <li><a asp-action="index" asp-controller="reservation" class="btn_top">Reservations</a></li>
+                            }
 
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<!-- /header -->
-	@RenderBody()
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- /header -->
+    @RenderBody()
 
-	<footer>
-		<div class="frame black"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-					<div class="footer_wp">
-						<i class="icon_pin_alt"></i>
-						<h3>Address</h3>
-						<p>@Setting.FirstOrDefault(s=>s.Key=="Address").Value</p>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-					<div class="footer_wp">
-						<i class="icon_tag_alt"></i>
-						<h3>Reservations</h3>
-						<p><a href="tel:009442323221">@Setting.FirstOrDefault(s=>s.Key=="Phone").Value</a><br><a href="#0">@Setting.FirstOrDefault(s=>s.Key=="E-mail").Value</a></p>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-					<div class="footer_wp">
-						<i class="icon_clock_alt"></i>
-						<h3>Opening Hours</h3>
-						<ul>
-							<li>@Setting.FirstOrDefault(s=>s.Key=="Opening Hours").Value</li>
-							
-						</ul>
-					</div>
-				</div>
-				
-			</div>
-			<!-- /row-->
-			<hr>
-			<div class="row">
-				<div class="col-sm-5">
-					<p class="copy">© Foores Restaurant - All rights reserved</p>
-				</div>
-				
-			</div>
-			<p class="text-center"></p>
-		</div>
-	</footer>
-	<!--/footer-->
+    <footer>
+        <div class="frame black"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="footer_wp">
+                        <i class="icon_pin_alt"></i>
+                        <h3>Address</h3>
+                        <p>@Setting.FirstOrDefault(s=>s.Key=="Address").Value</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="footer_wp">
+                        <i class="icon_tag_alt"></i>
+                        <h3>Reservations</h3>
+                        <p><a href="tel:009442323221">@Setting.FirstOrDefault(s=>s.Key=="Phone").Value</a><br><a href="#0">@Setting.FirstOrDefault(s=>s.Key=="E-mail").Value</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                    <div class="footer_wp">
+                        <i class="icon_clock_alt"></i>
+                        <h3>Opening Hours</h3>
+                        <ul>
+                            <li>@Setting.FirstOrDefault(s=>s.Key=="Opening Hours").Value</li>
 
-	<div id="toTop"></div><!-- Back to top button -->
-	<!-- Modal terms -->
-	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
-	<!-- COMMON SCRIPTS -->
-	<script src="~/assets/js/common_scripts.min.js"></script>
-	<script src="~/assets/js/slider.js"></script>
-	<script src="~/assets/js/common_func.js"></script>
-	<script src="phpmailer/validate.js"></script>
+                        </ul>
+                    </div>
+                </div>
 
-	<!-- SPECIFIC SCRIPTS (wizard form) -->
-	<script src="~/assets/js/wizard/wizard_scripts.min.js"></script>
-	<script src="~/assets/js/wizard/wizard_func.js"></script>
+            </div>
+            <!-- /row-->
+            <hr>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p class="copy">© Foores Restaurant - All rights reserved</p>
+                </div>
+
+            </div>
+            <p class="text-center"></p>
+        </div>
+    </footer>
+    <!--/footer-->
+
+    <div id="toTop"></div><!-- Back to top button -->
+    <!-- Modal terms -->
+    <div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                    <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                    <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- COMMON SCRIPTS -->
+    <script src="~/assets/js/common_scripts.min.js"></script>
+    <script src="~/assets/js/slider.js"></script>
+    <script src="~/assets/js/common_func.js"></script>
+    <script src="phpmailer/validate.js"></script>
+
+    <!-- SPECIFIC SCRIPTS (wizard form) -->
+    <script src="~/assets/js/wizard/wizard_scripts.min.js"></script>
+    <script src="~/assets/js/wizard/wizard_func.js"></script>
 
 </body>
 

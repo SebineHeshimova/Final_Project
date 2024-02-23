@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.CustomException.RestaurantException.FoodExceptions;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
@@ -7,6 +8,7 @@ using Restaurant.Data.DAL;
 
 namespace Restaurant.MVC.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "SuperAdmin, Admin")]
     [Area("Manage")]
     public class FoodController : Controller
     {

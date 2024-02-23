@@ -152,9 +152,9 @@ namespace Restaurant.Business.Services.Implementations
             OrderViewModel orderViewModel = new OrderViewModel()
             {
                 CheckoutViewModels = checkoutVMList,
-                FullName=user.FullName,
-                Email=user.Email,
-                Phone=user.PhoneNumber
+                FullName=user?.FullName,
+                Email=user?.Email,
+                Phone=user?.PhoneNumber
                 
             };
             

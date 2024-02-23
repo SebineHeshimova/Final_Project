@@ -1,8 +1,10 @@
 ﻿@model OrderViewModel
+@inject LayoutService service;
 @{
     ViewData["Title"] = "Checkout";
     double totalPrice = 0;
     double deliveryFee = 10;
+    var Setting = await service.GetSetting();
 }
 
 
@@ -170,7 +172,7 @@
 
                             </ul>
                             <button form="order" type="submit" class="btn_1 full-width mb_5">Order Now</button>
-                            <div class="text-center"><small>Or Call Us at <strong>0432 48432854</strong></small></div>
+                            <div class="text-center"><small>Or Call Us at <strong>@Setting.FirstOrDefault(s=>s.Key=="Phone").Value</strong></small></div>
                         </div>
                     </div>
                     <!-- /box_booking -->

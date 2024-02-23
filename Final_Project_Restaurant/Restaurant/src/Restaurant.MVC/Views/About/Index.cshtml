@@ -59,7 +59,14 @@
                                 <h2>@preferenceText.Title</h2>
                             </div>
                             <p class="lead">@preferenceText.Description</p>
-                            <p><a href="@preferenceText.RedirectUrl" class="btn_1 mt-2">@preferenceText.RedirectText</a></p>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <p><a asp-action="login" asp-controller="account" class="btn_1 mt-2">@preferenceText.RedirectText</a></p>
+                            }
+                            else
+                            {
+                                <p><a href="@preferenceText.RedirectUrl" class="btn_1 mt-2">@preferenceText.RedirectText</a></p>
+                            }
                         </div>
                     }
                 </div>

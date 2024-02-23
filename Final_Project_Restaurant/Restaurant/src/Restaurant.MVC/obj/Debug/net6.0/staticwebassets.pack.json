@@ -9029,24 +9029,44 @@
       "PackagePath": "staticwebassets\\phpmailer\\validate.js"
     },
     {
-      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\11104644-ef40-47ee-a5ba-6518f5238b59signature.png",
-      "PackagePath": "staticwebassets\\uploads\\abouts\\11104644-ef40-47ee-a5ba-6518f5238b59signature.png"
-    },
-    {
       "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\12ccc42a-10e7-4f5f-b303-27edd8742d57home_1.jpg",
       "PackagePath": "staticwebassets\\uploads\\abouts\\12ccc42a-10e7-4f5f-b303-27edd8742d57home_1.jpg"
     },
     {
-      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\41b53d2a-16a8-4604-b016-1ec4c72c888cimg-4.jpg",
-      "PackagePath": "staticwebassets\\uploads\\banners\\41b53d2a-16a8-4604-b016-1ec4c72c888cimg-4.jpg"
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\5b24c908-75fd-4f8c-ba12-6e17e544015dsignature.png",
+      "PackagePath": "staticwebassets\\uploads\\abouts\\5b24c908-75fd-4f8c-ba12-6e17e544015dsignature.png"
     },
     {
-      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\c845de17-f156-4c5f-8d45-e4bddca4911dimg-3.jpg",
-      "PackagePath": "staticwebassets\\uploads\\banners\\c845de17-f156-4c5f-8d45-e4bddca4911dimg-3.jpg"
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\7f57d68a-735d-448c-8729-26fc8ea2512dblog-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\abouts\\7f57d68a-735d-448c-8729-26fc8ea2512dblog-1.jpg"
     },
     {
-      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\ddb7f27a-46eb-406c-9af0-a3da317d08caimg-5.jpg",
-      "PackagePath": "staticwebassets\\uploads\\banners\\ddb7f27a-46eb-406c-9af0-a3da317d08caimg-5.jpg"
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\86f210c1-01e9-419a-901e-14361b439dd6signature.png",
+      "PackagePath": "staticwebassets\\uploads\\abouts\\86f210c1-01e9-419a-901e-14361b439dd6signature.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\a146451f-1f5a-4d60-97bc-931091a99ee7signature.png",
+      "PackagePath": "staticwebassets\\uploads\\abouts\\a146451f-1f5a-4d60-97bc-931091a99ee7signature.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\c40f9e06-4f65-457c-84fb-309bffcc4201signature.png",
+      "PackagePath": "staticwebassets\\uploads\\abouts\\c40f9e06-4f65-457c-84fb-309bffcc4201signature.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\abouts\\f956df67-a9d6-4694-869f-7f12ced3acdfsignature.png",
+      "PackagePath": "staticwebassets\\uploads\\abouts\\f956df67-a9d6-4694-869f-7f12ced3acdfsignature.png"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\620bea4f-b6d8-481c-94ea-aee4b8da8937slide_3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\banners\\620bea4f-b6d8-481c-94ea-aee4b8da8937slide_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\73d561ce-b942-4d7b-a29e-d7e41857517cimg-5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\banners\\73d561ce-b942-4d7b-a29e-d7e41857517cimg-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\banners\\ea7e483c-808d-4721-8457-3d57895ffb75slide_5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\banners\\ea7e483c-808d-4721-8457-3d57895ffb75slide_5.jpg"
     },
     {
       "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\chefs\\98093b16-a357-42ee-92db-4056dfbb1a32staff_1.jpg",
@@ -9223,6 +9243,10 @@
     {
       "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\09b830f2-148d-4a91-b882-ee890fe98720slide_home_1.jpg",
       "PackagePath": "staticwebassets\\uploads\\sliders\\09b830f2-148d-4a91-b882-ee890fe98720slide_home_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\1090cca3-28ba-4184-a20d-f43e47e286fdblog-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\1090cca3-28ba-4184-a20d-f43e47e286fdblog-3.jpg"
     },
     {
       "Id": "C:\\Users\\TTS\\Desktop\\Final_-Project\\Final_Project_Restaurant\\Restaurant\\src\\Restaurant.MVC\\wwwroot\\uploads\\sliders\\4ec5d60b-d20c-4e6d-a02a-72067c649aafslide_home_1.jpg",

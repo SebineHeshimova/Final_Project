@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.CustomException.RestaurantException.PreferenceSliderExceptions;
 using Restaurant.Business.Services.Implementations;
 using Restaurant.Business.Services.Interfaces;
@@ -6,6 +7,7 @@ using Restaurant.Core.Entiity;
 
 namespace Restaurant.MVC.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "SuperAdmin, Admin")]
     [Area("Manage")]
     public class PreferenceSliderController : Controller
     {

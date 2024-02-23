@@ -124,7 +124,7 @@ namespace Restaurant.Business.Services.Implementations
 					throw new AboutSignatureImageLengthException("SignatureImageFile", "File size must be lower than 2mb!");
 				}
 				Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", existAbout.SignatureImageUrl);
-				about.SignatureImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.SignatureImageFile);
+				existAbout.SignatureImageUrl = Helper.SaveFile(_env.WebRootPath, "uploads/abouts", about.SignatureImageFile);
 			}
 			existAbout.UpdatedDate = DateTime.UtcNow.AddHours(4);
 			existAbout.Title = about.Title;

@@ -20,7 +20,7 @@ namespace Restaurant.Business.Services.Implementations
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-		private readonly IHttpContextAccessor _context;
+        private readonly IHttpContextAccessor _context;
         private readonly IOrderRepository _orderRepository;
         private readonly IReservationRepository _reservationRepository;
         public UserAccountService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IHttpContextAccessor context, IOrderRepository orderRepository, IReservationRepository reservationRepository)
@@ -66,8 +66,8 @@ namespace Restaurant.Business.Services.Implementations
                 Email = viewModel.Email,
                 FullName = viewModel.Fullname,
                 BirthDate = viewModel.Birthdate,
-                PhoneNumber=viewModel.Phone,
-               
+                PhoneNumber = viewModel.Phone,
+
             };
             var result = await _userManager.CreateAsync(appUser, viewModel.Password);
             if (!result.Succeeded)
@@ -79,15 +79,15 @@ namespace Restaurant.Business.Services.Implementations
             }
             await _userManager.AddToRoleAsync(appUser, "User");
         }
-		public async Task Logout()
-		{
-			await _signInManager.SignOutAsync();
-		}
-		public async Task<ProfilViewModel> Profile()
-		{
-			AppUser appUser = null;
+        public async Task Logout()
+        {
+            await _signInManager.SignOutAsync();
+        }
+        public async Task<ProfilViewModel> Profile()
+        {
+            AppUser appUser = null;
 
-			if (_context.HttpContext.User.Identity.IsAuthenticated)
+            if (_context.HttpContext.User.Identity.IsAuthenticated)
 			{
 				appUser = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
 			}

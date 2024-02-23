@@ -27,13 +27,17 @@ namespace Restaurant.MVC.Controllers
         }
         public async Task<IActionResult> Create()
         {
+            if (!ModelState.IsValid) return View();
 
-            return View();
+            var reservationViewModel = await _reservationService.CreateGet();
+            if (reservationViewModel == null) return View();
+            return View(reservationViewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ReservationViewModel reservation)
         {
+            if(!ModelState.IsValid) return View();
             try
             {
                 await _reservationService.Create(reservation);
@@ -46,6 +50,7 @@ namespace Restaurant.MVC.Controllers
             catch (InvalidReservatinDateException ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View("Index", "Reservation");
             }
             return RedirectToAction("Index", "Home");
         }

@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     var user = await service.GetAppUser();
+    var Setting = await service.GetSetting();
 }
 
 
@@ -42,7 +43,7 @@
                         <div class="main_title">
                             <span><em></em></span>
                             <h2>Reserve a table</h2>
-                            <p>or Call us at 0344 32423453</p>
+                            <p>or Call us at @Setting.FirstOrDefault(s=>s.Key=="Phone").Value</p>
                         </div>
                         <div id="wizard_container">
                             <section class="book_section layout_padding">

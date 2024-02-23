@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.CustomException.RestaurantException.VideoExceptions;
 using Restaurant.Business.Services.Implementations;
 using Restaurant.Business.Services.Interfaces;
@@ -6,7 +7,8 @@ using Restaurant.Core.Entiity;
 
 namespace Restaurant.MVC.Areas.Manage.Controllers
 {
-	[Area("Manage")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Area("Manage")]
 	public class VideoController : Controller
 	{
 		private readonly IVideoService _videoService;

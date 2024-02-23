@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Restaurant.Business.CustomException.RestaurantException.OrderExceptions;
 using Restaurant.Business.CustomException.RestaurantException.ReservationExceptions;
@@ -8,6 +9,7 @@ using Restaurant.Core.Entiity;
 
 namespace Restaurant.MVC.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "SuperAdmin, Admin")]
     [Area("Manage")]
     public class ReservationCheckController : Controller
     {

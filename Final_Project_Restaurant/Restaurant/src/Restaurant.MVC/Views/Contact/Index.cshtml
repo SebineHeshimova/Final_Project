@@ -36,7 +36,15 @@
 							<i class="icon_tag_alt"></i>
 							<h2>Reservations</h2>
 						<a >@Setting.FirstOrDefault(s=>s.Key=="Phone").Value</a> - <a>@Setting.FirstOrDefault(s=>s.Key=="E-mail").Value</a>
-							<small>- <a asp-action="index" asp-controller="reservation">Or use the online form</a> -</small>
+						@if (!User.Identity.IsAuthenticated)
+						{
+							<small>- <a asp-action="login" asp-controller="account" >Or use the online form</a> -</small>
+						}
+						else
+						{
+							<small>-<a asp-action="index" asp-controller="reservation">Or use the online form</a> -</small>
+						}
+							
 						</div>
 					</div>
 					<div class="col-lg-4">
@@ -44,7 +52,7 @@
 							<i class="icon_pin_alt"></i>
 							<h2>Address</h2>
 						<div>@Setting.FirstOrDefault(s=>s.Key=="Address").Value</div>
-							<small>-Get Directions-</small>
+							<br />
 						</div>
 					</div>
 					<div class="col-lg-4">

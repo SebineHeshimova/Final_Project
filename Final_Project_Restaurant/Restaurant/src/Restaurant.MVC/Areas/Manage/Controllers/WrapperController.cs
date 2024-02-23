@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.CustomException.RestaurantException.SliderException;
 using Restaurant.Business.CustomException.RestaurantException.WrapperExceptions;
 using Restaurant.Business.Services.Implementations;
@@ -7,7 +8,8 @@ using Restaurant.Core.Entiity;
 
 namespace Restaurant.MVC.Areas.Manage.Controllers
 {
-	[Area("Manage")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Area("Manage")]
 	public class WrapperController : Controller
 	{
 		private readonly IWrapperService _wrapperService;
