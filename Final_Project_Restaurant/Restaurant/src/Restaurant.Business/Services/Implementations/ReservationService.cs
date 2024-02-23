@@ -28,22 +28,7 @@ namespace Restaurant.Business.Services.Implementations
             _userManager = userManager;
         }
 
-        public async Task<ReservationViewModel> CreateGet()
-        {
-            AppUser appUser = null;
-            if (_context.HttpContext.User.Identity.IsAuthenticated)
-            {
-                appUser = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
-            }
-            if(appUser == null) throw new ReservationAppUserException("Appuser null!");
-            ReservationViewModel viewModel = new ReservationViewModel()
-            {
-                FullName = appUser?.FullName,
-                Email = appUser?.Email,
-
-            };
-            return viewModel;
-        }
+      
         public async Task Create(ReservationViewModel viewModel)
         {
 

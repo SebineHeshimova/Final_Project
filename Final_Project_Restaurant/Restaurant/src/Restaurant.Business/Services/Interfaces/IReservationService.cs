@@ -12,7 +12,6 @@ namespace Restaurant.Business.Services.Interfaces
     public interface IReservationService
     {
         Task Create(ReservationViewModel viewModel);
-        Task<ReservationViewModel> CreateGet();
         Task Delete(int id);
         Task Update(Reservation reservation);
         Task<List<Reservation>> GetAllAsync(Expression<Func<Reservation, bool>>? expression=null, params string[]? include);
