@@ -160,15 +160,15 @@
                             <ul class="clearfix">
                                 @foreach (var item in Model.CheckoutViewModels)
                                 {
-                                    <li><a asp-controller="menu" asp-action="index">@item.Count x @item.Food.Name</a><span>$@(item.Food.Price * item.Count)</span></li>
+                                    <li><a asp-controller="menu" asp-action="index">@item.Count x @item.Food.Name</a><span>@(item.Food.Price * item.Count) AZN</span></li>
                                     totalPrice += (item.Food.Price * item.Count);
                                 }
 
                             </ul>
                             <ul class="clearfix">
-                                <li>Subtotal<span>$@totalPrice</span></li>
-                                <li>Delivery fee<span>$@deliveryFee</span></li>
-                                <li class="total">Total<span>$@(totalPrice+deliveryFee)</span></li>
+                                <li>Subtotal<span>@totalPrice AZN</span></li>
+                                <li>Delivery fee<span>@deliveryFee AZN</span></li>
+                                <li class="total">Total<span>@(totalPrice+deliveryFee) AZN</span></li>
 
                             </ul>
                             <button form="order" type="submit" class="btn_1 full-width mb_5">Order Now</button>

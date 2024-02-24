@@ -5,6 +5,7 @@ using Restaurant.Business.CustomException.RestaurantException.BannerExceptions;
 using Restaurant.Business.CustomException.RestaurantException.FoodExceptions;
 using Restaurant.Business.CustomException.RestaurantException.OfferExceptions;
 using Restaurant.Business.Extensions;
+using Restaurant.Business.PaginationModel;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
 using Restaurant.Core.Repositories.Interfaces;
@@ -68,6 +69,12 @@ namespace Restaurant.Business.Services.Implementations
         public async Task<List<Food>> GetAllAsync(Expression<Func<Food, bool>>? expression = null, params string[]? includes)
         {
             return await _foodRepository.GetAllWhere(expression, "Category").ToListAsync();
+        }
+        public async Task<PaginatedList<Food>> GetAllPaginatedAsync(int page, int pageSize, Expression<Func<Food, bool>>? expression = null, params string[]? includes)
+        {
+            var query = _foodRepository.GetAllWhere(expression, "Category");
+            var paginatedList = PaginatedList<Food>.Create(query, page, pageSize);
+            return paginatedList;
         }
 
         public async Task<Food> GetByIdAsync(Expression<Func<Food, bool>>? expression = null, params string[]? includes)

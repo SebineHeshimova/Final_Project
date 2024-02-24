@@ -38,7 +38,7 @@
         {
             <li>
                 <a href="@banner.RedirectUrl" class="~/assets/img_container">
-                    <img height="220px" width="572px" src="~/assets/img/banners_cat_placeholder.jpg" data-src="uploads/banners/@banner.ImageUrl" alt="" class="lazy">
+                    <img height="220px" width=100% src="~/assets/img/banners_cat_placeholder.jpg" data-src="uploads/banners/@banner.ImageUrl" alt="" class="lazy">
                     <div style="text-align:center" class=" margin_80_60 short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                         <h3 style="color:white">@banner.Title</h3>
                         <p style="color:white">@banner.Description</p>
@@ -113,7 +113,7 @@
                                 </a>
                             </figure>
                             <div class="menu_title">
-                                <h3>@food.Name</h3><em>$@food.Price</em>
+                                <h3>@food.Name</h3><em>@food.Price AZN</em>
                             </div>
                             <p>@food.Composition</p>
                         </div>

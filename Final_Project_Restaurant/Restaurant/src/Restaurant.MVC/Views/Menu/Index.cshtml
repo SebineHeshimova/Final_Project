@@ -61,11 +61,11 @@
                 <div class="frame white"></div>
             </div>
         }
-
+        
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio">
             <div class="container">
-
+                <br />
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
@@ -89,7 +89,7 @@
                                     </a>
                                 </figure>
                                 <div class="menu_title">
-                                    <h3>@food.Name</h3><em>$@food.Price</em>
+                                    <h3>@food.Name</h3><em>@food.Price AZN</em>
                                 </div>
                                 <p>@food.Composition</p>
                                 <a asp-action="AddToBasket" asp-controller="shop" asp-route-foodId="@food.Id" class="add_to_cart add-to-basket">Add To Cart</a>

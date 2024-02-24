@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Business.CustomException.RestaurantException.FoodExceptions;
+using Restaurant.Business.Services.Implementations;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
 using Restaurant.Core.Repositories.Interfaces;
@@ -20,10 +21,11 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
             _foodRepository = foodRepository;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var food=await _foodService.GetAllAsync();
-            return View(food);
+
+            var datas = await _foodService.GetAllPaginatedAsync(page, 10);
+            return View(datas);
         }
         public IActionResult Create()
         {

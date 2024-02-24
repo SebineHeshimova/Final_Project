@@ -23,57 +23,55 @@
     </div>
 
     <main class="page-section inner-page-sec-padding-bottom">
-        <div class="container" style="margin-top: 100px;">
+        <div class="container" style="margin-top: 100px; ">
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb--30 mb-lg--0">
                     <!-- Login Form s-->
                     <form method="post">
-                        <div class="login-form">
+                    <div class="login-form" style="border: 3px solid black;">
                             <h4 class="login-title">New Customer</h4>
                             <p><span class="font-weight-bold">I am a new customer</span></p>
                             <div class="row">
-                                <div class="col-md-6 col-12 mb--15">
-                                    <label>Full Name</label>
-                                    <input asp-for="Fullname" class="mb-0 form-control" placeholder="Enter your fullname">
+                            <div class="col-md-6 col-12 mb--15">
+                                    <label style="color:black">Full Name</label>
+                                <input style="border: 2px solid black;" asp-for="Fullname" class="mb-0 form-control" placeholder="Enter your fullname">
                                     <span asp-validation-for="Fullname"></span>
                                 </div>
                                 <div class="col-md-6 col-12 mb--15">
-                                    <label>Username</label>
-                                    <input asp-for="UserName" class="mb-0 form-control" placeholder="Enter your username">
+                                <label style="color:black">Username</label>
+                                <input style="border: 2px solid black;" asp-for="UserName" class="mb-0 form-control" placeholder="Enter your username">
                                     <span asp-validation-for="UserName"></span>
                                 </div>
                                 <div class="col-md-6 col-12 mb--15">
-                                    <label>Email</label>
-                                    <input asp-for="Email" class="mb-0 form-control" placeholder="Enter your email">
+                                    <label style="color:black">Email</label>
+                                <input style="border: 2px solid black;" asp-for="Email" class="mb-0 form-control" placeholder="Enter your email">
                                     <span asp-validation-for="Email"></span>
                                 </div>
                                 <div class="col-md-6 col-12 mb--15">
-                                    <label>Birthdate</label>
-                                    <input asp-for="Birthdate" class="mb-0 form-control" placeholder="Enter your birthdate">
+                                <label style="color:black">Birthdate</label>
+                                <input style="border: 2px solid black; " asp-for="Birthdate" class="mb-0 form-control" placeholder="Enter your birthdate">
                                     <span asp-validation-for="Birthdate"></span>
                                 </div>
                                 <div class="col-md-6 col-12 mb--15">
-                                    <label>Phone</label>
-                                    <input asp-for="Phone" class="mb-0 form-control" placeholder="Enter your Phone">
+                                <label style="color:black">Phone</label>
+                                <input style="border: 2px solid black;" asp-for="Phone" class="mb-0 form-control" placeholder="Enter your Phone">
                                     <span asp-validation-for="Phone"></span>
                                 </div>
                                  <div class="col-md-6 col-12 mb--15">
-                                    <label>Password</label>
-                                    <input asp-for="Password" class="mb-0 form-control" placeholder="Enter your password">
+                                <label style="color:black">Password</label>
+                                <input style="border: 2px solid black;" asp-for="Password" class="mb-0 form-control" placeholder="Enter your password">
                                     <span asp-validation-for="Password"></span>
                                 </div>
                                 <div class="col-md-6 col-12 mb--15">
-                                    <label>Confirm Password</label>
-                                    <input asp-for="ConfirmPassword" class="mb-0 form-control" placeholder="Enter your confirm password">
-                                    <span asp-validation-for="ConfirmPassword"></span>
+                                <label style="color:black">Confirm Password</label>
+                                <input style="border: 2px solid black;" asp-for="ConfirmPassword" class="mb-0 form-control" placeholder="Enter your confirm password">
+                                    <span  asp-validation-for="ConfirmPassword"></span>
                                 </div>
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-outlined">Register</button>
+                                <button  type="submit" class="btn btn-outlined">Register</butto>
                                 </div>
                             </div>
                         </div>
                     </form>
-            </div>
         </div>
     </main>
     </div>

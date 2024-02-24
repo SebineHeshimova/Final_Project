@@ -3,35 +3,37 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="color:black">Create</h1>
 <div class="container-fluid">
     <form method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label asp-for="Title" /></label>
-            <input asp-for="Title" placeholder="Title">
-            <span asp-validation-for="Title"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Description" /></label>
-            <input asp-for="Description" placeholder="Description">
-            <span asp-validation-for="Description"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="RedirectText" /></label>
-            <input asp-for="RedirectText" placeholder="RedirectText">
-            <span asp-validation-for="RedirectText"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="RedirectUrl" /></label>
-            <input asp-for="RedirectUrl" placeholder="RedirectUrl">
-            <span asp-validation-for="RedirectUrl"></span>
-        </div>
-        <div class="mb-3 form-check">
-            <label asp-for="ImageFile" /></label>
-            <input asp-for="ImageFile" placeholder="ImageFile">
-            <span asp-validation-for="ImageFile"></span>
-        </div>
         <div class="form-row">
+            <div class="mb-3 col-md-4">
+                <label asp-for="Title" /></label>
+                <input asp-for="Title" placeholder="Title">
+                <span asp-validation-for="Title"></span>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label asp-for="Description" /></label>
+                <input asp-for="Description" placeholder="Description">
+                <span asp-validation-for="Description"></span>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label asp-for="RedirectText" /></label>
+                <input asp-for="RedirectText" placeholder="RedirectText">
+                <span asp-validation-for="RedirectText"></span>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label asp-for="RedirectUrl" /></label>
+                <input asp-for="RedirectUrl" placeholder="RedirectUrl">
+                <span asp-validation-for="RedirectUrl"></span>
+            </div>
+            <div class="mb-3 col-md-4 form-check">
+                <label asp-for="ImageFile" /></label>
+                <input asp-for="ImageFile" placeholder="ImageFile">
+                <span asp-validation-for="ImageFile"></span>
+            </div>
+        </div>
+        <div class="form-row container-fluid">
             <div class="form-check mb-3 col-md-4">
                 <input class="form-check-input" asp-for="IsAbout">
                 <label class="form-check-label" asp-for="IsAbout">IsAbout</label>
