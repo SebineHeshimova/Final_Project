@@ -30,5 +30,7 @@ namespace Restaurant.Core.Entiity
         public string? AppUserId {  get; set; }
         public AppUser? User { get; set; }
         public ReservationStatus Status { get; set; }
+        [StringLength(maximumLength: 300, MinimumLength = 3)]
+        public string? AdminComment { get; set; }
     }
 }

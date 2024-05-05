@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Checkout";
     double totalPrice = 0;
-    double deliveryFee = 10;
+    double deliveryFee = 5;
     var Setting = await service.GetSetting();
 }
 
@@ -54,13 +54,6 @@
                                         <label>City</label>
                                         <input asp-for="City" placeholder="City" required />
                                         <span asp-validation-for="City"></span>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>Postal Code</label>
-                                            <input asp-for="ZipCode" placeholder="0123" required />
-                                            <span asp-validation-for="ZipCode"></span>
-                                        </div>
                                     </div>
                                 </form>
                             </div>

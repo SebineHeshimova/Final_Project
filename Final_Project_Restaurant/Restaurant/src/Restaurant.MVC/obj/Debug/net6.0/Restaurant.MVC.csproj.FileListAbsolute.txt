@@ -332,3 +332,7 @@ C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Rest
 C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC\obj\Debug\net6.0\Restaurant.MVC.csproj.CopyComplete
 C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC\obj\Debug\net6.0\Restaurant.MVC.genruntimeconfig.cache
 C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC\obj\Debug\net6.0\ref\Restaurant.MVC.dll
+C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC\bin\Debug\net6.0\MailKit.dll
+C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC\bin\Debug\net6.0\MimeKit.dll
+C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC\bin\Debug\net6.0\NETCore.MailKit.dll
+C:\Users\TTS\Desktop\Final_-Project\Final_Project_Restaurant\Restaurant\src\Restaurant.MVC\bin\Debug\net6.0\BouncyCastle.Crypto.dll

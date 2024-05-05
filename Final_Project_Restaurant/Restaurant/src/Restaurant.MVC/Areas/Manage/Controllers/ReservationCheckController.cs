@@ -30,11 +30,11 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
             var reservation = await _reservationCheckService.Detail(id);
             return View(reservation);
         }
-        public async Task<IActionResult> Accept(int id)
+        public async Task<IActionResult> Accept(int id, string adminComment)
         {
             try
             {
-                await _reservationCheckService.Accept(id);
+                await _reservationCheckService.Accept(id, adminComment);
             }
             catch (ReservationNullException ex)
             {
@@ -44,16 +44,22 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
             catch (Exception ex) { }
             return RedirectToAction("index", "ReservationCheck");
         }
-        public async Task<IActionResult> Reject(int id)
+        public async Task<IActionResult> Reject(int id, string adminComment)
         {
+            Reservation reservation;
             try
             {
-                await _reservationCheckService.Reject(id);
+                await _reservationCheckService.Reject(id, adminComment);
             }
             catch (ReservationNullException ex)
             {
                 ModelState.AddModelError("", ex.Message);
                 return View();
+            }
+            catch(ReservationAdminCommentNullException ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View("detail", reservation = await _reservationCheckService.GetByIdAsync(r => r.Id == id));
             }
             catch (Exception ex) { }
             return RedirectToAction("index", "ReservationCheck");

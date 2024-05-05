@@ -27,16 +27,18 @@
 						<div class="login-form" style="border: 3px solid black; ">
 							<h1 style="color:black" class="login-title">Login</h1>
 							<div class="row">
-								<div class="col-md-6 col-12 mb--15">
+								<div class="mb-12">
 									<label style="color:black">UserName</label>
-									<input style="border: 2px solid black; " asp-for="UserName" class="mb-0 form-control" placeholder="Enter your username">
-									<span asp-validation-for="UserName"></span>
+									<input style="border: 2px solid; color: black;" asp-for="UserName" class="mb-0 form-control" placeholder="Enter your username">
+									<span class="text-danger" asp-validation-for="UserName"></span>
 								</div>
-								<div class="col-md-6 col-12 mb--15">
+								<div class="mb-12">
 									<label style="color:black">Password</label>
-									<input style="border: 2px solid black; " asp-for="Password" class="mb-0 form-control" placeholder="Enter your password">
-									<span asp-validation-for="Password"></span>
+									<input style="border: 2px solid; color: black;" asp-for="Password" class="mb-0 form-control" placeholder="Enter your password">
+									<span class="text-danger" asp-validation-for="Password"></span>
 								</div>
+								<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+								<br /><br />
 								<div class="col-md-12">
 									<button type="submit" class="btn btn-outlined">Login</button>
 									<br /><br /><a style="color:blue;" asp-action="register" asp-controller="account">If you don't have account register here</a>

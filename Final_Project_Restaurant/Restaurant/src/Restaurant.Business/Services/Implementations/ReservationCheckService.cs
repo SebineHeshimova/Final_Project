@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Restaurant.Business.CustomException.RestaurantException.OrderExceptions;
 using Restaurant.Business.CustomException.RestaurantException.ReservationExceptions;
 using Restaurant.Business.PaginationModel;
 using Restaurant.Business.Services.Interfaces;
@@ -24,11 +25,12 @@ namespace Restaurant.Business.Services.Implementations
             _repository = repository;
         }
 
-        public async Task Accept(int id)
+        public async Task Accept(int id, string adminComment)
         {
             var reservation = await _repository.SingleAsync(r => r.Id == id);
             if (reservation == null) throw new ReservationNullException("Entity cannot be null!");
             reservation.Status = ReservationStatus.Accepted;
+            reservation.AdminComment = adminComment;
             await _repository.CommitAsync();
         }
 
@@ -64,11 +66,20 @@ namespace Restaurant.Business.Services.Implementations
             await _repository.CommitAsync();
         }
 
-        public async Task Reject(int id)
+        public async Task Reject(int id, string adminComment)
         {
-            var reservation = await _repository.SingleAsync(r => r.Id == id);
-            if (reservation == null) throw new ReservationNullException("Entity cannot be null!");
-            reservation.Status = ReservationStatus.Rejected;
+            Reservation reservation = await _repository.Table.FirstOrDefaultAsync(x => x.Id == id);
+            if (reservation is null) throw new ReservationNullException("Entity cannot be null!");
+            if (adminComment == null)
+            {
+                throw new ReservationAdminCommentNullException("AdminComment", "Reject halinda mesaj yazilmalidir!");
+            }
+
+
+            reservation.AdminComment = adminComment;
+            reservation.Status = Core.Enums.ReservationStatus.Rejected;
+
+
             await _repository.CommitAsync();
         }
     }

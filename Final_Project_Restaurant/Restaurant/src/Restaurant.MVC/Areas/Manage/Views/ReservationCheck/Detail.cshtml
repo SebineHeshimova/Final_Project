@@ -17,14 +17,19 @@
             <p class="card-text"><span class="fw-bold text-dark">Guest count:</span>  @Model.GuestCount</p>
             <p class="card-text"><span class="fw-bold text-dark">Reservation date:</span>  @Model.DateTime</p>
             <p class="card-text"><span class="fw-bold text-dark">Updatete date:</span>  @Model.UpdatedDate</p>
-
+            <form id="admin-comment-form" asp-action="reject" asp-controller="reservationCheck" method="post">
+                <label asp-for="AdminComment"> </label>
+                <textarea asp-for="AdminComment"></textarea>
+                <span asp-validation-for="AdminComment" class="text-danger"></span>
+                <input hidden value="@Model.Id" asp-for="Id" />
+            </form>
            
         </div>
 
         <div class="card-body">
             <a asp-action="pending" asp-controller="ReservationCheck" asp-route-id="@Model.Id" class="btn btn-secondary">Pending</a>
             <a asp-action="accept" asp-controller="ReservationCheck" asp-route-id="@Model.Id" class="btn btn-success">Accept</a>
-            <a asp-action="reject" asp-controller="ReservationCheck" asp-route-id="@Model.Id" class="btn btn-danger">Reject</a>
+            <button type="submit" form="admin-comment-form" class="btn btn-danger">Reject</button>
             <a asp-action="index" asp-controller="ReservationCheck" class="btn btn-primary">Go to back</a>
         </div>
     </div>

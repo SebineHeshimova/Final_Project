@@ -29,11 +29,11 @@ namespace Restaurant.Business.Services.Implementations
         }
 
       
-        public async Task Create(ReservationViewModel viewModel)
+        public async Task CreatePOST(ReservationViewModel viewModel)
         {
 
             if (viewModel == null) throw new ReservationNullException("Entity cannot be null!");
-            if (viewModel.DateTime < DateTime.UtcNow) throw new InvalidReservatinDateException("DateTime", "mshgjre");
+            if (viewModel.DateTime < DateTime.Now.AddMinutes(60)) throw new InvalidReservatinDateException("DateTime", "Rezervasiya tarixi yalnız hazırki vaxtdan 1 saat sonraya təyin oluna bilər!");
             AppUser user = null;
             if (_context.HttpContext.User.Identity.IsAuthenticated)
             {
@@ -56,29 +56,29 @@ namespace Restaurant.Business.Services.Implementations
             await _repository.CreateAsync(reservation);
             await _repository.CommitAsync();
         }
-        //public async Task<ReservationViewModel> CreateGet()
-        //{
+        public async Task<ReservationViewModel> CreateGet()
+        {
 
-        //  //  if (viewModel == null) throw new ReservationNullException("ReservationViewModel cannot be null!");
-        //  // 
-        //    AppUser user = null;
-        //    if (_context.HttpContext.User.Identity.IsAuthenticated)
-        //    {
-        //        user = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
-        //    }
+            //  if (viewmodel == null) throw new reservationnullexception("reservationviewmodel cannot be null!");
+            // 
+            AppUser user = null;
+            if (_context.HttpContext.User.Identity.IsAuthenticated)
+            {
+                user = await _userManager.FindByNameAsync(_context.HttpContext.User.Identity.Name);
+            }
 
-        //    ReservationViewModel viewModel = new ReservationViewModel()
-        //    {
-        //        FullName = user.FullName,
-        //        Email = user.Email,
-        //        Phone = user.PhoneNumber,
-
-
-        //    };
+            ReservationViewModel viewmodel = new ReservationViewModel()
+            {
+                FullName = user.FullName,
+                Email = user.Email,
+                Phone = user.PhoneNumber,
 
 
-        //    return viewModel;
-        //}
+            };
+
+
+            return viewmodel;
+        }
         public async Task Delete(int id)
         {
             var reservation = await _repository.SingleAsync(c => c.Id == id);
@@ -99,9 +99,14 @@ namespace Restaurant.Business.Services.Implementations
 
         public async Task Update(Reservation reservation)
         {
+            
+            DateTime date = new DateTime();
+            date = reservation.DateTime;
+            DateTime newDate=date.AddMinutes(60);
+           
             var existReservation = await _repository.SingleAsync(x => x.Id == reservation.Id);
             if (reservation == null) throw new ReservationNullException("Entity cannot be null!");
-            if (reservation.DateTime < DateTime.UtcNow) throw new InvalidReservatinDateException("DateTime", "Invalid reservation date!");
+            if (reservation.DateTime < DateTime.Now.AddMinutes(60) || DateTime.Now.AddMinutes(60) > existReservation.DateTime) throw new InvalidReservatinDateException("DateTime", "Rezervasiya tarixi dəyişdirilə bilməz! Tarix hazırki vaxtdan əvvələ təyin olunub və ya rezervasiya vaxtına 1 saat qalıb!");
             existReservation.FullName = reservation.FullName;
             existReservation.Email = reservation.Email;
             existReservation.Phone = reservation.Phone;

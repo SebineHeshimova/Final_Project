@@ -27,6 +27,6 @@ namespace Restaurant.Core.Entiity
 		[StringLength(maximumLength: 100)]
 		public string? SignatureImageUrl { get; set; }
 		[NotMapped]
-		public IFormFile SignatureImageFile { get; set; }
+		public IFormFile? SignatureImageFile { get; set; }
 	}
 }

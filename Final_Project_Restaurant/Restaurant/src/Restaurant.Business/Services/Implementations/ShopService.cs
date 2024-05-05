@@ -171,7 +171,8 @@ namespace Restaurant.Business.Services.Implementations
             List<CheckoutViewModel> checkoutItemList = new List<CheckoutViewModel>();
             List<BasketItemViewModel> basketItemList = new List<BasketItemViewModel>();
             List<BasketItem> basketItems = new List<BasketItem>();
-            double delivery = 10;
+            double delivery = 5;
+            double sum=0;
             OrderItem orderItem = null;
             AppUser user = null;
             if (_context.HttpContext.User.Identity.IsAuthenticated)
@@ -185,7 +186,6 @@ namespace Restaurant.Business.Services.Implementations
                 City = viewModel.City,
                 Address = viewModel.Address,
                 Phone = viewModel.Phone,
-                ZipCode = viewModel.ZipCode,
                 AppUserId = user?.Id,
                 OrderItems = new List<OrderItem>(),
                 CreatedDate = DateTime.UtcNow.AddHours(4),
@@ -211,8 +211,8 @@ namespace Restaurant.Business.Services.Implementations
                             Order = order,
                             
                         };
-                        order.TotalPrice += (orderItem.Price * orderItem.Count);
-                        order.TotalPrice += delivery;
+                        sum += (orderItem.Price * orderItem.Count);
+                        order.TotalPrice =sum + delivery;
                         order.OrderItems.Add(orderItem);
                     }
                 }
@@ -232,8 +232,8 @@ namespace Restaurant.Business.Services.Implementations
                         Count = item.Count,
                         Order = order
                     };
-                    order.TotalPrice += (orderItem.Price * orderItem.Count);
-                    order.TotalPrice =order.TotalPrice+ delivery;
+                    sum += (orderItem.Price * orderItem.Count);
+                    order.TotalPrice = sum + delivery;
                     order.OrderItems.Add(orderItem);
                     item.IsDeleted = true;
                 }

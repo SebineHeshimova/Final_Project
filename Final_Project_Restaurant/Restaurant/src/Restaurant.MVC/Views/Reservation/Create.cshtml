@@ -1,0 +1,79 @@
+﻿@model ReservationViewModel
+@inject LayoutService service
+@{
+    ViewData["Title"] = "Create";
+    var Setting = await service.GetSetting();
+}
+
+
+<div class="pattern_2">
+    <div class="container margin_120_100 pb-0">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center d-none d-lg-block" data-cue="slideInUp">
+                <img src="~/assets/img/chef.png" width="400" height="733" alt="" class="~/assets/img-fluid">
+            </div>
+            <div class="col-lg-6 col-md-8" data-cue="slideInUp">
+                <div class="main_title">
+                    <span><em></em></span>
+                    <h2>Reserve a table</h2>
+                    <p>or Call us at @Setting.FirstOrDefault(s=>s.Key=="Phone").Value</p>
+                </div>
+                <div id="wizard_container">
+                    <section class="book_section layout_padding">
+                        <div class="container">
+                            <div class="heading_container">
+                                <h2>
+                                    Book A Table
+                                </h2>
+                            </div>
+                            <div class="form_container">
+
+                                <form method="post" asp-action="create" asp-controller="reservation">
+                                    <div class="mb-12">
+                                        <label asp-for="FullName" /></label>
+                                        <input asp-for="FullName" placeholder="Full name" class="form-control" required />
+                                        <span asp-validation-for="FullName" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-12">
+                                        <label asp-for="Email" /></label>
+                                        <input asp-for="Email" placeholder="Email" class="form-control" required>
+                                        <span asp-validation-for="Email " class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-12">
+                                        <label asp-for="Phone" /></label>
+                                        <input asp-for="Phone" placeholder="Phone" class="form-control" required>
+                                        <span asp-validation-for="Phone" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-12">
+                                        <label asp-for="GuestCount" /></label>
+                                        <input asp-for="GuestCount" placeholder="GuestCount" class="form-control" required>
+                                        <span asp-validation-for="GuestCount" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-12 ">
+                                        <label asp-for="DateTime" /></label>
+                                        <input asp-for="DateTime" type="datetime-local" class="form-control" placeholder="DateTime" required />
+                                        <span asp-validation-for="DateTime" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-12 form-check  text-center">
+                                        <br />
+                                        <button type="submit" class="item-btn">Submit</button>
+                                    </div>
+
+                                </form>
+
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+                <!-- /Wizard container -->
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>

@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException.OrderExceptions;
 using Restaurant.Business.Services.Interfaces;
 using Restaurant.Core.Entiity;
@@ -29,11 +27,11 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
             var order = await _orderService.Detail(id);
             return View(order);
         }
-        public async Task<IActionResult> Accept(int id)
+        public async Task<IActionResult> Accept(int id, string adminComment)
         {
             try
             {
-                await _orderService.Accept(id); 
+                await _orderService.Accept(id, adminComment); 
             }
             catch(OrderNullException ex)
             {
@@ -43,16 +41,22 @@ namespace Restaurant.MVC.Areas.Manage.Controllers
             catch(Exception ex) { }
             return RedirectToAction("index", "Order");
         }
-        public async Task<IActionResult> Reject(int id)
+        public async Task<IActionResult> Reject(int id, string AdminComment)
         {
+            Order order;
             try
             {
-                await _orderService.Reject(id);
+                await _orderService.Reject(id, AdminComment);
             }
             catch (OrderNullException ex)
             {
                 ModelState.AddModelError("", ex.Message);
                 return View();
+            }
+            catch(OrderAdminCommentNullException ex)
+            {
+                ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View("detail",order =await _orderService.GetByIdAsync(o => o.Id == id));
             }
             catch (Exception ex) { }
             return RedirectToAction("index", "Order");

@@ -28,7 +28,6 @@ namespace Restaurant.Business.ViewModels
         [Required]
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
-        public string ZipCode { get; set; }
        
     }
 }

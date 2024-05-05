@@ -71,7 +71,7 @@ namespace Restaurant.Business.Services.Implementations
         public async Task DeleteAsync(int id)
         {
             var about = await _repository.SingleAsync(x => x.Id == id);
-            if (about == null) throw new SliderNullException("Entity cannot be null!");
+            if (about == null) throw new AboutNullException("Entity cannot be null!");
             Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", about.ImageUrl);
 			Helper.DeleteFile(_env.WebRootPath, "uploads/abouts", about.SignatureImageUrl);
 			_repository.Delete(about);

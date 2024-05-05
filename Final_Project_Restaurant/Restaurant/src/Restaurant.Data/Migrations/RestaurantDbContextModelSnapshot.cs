@@ -268,7 +268,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Abouts", (string)null);
+                    b.ToTable("Abouts");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Banner", b =>
@@ -309,7 +309,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Banners", (string)null);
+                    b.ToTable("Banners");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.BasketItem", b =>
@@ -345,7 +345,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BasketItems", (string)null);
+                    b.ToTable("BasketItems");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Category", b =>
@@ -372,7 +372,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Chef", b =>
@@ -408,7 +408,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Chefs", (string)null);
+                    b.ToTable("Chefs");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Feedback", b =>
@@ -449,7 +449,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Feedbacks", (string)null);
+                    b.ToTable("Feedbacks");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Food", b =>
@@ -496,7 +496,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Foods", (string)null);
+                    b.ToTable("Foods");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Gallery", b =>
@@ -522,7 +522,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Gallerys", (string)null);
+                    b.ToTable("Gallerys");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Offer", b =>
@@ -573,7 +573,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Offers", (string)null);
+                    b.ToTable("Offers");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Order", b =>
@@ -588,6 +588,10 @@ namespace Restaurant.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("AdminComment")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
@@ -627,15 +631,11 @@ namespace Restaurant.Data.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ZipCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.OrderItem", b =>
@@ -678,7 +678,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrdersItems", (string)null);
+                    b.ToTable("OrdersItems");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.PreferenceSlider", b =>
@@ -714,7 +714,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PreferenceSlider", (string)null);
+                    b.ToTable("PreferenceSlider");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.PreferenceText", b =>
@@ -756,7 +756,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PreferenceText", (string)null);
+                    b.ToTable("PreferenceText");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Reservation", b =>
@@ -766,6 +766,10 @@ namespace Restaurant.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AdminComment")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
@@ -807,7 +811,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Reservations", (string)null);
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Setting", b =>
@@ -839,7 +843,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings", (string)null);
+                    b.ToTable("Settings");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Slider", b =>
@@ -909,7 +913,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders", (string)null);
+                    b.ToTable("Sliders");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Video", b =>
@@ -940,7 +944,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Videos", (string)null);
+                    b.ToTable("Videos");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.Wrapper", b =>
@@ -991,7 +995,7 @@ namespace Restaurant.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Wrappers", (string)null);
+                    b.ToTable("Wrappers");
                 });
 
             modelBuilder.Entity("Restaurant.Core.Entiity.AppUser", b =>
@@ -1001,6 +1005,9 @@ namespace Restaurant.Data.Migrations
                     b.Property<string>("BirthDate")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ConfirmCode")
+                        .HasColumnType("int");
 
                     b.Property<string>("FullName")
                         .IsRequired()

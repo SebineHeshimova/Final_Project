@@ -28,11 +28,12 @@ namespace Restaurant.Core.Entiity
         [Required]
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
-        public string ZipCode { get; set; }
         public double TotalPrice { get; set; }
         public string? AppUserId { get; set; }
         public AppUser? AppUser { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public OrderStatus Status { get; set; }
-    }
+		[StringLength(maximumLength: 300, MinimumLength = 3)]
+		public string? AdminComment { get; set; }
+	}
 }

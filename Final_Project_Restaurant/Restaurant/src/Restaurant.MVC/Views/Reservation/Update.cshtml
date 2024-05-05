@@ -34,24 +34,26 @@
                                         <div class="mb-3">
                                             <label asp-for="Email" /></label>
                                             <input asp-for="Email" placeholder="Email" class="form-control" required>
-                                            <span asp-validation-for="Email "></span>
+                                            <span asp-validation-for="Email " class="text-danger"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label asp-for="Phone" /></label>
                                             <input asp-for="Phone" placeholder="Phone" class="form-control" required>
-                                            <span asp-validation-for="Phone"></span>
+                                            <span asp-validation-for="Phone" class="text-danger"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label asp-for="GuestCount" /></label>
                                             <input asp-for="GuestCount" placeholder="GuestCount" class="form-control" required>
-                                            <span asp-validation-for="GuestCount"></span>
+                                            <span asp-validation-for="GuestCount" class="text-danger"></span>
                                         </div>
-                                        <div class="mb-3 form-check">
+                                        <div class="mb-3 ">
                                             <label asp-for="DateTime" /></label>
                                             <input asp-for="DateTime" placeholder="DateTime" class="form-control">
-                                            <span asp-validation-for="DateTime"></span>
+                                            <span asp-validation-for="DateTime" class="text-danger"></span>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <div class="col-12 form-check text-center">
+                                            <button type="submit" class="item-btn">Update</button>
+                                        </div>
                                     </form>
 
                                 </div>

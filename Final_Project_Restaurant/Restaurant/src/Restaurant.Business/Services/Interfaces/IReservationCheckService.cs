@@ -12,8 +12,8 @@ namespace Restaurant.Business.Services.Interfaces
     public interface IReservationCheckService
     {
         Task<Reservation> Detail(int id);
-        Task Accept(int id);
-        Task Reject(int id);
+        Task Accept(int id, string adminComment);
+        Task Reject(int id, string adminComment);
         Task Pending(int id);
         Task<List<Reservation>> GetAllAsync(Expression<Func<Reservation, bool>>? expression = null, params string[]? includes);
         Task<Reservation> GetByIdAsync(Expression<Func<Reservation, bool>>? expression = null, params string[]? includes); 

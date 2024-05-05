@@ -29,7 +29,8 @@ namespace Restaurant.MVC.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Register(UserRegisterViewModel viewModel)
 		{
-			if (!ModelState.IsValid) return View();
+            HttpContext.Items["Mail"] = viewModel.Email;
+            if (!ModelState.IsValid) return View();
 			try
 			{
 				await _accountService.Register(viewModel);

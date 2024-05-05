@@ -2,9 +2,11 @@
 @model ProfilViewModel
 @{
     ViewData["Title"] = "Profile";
-    int counter = 0;
+    int counter1 = 0;
+    int counter2 = 0;
     double delivery = 10;
 }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <div class="margin_80_60 " style="background-color:black"></div>
 <main>
     <div class="container" style="border: 1px solid; min-height:50vh">
@@ -23,13 +25,13 @@
             <tbody>
                 @foreach (var orderItem in Model.Orders)
                 {
-                    counter++;
+                    counter1++;
                     <tr>
-                        <th scope="row">@counter</th>
+                        <th scope="row">@counter1</th>
                         <td>@orderItem.OrderItems.Count</td>
                         <td>@orderItem.TotalPrice.ToString("0.00") AZN</td>
                         <td>@orderItem.CreatedDate.ToString("MMMM ddd, yyyy H:mm:ss")</td>
-                        <td> <span class="badge text-white text-bg-@(orderItem.Status == OrderStatus.Pending ? "secondary" : orderItem.Status == OrderStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@orderItem.Status</span></td>
+                        <td> <span title ="@orderItem.AdminComment" class="badge text-white text-bg-@(orderItem.Status == OrderStatus.Pending ? "secondary" : orderItem.Status == OrderStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@orderItem.Status</span></td>
                     </tr>
                 }
             </tbody>
@@ -43,7 +45,7 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Guest count</th>
-                    <th scope="col">Create Date</th>
+                    <th scope="col">Reservation date</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -51,12 +53,12 @@
             <tbody>
                 @foreach (var reservation in Model.Reservations)
                 {
-                    counter++;
+                    counter2++;
                     <tr>
-                        <th scope="row">@counter</th>
+                        <th scope="row">@counter2</th>
                         <td>@reservation.GuestCount</td>
-                        <td>@reservation.CreatedDate.ToString("MMMM ddd, yyyy H:mm:ss")</td>
-                        <td> <span class="badge text-white text-bg-@(reservation.Status == ReservationStatus.Pending ? "secondary" : reservation.Status == ReservationStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@reservation.Status</span></td>
+                        <td>@reservation.DateTime.ToString("MMMM ddd, yyyy H:mm:ss")</td>
+                        <td> <span title="@reservation.AdminComment" class="badge text-white text-bg-@(reservation.Status == ReservationStatus.Pending ? "secondary" : reservation.Status == ReservationStatus.Accepted ? "success" : "danger")" style="padding: 0.4rem 0.8rem; font-size: 16px">@reservation.Status</span></td>
                         <td>
                             <a class="btn btn-warning" asp-action="update" asp-controller="reservation" asp-route-id="@reservation.Id">Update</a>
                             <a class="btn btn-danger" asp-action="delete" asp-controller="reservation" asp-route-id="@reservation.Id">Delete</a>

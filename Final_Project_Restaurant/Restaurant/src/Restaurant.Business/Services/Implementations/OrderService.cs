@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using Restaurant.Business.CustomException.RestaurantException.OrderExceptions;
 using Restaurant.Business.PaginationModel;
 using Restaurant.Business.Services.Interfaces;
@@ -15,61 +17,74 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Business.Services.Implementations
 {
-    public class OrderService : IOrderService
-    {
-        private readonly IOrderRepository _repository;
-        public OrderService(IOrderRepository repository)
-        {
-            _repository = repository;
-        }
+	public class OrderService : IOrderService
+	{
+		private readonly IOrderRepository _repository;
+		private readonly UserManager<AppUser> _userManager;
+		public OrderService(IOrderRepository repository, UserManager<AppUser> userManager)
+		{
+			_repository = repository;
+			_userManager = userManager;
+		}
 
-        public async Task Accept(int id)
-        {
-            var order =await   _repository.SingleAsync(o => o.Id == id);
-            if (order == null) throw new OrderNullException("Entity cannot be null!");
-            order.Status = OrderStatus.Accepted;
-            await _repository.CommitAsync();
-        }
+		public async Task Accept(int id, string adminComment)
+		{
+			var order = await _repository.SingleAsync(o => o.Id == id);
+			if (order == null) throw new OrderNullException("Entity cannot be null!");
+			order.Status = OrderStatus.Accepted;
+			order.AdminComment = adminComment;
+			await _repository.CommitAsync();
+		}
 
-        public async Task<Order> Detail(int id)
-        {
+		public async Task<Order> Detail(int id)
+		{
 
-            var order =await _repository.SingleAsync(o => o.Id == id, "OrderItems");
-            if (order == null) throw new OrderNullException("Entity cannot be null!");
-            return order;
-        }
+			var order = await _repository.SingleAsync(o => o.Id == id, "OrderItems");
+			if (order == null) throw new OrderNullException("Entity cannot be null!");
+			return order;
+		}
 
-        public async Task<List<Order>> GetAllAsync(Expression<Func<Order, bool>>? expression = null, params string[]? includes)
-        {
-            return await _repository.GetAllWhere(expression, includes).ToListAsync();
-        }
+		public async Task<List<Order>> GetAllAsync(Expression<Func<Order, bool>>? expression = null, params string[]? includes)
+		{
+			return await _repository.GetAllWhere(expression, includes).ToListAsync();
+		}
 
-        public async Task<PaginatedList<Order>> GetAllPaginatedAsync(int page, int pageSize, Expression<Func<Order, bool>>? expression = null, params string[]? includes)
-        {
-            var query = _repository.GetAllWhere(expression, includes);
-            var paginatedList = PaginatedList<Order>.Create(query, page, pageSize);
-            return paginatedList;
-        }
+		public async Task<PaginatedList<Order>> GetAllPaginatedAsync(int page, int pageSize, Expression<Func<Order, bool>>? expression = null, params string[]? includes)
+		{
+			var query = _repository.GetAllWhere(expression, includes);
+			var paginatedList = PaginatedList<Order>.Create(query, page, pageSize);
+			return paginatedList;
+		}
 
-        public async Task<Order> GetByIdAsync(Expression<Func<Order, bool>>? expression = null, params string[]? includes)
-        {
-            return await _repository.SingleAsync(expression, includes);
-        }
+		public async Task<Order> GetByIdAsync(Expression<Func<Order, bool>>? expression = null, params string[]? includes)
+		{
+			return await _repository.SingleAsync(expression, includes);
+		}
 
-        public async Task Pending(int id)
-        {
-            var order = await _repository.SingleAsync(o => o.Id == id);
-            if (order == null) throw new OrderNullException("Entity cannot be null!");
-            order.Status = OrderStatus.Pending;
-            await _repository.CommitAsync();
-        }
+		public async Task Pending(int id)
+		{
+			var order = await _repository.SingleAsync(o => o.Id == id);
+			if (order == null) throw new OrderNullException("Entity cannot be null!");
+			order.Status = OrderStatus.Pending;
+			await _repository.CommitAsync();
+		}
 
-        public async Task Reject(int id)
-        {
-            var order = await _repository.SingleAsync(o => o.Id == id);
-            if (order == null) throw new OrderNullException("Entity cannot be null!");
-            order.Status = OrderStatus.Rejected;
-            await _repository.CommitAsync();
-        }
-    }
+		public async Task Reject(int id, string adminComment)
+		{
+			Order order = await _repository.Table.Include(x => x.OrderItems).FirstOrDefaultAsync(x => x.Id == id);
+			if (order is null) throw new OrderNullException("Entity cannot be null!");
+			if (adminComment == null)
+			{
+				throw new OrderAdminCommentNullException("AdminComment", "Reject halinda mesaj yazilmalidir!");
+			}
+
+
+            order.AdminComment = adminComment;
+            order.Status = Core.Enums.OrderStatus.Rejected;
+			
+
+			await _repository.CommitAsync();
+
+		}
+	}
 }

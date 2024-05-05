@@ -15,6 +15,7 @@ namespace Restaurant.Core.Entiity
 		public string FullName {  get; set; }
 		[Required]
 		public string BirthDate {  get; set; }
+		public int ConfirmCode { get; set; }
 		public List<BasketItem> BasketItems { get; set; }
 		public List<Reservation> Reservations { get; set; }
 	}

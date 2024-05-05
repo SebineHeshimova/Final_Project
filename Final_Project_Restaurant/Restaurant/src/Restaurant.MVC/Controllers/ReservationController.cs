@@ -27,7 +27,11 @@ namespace Restaurant.MVC.Controllers
         }
         public async Task<IActionResult> Create()
         {
-            return View();
+            if (!ModelState.IsValid) return View();
+
+            var orderViewModel = await _reservationService.CreateGet();
+            if (orderViewModel == null) return View();
+            return View(orderViewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -36,16 +40,17 @@ namespace Restaurant.MVC.Controllers
             if(!ModelState.IsValid) return View();
             try
             {
-                await _reservationService.Create(reservation);
+                await _reservationService.CreatePOST(reservation);
             }
             catch (ReservationNullException ex)
             {
                 ModelState.AddModelError("", ex.Message);
-                return View();
+                return View();  
             }
             catch (InvalidReservatinDateException ex)
             {
                 ModelState.AddModelError(ex.PropertyName, ex.Message);
+                return View();
             }
             return RedirectToAction("Index", "Home");
         }
@@ -75,7 +80,7 @@ namespace Restaurant.MVC.Controllers
                 return View();
             }
             catch (Exception ex) { }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
         public async Task<IActionResult> Delete(int id)
         {
@@ -97,7 +102,7 @@ namespace Restaurant.MVC.Controllers
                 return View();
             }
             catch (Exception ex) { }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
